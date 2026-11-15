@@ -6,10 +6,12 @@ with kinozal, and any moved case — regression or improvement — turns it red.
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any
 
 import pytest
 
+from scripts import eval_trailers
 from scripts.eval_trailers import (
     GOLDEN_PATH,
     BASELINE_PATH,
@@ -23,6 +25,7 @@ from scripts.eval_trailers import (
     evaluate,
     load_baseline,
     load_golden_set,
+    save_baseline,
 )
 
 
@@ -137,3 +140,20 @@ def test_regressed_selection_is_named() -> None:
     assert not report.ok
     assert "hit→miss" in report.text
     assert repr(cases[0].film.ru_title) in report.text
+
+
+@pytest.mark.parametrize("drifted", [False, True], ids=["match", "mismatch"])
+def test_cli_exit_status_follows_baseline(
+    drifted: bool,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    baseline = load_baseline(BASELINE_PATH)
+    if drifted:
+        baseline[0].outcome = "wrong" if baseline[0].outcome != "wrong" else "hit"
+    path = tmp_path / "baseline.json"
+    save_baseline(path, baseline)
+    monkeypatch.setattr(eval_trailers, "BASELINE_PATH", path)
+    assert eval_trailers.main([]) == (1 if drifted else 0)
+    assert ("MISMATCH" in capsys.readouterr().out) is drifted

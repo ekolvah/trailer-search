@@ -466,8 +466,9 @@ def main(
         save_baseline(BASELINE_PATH, build_baseline(rows))
         print(f"baseline updated → {BASELINE_PATH}")
         return 0
-    print(compare_to_baseline(load_baseline(BASELINE_PATH), rows).text)
-    return 0
+    report = compare_to_baseline(load_baseline(BASELINE_PATH), rows)
+    print(report.text)
+    return 0 if report.ok else 1
 
 
 if __name__ == "__main__":
