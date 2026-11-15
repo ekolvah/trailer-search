@@ -11,8 +11,8 @@
 
 ## 2. Text and selection
 
-- [ ] 2.1 Port `has_cyrillic`, `normalize_title`, `title_year_matches` into `src/trailer_search/text.py`; verify: `python -m pytest tests/test_text.py`.
-- [ ] 2.2 Port the types, `TrailerStrategy` and `HeuristicStrategy` into `src/trailer_search/strategy.py`, adding `TrailerPick.title` filled from the picked candidate (design 2); verify: `python -m pytest tests/test_strategy.py`; commit.
+- [x] 2.1 Port `has_cyrillic`, `normalize_title`, `title_year_matches` into `src/trailer_search/text.py`; verify: `python -m pytest tests/test_text.py`.
+- [x] 2.2 Port the types, `TrailerStrategy` and `HeuristicStrategy` into `src/trailer_search/strategy.py`, adding `TrailerPick.title` filled from the picked candidate (design 2); verify: `python -m pytest tests/test_strategy.py`; commit.
 
 ## 3. Retrieval and entry point
 

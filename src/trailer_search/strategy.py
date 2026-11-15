@@ -1,13 +1,52 @@
-"""Trailer selection over a candidate pool (RED stub)."""
+"""Trailer selection over a candidate pool, ported from kinozal_scraper
+`trailer_strategy.py` (40cd99d) without `FirstResultStrategy`."""
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
+from typing import Protocol
+
+from trailer_search.text import has_cyrillic, normalize_title, title_year_matches
+
+
+def _contains_phrase(haystack: str, phrase: str) -> bool:
+    """Word-boundary containment of an already normalized phrase."""
+    return bool(re.search(rf"\b{re.escape(phrase)}\b", haystack))
+
+
+def _is_sequel_number(token: str) -> bool:
+    """A standalone sequel number, not a four-digit year (years discriminate in
+    `title_year_matches` and must not be skipped)."""
+    return token.isdigit() and not re.fullmatch(r"(?:19|20)\d{2}", token)
+
+
+def _title_tokens_in(film_tokens: list[str], cand_tokens: list[str]) -> bool:
+    """`film_tokens` occur consecutively and in order in `cand_tokens`, allowing one
+    interspersed numeric sequel token between title tokens."""
+    if not film_tokens:
+        return False
+
+    def aligns(start: int) -> bool:
+        fi, ci, skipped = 0, start, False
+        while fi < len(film_tokens) and ci < len(cand_tokens):
+            if cand_tokens[ci] == film_tokens[fi]:
+                fi += 1
+                ci += 1
+            elif fi > 0 and not skipped and _is_sequel_number(cand_tokens[ci]):
+                skipped = True
+                ci += 1
+            else:
+                break
+        return fi == len(film_tokens)
+
+    return any(aligns(s) for s in range(len(cand_tokens)))
 
 
 @dataclass
 class FilmProfile:
-    """What selection knows about a film."""
+    """What selection knows about a film; `cast`/`director`/`genre`/`description`
+    are optional metadata (cast in a candidate description breaks ties)."""
 
     ru_title: str
     original_title: str
@@ -31,15 +70,93 @@ class Candidate:
 
 @dataclass
 class TrailerPick:
-    """Strategy decision; `video_id=None` means no pick."""
+    """Strategy decision. `video_id=None` means no pick; `title` is the picked
+    candidate's title; `reason` attributes the decision."""
 
     video_id: str | None
+    title: str | None
     confidence: float
     reason: str
 
 
-class HeuristicStrategy:
-    """Title+year relevance, then ranking."""
+class TrailerStrategy(Protocol):
+    def pick(
+        self, film_profile: FilmProfile, candidates: list[Candidate]
+    ) -> TrailerPick: ...
 
-    def pick(self, film: FilmProfile, candidates: list[Candidate]) -> TrailerPick:
-        raise NotImplementedError
+
+class HeuristicStrategy:
+    """Deterministic language-aware selection.
+
+    1. **relevance**: the candidate title contains `ru_title` or `original_title`
+       (or `original_title` without its parenthesized edition suffix) tokens in order,
+       allowing one numeric sequel token, and its year matches a truthy profile year.
+    2. **ranking** by `(is_ru, cast_hits, trailer_signal)`, descending and stable.
+
+    A unique top rank is a confident pick (0.9); equal top ranks give the first in
+    order with 0.3 and an `ambiguous` reason; no relevant candidate gives no pick."""
+
+    _MAX_CAST = 2
+    _TRAILER_WORDS = ("трейлер", "trailer", "дубляж")
+    _TEASER_WORDS = ("тизер", "teaser")
+
+    def pick(
+        self, film_profile: FilmProfile, candidates: list[Candidate]
+    ) -> TrailerPick:
+        relevant = [c for c in candidates if self._relevant(film_profile, c)]
+        if not relevant:
+            return TrailerPick(None, None, 0.0, "no title+year match")
+        cast = [
+            n
+            for n in (normalize_title(x) for x in film_profile.cast[: self._MAX_CAST])
+            if n
+        ]
+        ranked = sorted(relevant, key=lambda c: self._rank(c, cast), reverse=True)
+        best = ranked[0]
+        best_key = self._rank(best, cast)
+        tied = sum(1 for c in relevant if self._rank(c, cast) == best_key)
+        if tied > 1:
+            return TrailerPick(
+                best.video_id,
+                best.title,
+                0.3,
+                f"ambiguous: {tied} candidates share top rank",
+            )
+        is_ru, cast_hits, _trailer = best_key
+        reason = (
+            "cast tie-break"
+            if cast_hits
+            else ("ru language" if is_ru else "sole match")
+        )
+        return TrailerPick(best.video_id, best.title, 0.9, reason)
+
+    def _relevant(self, profile: FilmProfile, candidate: Candidate) -> bool:
+        """Title-and-year match. The edition-less `original_title` variant is an equal
+        alternative, not a fallback; only `original_title` is trimmed at `(` because a
+        Russian parenthesis may qualify a part or season."""
+        cand_tokens = normalize_title(candidate.title).split()
+        titles = [
+            profile.ru_title,
+            profile.original_title,
+            profile.original_title.split("(")[0],
+        ]
+        film_titles = [normalize_title(t) for t in titles]
+        if not any(t and _title_tokens_in(t.split(), cand_tokens) for t in film_titles):
+            return False
+        return not profile.year or title_year_matches(candidate.title, profile.year)
+
+    def _rank(self, candidate: Candidate, cast: list[str]) -> tuple[int, int, int]:
+        description = normalize_title(candidate.description)
+        cast_hits = sum(1 for name in cast if _contains_phrase(description, name))
+        return (
+            int(has_cyrillic(candidate.title)),
+            cast_hits,
+            self._trailer_signal(candidate),
+        )
+
+    def _trailer_signal(self, candidate: Candidate) -> int:
+        """Trailer/dub words +1 each, teaser words −1 each."""
+        title = normalize_title(candidate.title)
+        return sum(w in title for w in self._TRAILER_WORDS) - sum(
+            w in title for w in self._TEASER_WORDS
+        )
