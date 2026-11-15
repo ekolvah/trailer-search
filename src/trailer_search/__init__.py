@@ -1,11 +1,15 @@
-"""Russian trailer selection (RED stub: eager re-export of every retriever)."""
+"""Russian trailer selection for a film. Retrievers live in `trailer_search.ytdlp` and
+`trailer_search.youtube_api`, so the base import loads neither extra."""
 
 from __future__ import annotations
 
 from trailer_search.retrieval import TrailerRetrievalError, TrailerRetriever
-from trailer_search.strategy import Candidate, FilmProfile, TrailerPick
-from trailer_search.youtube_api import YoutubeApiRetriever
-from trailer_search.ytdlp import YtDlpRetriever
+from trailer_search.strategy import (
+    Candidate,
+    FilmProfile,
+    HeuristicStrategy,
+    TrailerPick,
+)
 
 __all__ = [
     "Candidate",
@@ -13,11 +17,11 @@ __all__ = [
     "TrailerPick",
     "TrailerRetrievalError",
     "TrailerRetriever",
-    "YoutubeApiRetriever",
-    "YtDlpRetriever",
     "find_trailer",
 ]
 
 
 def find_trailer(profile: FilmProfile, retriever: TrailerRetriever) -> TrailerPick:
-    raise NotImplementedError
+    """Retrieve candidates and pick one; a retrieval failure propagates as
+    `TrailerRetrievalError`, distinct from a pick with `video_id=None`."""
+    return HeuristicStrategy().pick(profile, retriever.search_candidates(profile))
