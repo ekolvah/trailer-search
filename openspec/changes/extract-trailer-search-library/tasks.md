@@ -23,7 +23,7 @@
 
 ## 4. Evaluation
 
-- [ ] 4.1 Port `scripts/eval_trailers.py`: loader (`tmdb_videos` only as accepted-id source, design 8), `classify`, `score`, scorecard over `find_trailer` with a frozen retriever, baseline compare and `--update-baseline`, `--record` through `YoutubeApiRetriever` (design 7); drop TMDB and delivery runs and `--threshold`; verify: `python -m pytest tests/test_eval_trailers.py tests/test_eval_baseline.py` passes and `python -X utf8 scripts/eval_trailers.py` prints `hit=29 miss=2 wrong=1 (n=32)` and `baseline: match`; commit.
+- [x] 4.1 Port `scripts/eval_trailers.py`: loader (`tmdb_videos` only as accepted-id source, design 8), `classify`, `score`, scorecard over `find_trailer` with a frozen retriever, baseline compare and `--update-baseline`, `--record` through `YoutubeApiRetriever` (design 7); drop TMDB and delivery runs and `--threshold`; verify: `python -m pytest tests/test_eval_trailers.py tests/test_eval_baseline.py` passes and `python -X utf8 scripts/eval_trailers.py` prints `hit=29 miss=2 wrong=1 (n=32)` and `baseline: match`; commit.
 
 ## 5. Package and live check
 
