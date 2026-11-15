@@ -15,7 +15,9 @@ repos:
       - id: ruff-check
         args: ["--extend-select=C901,PLR0911,PLR0912,PLR0913,PLR0915"]
         stages: [pre-commit, manual]
+      # The installer-managed check ships in the distribution's own format; init rewrites it.
       - id: ruff-format
+        exclude: ^\.claude/agent-process-check\.py$
         stages: [pre-commit, manual]
   # No arguments: an import mypy cannot resolve fails until its types are listed here.
   - repo: https://github.com/pre-commit/mirrors-mypy
