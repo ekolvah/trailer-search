@@ -1,0 +1,47 @@
+{
+  "verdict": "approve",
+  "round": 4,
+  "reviewer": "architect-reviewer",
+  "reasoning": "All three round-3 findings are applied. The Event fakes are now released in a fixture finalizer and wait at most 5 s. Design 12 quotes the concurrent.futures docs and records the observed run. Every Search deadline sentence has a test, and the live test now shows that both queries finish in time.",
+  "classes": {
+    "simpler": {
+      "evidence": "Design 12 rejects relying on socket_timeout alone because several requests or a slow trickle can exceed 10 s. It also rejects a CPU benchmark: the time goes to the network, runner noise would need a threshold of about 7%, and it adds a dependency. The deadline sits in the shared search_union, where the pool already is. The Data API calls it with deadline_s=None, so its behaviour does not change. The one-thread pool used when a deadline is set is needed because a call running in the caller's thread cannot be abandoned. Decisions 1-11 are unchanged from round 2.",
+      "result": "ok"
+    },
+    "map": {
+      "evidence": "The spec deltas have 36 scenarios (selection 12, retrieval 16, eval 8) and the tasks.md map has 36 rows, one per scenario. Default deadline maps to test_default_deadline_10s. Invalid deadline or timeout rejected maps to the parametrized test_invalid_timing_rejected. Late query dropped, Blocked yt-dlp search hits the deadline and Durations logged each name their node id. The live scenario names its marker, task 5.2 and its exclusion from CI.",
+      "result": "ok"
+    },
+    "red": {
+      "evidence": "Task 1.4 runs check_red on every map id except the live one before src/ exists, so the tests fail at import. Design 12 and task 1.3 now require every threading.Event fake, including the one in test_queries_run_concurrently, to be released by a fixture finalizer even after a failed assert, and to wait at most 5 s. A regression therefore shows as a failing test, not as a pytest process that never exits.",
+      "result": "ok"
+    },
+    "platform": {
+      "evidence": "Design 12 quotes the Executor.shutdown docs (https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.Executor.shutdown): leaving a `with` block shuts down as if wait were True, and 'the entire Python program will not exit until all pending futures are done executing'. It records the observed Python 3.12.8 run: wait(timeout=0.2) plus shutdown(wait=False, cancel_futures=True) returned after 0.22 s, and the process did not exit while a worker was blocked. The 'YouTube hung' risk now says threads last until yt-dlp returns, which a slow trickle can push past socket_timeout, and that they delay the consumer's process exit. The yt-dlp and Data API observations are unchanged from round 2.",
+      "result": "ok"
+    },
+    "replaced": {
+      "evidence": "No project-declared input is replaced and no guard is dropped. With deadline_s=None the Data API stays on the round-2 path: max_workers=1, in the caller's thread, as in kinozal's batch run. The ValueError check in the YtDlpRetriever constructor adds a guard on socket_timeout and deadline_s; it removes none.",
+      "result": "ok"
+    },
+    "catcher": {
+      "evidence": "A late branch gets a WARNING naming its query, the same treatment the round-2 approval gave a failed branch. When no branch succeeds, search_union raises TrailerRetrievalError, and find_trailer passes it to the consumer ('Retrieval failure propagates'). A broken deadline is caught by test_late_query_dropped_at_deadline and test_blocked_search_hits_deadline inside the declared `test` (task 6.3). The INFO durations go to the consumer's logs; task 7.1 defers the armv7 measurement to lampa-mediacenter#48.",
+      "result": "ok"
+    },
+    "length": {
+      "evidence": "Words per requirement body: Query union 61, Retrieval failure 48, Search deadline 65 (the Data API sentence moved to design 12), Data API 54, yt-dlp 54. Each Search deadline sentence now has a test. The return-within-deadline, WARNING and raise clauses are covered by the Late and Blocked scenarios. The 10 s default is covered by test_default_deadline_10s, through the deadline_s attribute task 3.3 exposes. ValueError for deadline_s 0 and -1 and for socket_timeout 0 is covered by test_invalid_timing_rejected. That deadline_s reaches search_union is shown by the Blocked test, which builds the retriever with a short deadline. In the live scenario, 'with no query dropped' is asserted in task 5.2 as the absence of a dropped-query WARNING, so a pass shows both queries finished inside the deadline.",
+      "result": "ok"
+    },
+    "bespoke": {
+      "evidence": "Standard approach cites deadline-budget sources (oneuptime, alivedise), a source for testing timeouts with a fake that never answers (rithikpyne), and a source on CI benchmark noise (codspeed); design 12 adds the Python concurrent.futures docs. The design follows them: an overall deadline on top of the per-attempt socket_timeout, and a blocking test double. It departs from a CPU benchmark for the reason design 12 gives. The revision adds no script or check; the deadline tests are ordinary pytest tests inside the declared `test`.",
+      "result": "ok"
+    }
+  },
+  "scenario_coverage": [
+    {
+      "capability": "trailer-retrieval",
+      "scenario": "Live Russian trailer for The Beast",
+      "reason": "Needs live YouTube. The `live` marker, excluded by addopts, keeps it out of CI. It runs once in task 5.2, and its pick and elapsed time are recorded in the PR report."
+    }
+  ]
+}
