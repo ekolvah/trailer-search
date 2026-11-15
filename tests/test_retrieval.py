@@ -6,7 +6,7 @@ import logging
 import re
 import threading
 import time
-from collections.abc import Callable, Iterator
+from collections.abc import Callable
 
 import pytest
 
@@ -40,14 +40,6 @@ class _Branches:
             out()
             return []
         return out
-
-
-@pytest.fixture
-def release() -> Iterator[threading.Event]:
-    """Blocks a fake branch; the finalizer frees it even after a failed assert."""
-    event = threading.Event()
-    yield event
-    event.set()
 
 
 def test_query_durations_logged(caplog: pytest.LogCaptureFixture) -> None:

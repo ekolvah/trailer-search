@@ -7,7 +7,12 @@ import re
 from dataclasses import dataclass, field
 from typing import Protocol
 
-from trailer_search.text import has_cyrillic, normalize_title, title_year_matches
+from trailer_search.text import (
+    YEAR_PATTERN,
+    has_cyrillic,
+    normalize_title,
+    title_year_matches,
+)
 
 
 def _contains_phrase(haystack: str, phrase: str) -> bool:
@@ -18,7 +23,7 @@ def _contains_phrase(haystack: str, phrase: str) -> bool:
 def _is_sequel_number(token: str) -> bool:
     """A standalone sequel number, not a four-digit year (years discriminate in
     `title_year_matches` and must not be skipped)."""
-    return token.isdigit() and not re.fullmatch(r"(?:19|20)\d{2}", token)
+    return token.isdigit() and not re.fullmatch(YEAR_PATTERN, token)
 
 
 def _title_tokens_in(film_tokens: list[str], cand_tokens: list[str]) -> bool:
@@ -103,7 +108,10 @@ class HeuristicStrategy:
     def pick(
         self, film_profile: FilmProfile, candidates: list[Candidate]
     ) -> TrailerPick:
-        relevant = [c for c in candidates if self._relevant(film_profile, c)]
+        film_titles = self._film_titles(film_profile)
+        relevant = [
+            c for c in candidates if self._relevant(film_profile, film_titles, c)
+        ]
         if not relevant:
             return TrailerPick(None, None, 0.0, "no title+year match")
         cast = [
@@ -111,10 +119,10 @@ class HeuristicStrategy:
             for n in (normalize_title(x) for x in film_profile.cast[: self._MAX_CAST])
             if n
         ]
-        ranked = sorted(relevant, key=lambda c: self._rank(c, cast), reverse=True)
-        best = ranked[0]
-        best_key = self._rank(best, cast)
-        tied = sum(1 for c in relevant if self._rank(c, cast) == best_key)
+        keys = [self._rank(c, cast) for c in relevant]
+        best_key = max(keys)  # first of the top rank, as a stable descending sort
+        best = relevant[keys.index(best_key)]
+        tied = keys.count(best_key)
         if tied > 1:
             return TrailerPick(
                 best.video_id,
@@ -130,18 +138,24 @@ class HeuristicStrategy:
         )
         return TrailerPick(best.video_id, best.title, 0.9, reason)
 
-    def _relevant(self, profile: FilmProfile, candidate: Candidate) -> bool:
-        """Title-and-year match. The edition-less `original_title` variant is an equal
+    @staticmethod
+    def _film_titles(profile: FilmProfile) -> list[list[str]]:
+        """Title token variants. The edition-less `original_title` variant is an equal
         alternative, not a fallback; only `original_title` is trimmed at `(` because a
         Russian parenthesis may qualify a part or season."""
-        cand_tokens = normalize_title(candidate.title).split()
         titles = [
             profile.ru_title,
             profile.original_title,
             profile.original_title.split("(")[0],
         ]
-        film_titles = [normalize_title(t) for t in titles]
-        if not any(t and _title_tokens_in(t.split(), cand_tokens) for t in film_titles):
+        return [normalize_title(t).split() for t in titles]
+
+    def _relevant(
+        self, profile: FilmProfile, film_titles: list[list[str]], candidate: Candidate
+    ) -> bool:
+        """Title-and-year match against the `_film_titles` variants."""
+        cand_tokens = normalize_title(candidate.title).split()
+        if not any(_title_tokens_in(t, cand_tokens) for t in film_titles):
             return False
         return not profile.year or title_year_matches(candidate.title, profile.year)
 

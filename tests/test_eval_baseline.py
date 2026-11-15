@@ -6,13 +6,12 @@ with kinozal, and any moved case — regression or improvement — turns it red.
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
 from typing import Any
 
 import pytest
 
 from scripts.eval_trailers import (
+    GOLDEN_PATH,
     BASELINE_PATH,
     FrozenRetriever,
     GoldenCase,
@@ -25,20 +24,6 @@ from scripts.eval_trailers import (
     load_baseline,
     load_golden_set,
 )
-
-GOLDEN_PATH = Path(__file__).parent / "fixtures" / "trailer_golden.json"
-
-
-@pytest.fixture
-def write(tmp_path: Path) -> Any:
-    counter = iter(range(100))
-
-    def _write(data: Any) -> str:
-        path = tmp_path / f"f{next(counter)}.json"
-        path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
-        return str(path)
-
-    return _write
 
 
 @pytest.fixture
@@ -70,7 +55,7 @@ def mini_rows(write: Any) -> list[tuple[GoldenCase, str | None, Outcome]]:
             ]
         )
     )
-    rows, _ = evaluate(cases)
+    rows = evaluate(cases)
     return rows
 
 
@@ -133,7 +118,7 @@ def test_trap_pick_classifies_as_wrong() -> None:
 
 
 def test_committed_baseline_matches() -> None:
-    rows, _ = evaluate(load_golden_set(GOLDEN_PATH))
+    rows = evaluate(load_golden_set(GOLDEN_PATH))
     baseline = load_baseline(BASELINE_PATH)
     report = compare_to_baseline(baseline, rows)
     assert report.ok, report.text
@@ -147,7 +132,7 @@ def test_committed_baseline_matches() -> None:
 
 def test_regressed_selection_is_named() -> None:
     cases = load_golden_set(GOLDEN_PATH)
-    rows, _ = evaluate(cases, retriever_for=lambda _case: FrozenRetriever([]))
+    rows = evaluate(cases, retriever_for=lambda _case: FrozenRetriever([]))
     report = compare_to_baseline(load_baseline(BASELINE_PATH), rows)
     assert not report.ok
     assert "hit→miss" in report.text

@@ -18,6 +18,7 @@ import argparse
 import json
 import os
 import sys
+from collections import Counter
 from collections.abc import Callable
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
@@ -37,10 +38,9 @@ Outcome = Literal["hit", "wrong", "miss"]
 Row = tuple["GoldenCase", str | None, Outcome]
 
 _SCORE: dict[Outcome, int] = {"hit": 1, "miss": 0, "wrong": -2}
-_OUTCOMES: tuple[Outcome, ...] = ("hit", "wrong", "miss")
 
 _FIXTURES = Path(__file__).resolve().parent.parent / "tests" / "fixtures"
-_DEFAULT_GOLDEN = _FIXTURES / "trailer_golden.json"
+GOLDEN_PATH = _FIXTURES / "trailer_golden.json"
 BASELINE_PATH = _FIXTURES / "trailer_baseline.json"
 
 
@@ -65,8 +65,13 @@ def classify(correct: str | list[str] | None, pick_id: str | None) -> Outcome:
         return "hit" if pick_id is None else "wrong"
     if pick_id is None:
         return "miss"
-    accept = {correct} if isinstance(correct, str) else set(correct)
-    return "hit" if pick_id in accept else "wrong"
+    return "hit" if pick_id in _accept_set(correct) else "wrong"
+
+
+def _accept_set(correct: str | list[str] | None) -> set[str]:
+    if correct is None:
+        return set()
+    return {correct} if isinstance(correct, str) else set(correct)
 
 
 def score(outcomes: list[Outcome]) -> int:
@@ -187,11 +192,7 @@ def _parse_trap(
         raise GoldenSetError(
             f"{where}: 'trap' must be a list, got {type(raw).__name__}"
         )
-    accept: set[str] = set()
-    if isinstance(correct, str):
-        accept = {correct}
-    elif isinstance(correct, list):
-        accept = set(correct)
+    accept = _accept_set(correct)
     out: list[str] = []
     for j, vid in enumerate(raw):
         if not isinstance(vid, str):
@@ -259,12 +260,12 @@ def _frozen(case: GoldenCase) -> TrailerRetriever:
 def evaluate(
     cases: list[GoldenCase],
     retriever_for: Callable[[GoldenCase], TrailerRetriever] = _frozen,
-) -> tuple[list[Row], int]:
+) -> list[Row]:
     rows: list[Row] = []
     for case in cases:
         pick = find_trailer(case.film, retriever_for(case))
         rows.append((case, pick.video_id, classify(case.correct, pick.video_id)))
-    return rows, score([o for _, _, o in rows])
+    return rows
 
 
 # ── baseline ratchet ──────────────────────────────────────────────────────────
@@ -325,10 +326,11 @@ def load_baseline(path: str | Path) -> list[BaselineEntry]:
         if not isinstance(entry, dict):
             raise GoldenSetError(f"{where}: entry must be an object")
         _require(entry, ("i", "film", "outcome"), where)
-        outcome = next((o for o in _OUTCOMES if o == entry["outcome"]), None)
-        if outcome is None:
+        if entry["outcome"] not in _SCORE:
             raise GoldenSetError(f"{where}: unknown outcome {entry['outcome']!r}")
-        out.append(BaselineEntry(i=entry["i"], film=entry["film"], outcome=outcome))
+        out.append(
+            BaselineEntry(i=entry["i"], film=entry["film"], outcome=entry["outcome"])
+        )
     return out
 
 
@@ -366,10 +368,10 @@ def compare_to_baseline(
     )
 
 
-def _print_scorecard(rows: list[Row], total: int) -> None:
-    tally: dict[Outcome, int] = {"hit": 0, "wrong": 0, "miss": 0}
+def _print_scorecard(rows: list[Row]) -> None:
+    tally = Counter(o for _, _, o in rows)
+    total = score(list(tally.elements()))
     for case, pick_id, outcome in rows:
-        tally[outcome] += 1
         trap = " TRAP" if pick_id is not None and pick_id in case.trap else ""
         print(
             f"  {outcome.upper():5}{trap} {case.film.ru_title!r} → "
@@ -440,7 +442,7 @@ def main(
         description="Trailer-selection evaluation harness."
     )
     parser.add_argument(
-        "--golden", default=str(_DEFAULT_GOLDEN), help="golden-set JSON path"
+        "--golden", default=str(GOLDEN_PATH), help="golden-set JSON path"
     )
     parser.add_argument(
         "--record",
@@ -457,9 +459,9 @@ def main(
     if args.record:
         return _record(args.golden, make_retriever)
 
-    rows, total = evaluate(load_golden_set(args.golden))
+    rows = evaluate(load_golden_set(args.golden))
     print("── find_trailer (frozen pools) ──")
-    _print_scorecard(rows, total)
+    _print_scorecard(rows)
     if args.update_baseline:
         save_baseline(BASELINE_PATH, build_baseline(rows))
         print(f"baseline updated → {BASELINE_PATH}")

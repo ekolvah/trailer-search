@@ -6,13 +6,13 @@ as a source of accepted ids (design 8).
 
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from typing import Any
 
 import pytest
 
 from scripts.eval_trailers import (
+    GOLDEN_PATH,
     FrozenRetriever,
     GoldenSetError,
     classify,
@@ -22,18 +22,6 @@ from scripts.eval_trailers import (
     score,
 )
 from trailer_search import Candidate, FilmProfile, TrailerRetriever
-
-GOLDEN_PATH = Path(__file__).parent / "fixtures" / "trailer_golden.json"
-
-
-@pytest.fixture
-def write(tmp_path: Path) -> Any:
-    def _write(data: Any) -> str:
-        path = tmp_path / "golden.json"
-        path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
-        return str(path)
-
-    return _write
 
 
 def _valid_case() -> dict[str, Any]:
@@ -223,20 +211,20 @@ def test_invalid_trap_errors(write: Any, trap: Any) -> None:
 
 
 def test_committed_golden_set_scorecard() -> None:
-    rows, total = evaluate(load_golden_set(GOLDEN_PATH))
+    rows = evaluate(load_golden_set(GOLDEN_PATH))
     outcomes = [o for _, _, o in rows]
     assert (outcomes.count("hit"), outcomes.count("miss"), outcomes.count("wrong")) == (
         29,
         2,
         1,
     )
-    assert total == 27
+    assert score(outcomes) == 27
 
 
 def test_138_ru_selection_is_fixed() -> None:
     cases = [c for c in load_golden_set(GOLDEN_PATH) if c.note.startswith("seed: #138")]
     assert cases
-    rows, _ = evaluate(cases)
+    rows = evaluate(cases)
     assert [o for _, _, o in rows] == ["hit"] * len(cases)
 
 

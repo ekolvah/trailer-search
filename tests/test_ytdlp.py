@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import threading
 import time
-from collections.abc import Callable, Iterator
+from collections.abc import Callable
 from typing import Any
 
 import pytest
@@ -63,14 +63,6 @@ def _factory(
     on_search: Callable[[str], list[dict[str, Any]]], calls: list[dict[str, Any]]
 ) -> Callable[[dict[str, Any]], _FakeYDL]:
     return lambda opts: _FakeYDL(opts, on_search, calls)
-
-
-@pytest.fixture
-def release() -> Iterator[threading.Event]:
-    """Blocks a fake search; the finalizer frees it even after a failed assert."""
-    event = threading.Event()
-    yield event
-    event.set()
 
 
 def test_drops_long_and_unknown_duration() -> None:
@@ -185,6 +177,6 @@ def test_default_deadline_10s() -> None:
 @pytest.mark.parametrize(
     "kwargs", [{"deadline_s": 0}, {"deadline_s": -1}, {"socket_timeout": 0}], ids=str
 )
-def test_invalid_timing_rejected(kwargs: dict[str, float]) -> None:
+def test_invalid_timing_rejected(kwargs: dict[str, Any]) -> None:
     with pytest.raises(ValueError):
         YtDlpRetriever(**kwargs)
