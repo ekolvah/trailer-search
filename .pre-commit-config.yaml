@@ -25,6 +25,7 @@ repos:
     hooks:
       - id: mypy
         args: []
+        additional_dependencies: [pytest]
         stages: [pre-commit, manual]
   - repo: https://github.com/pylint-dev/pylint
     rev: v4.0.9
