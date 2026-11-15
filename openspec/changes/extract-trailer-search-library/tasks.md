@@ -27,8 +27,8 @@
 
 ## 5. Package and live check
 
-- [ ] 5.1 Add `README.md` (install by git URL with extras, the issue #1 usage snippet, eval command) and `.gitignore` (`__pycache__/`, `*.egg-info/`, `build/`, `dist/`, `.venv/`); verify: in a fresh venv `pip install .` then `python -c "import trailer_search, sys; assert 'yt_dlp' not in sys.modules"`, and `pip install ".[ytdlp]"` then `python -c "from trailer_search.ytdlp import YtDlpRetriever"`.
-- [ ] 5.2 Run `python -m pytest -m live tests/test_live_ytdlp.py` in that venv; verify: it passes, asserts and prints the elapsed time under the deadline and no dropped-query WARNING, and the pick and time are recorded in the PR report; commit.
+- [x] 5.1 Add `README.md` (install by git URL with extras, the issue #1 usage snippet, eval command) and `.gitignore` (`__pycache__/`, `*.egg-info/`, `build/`, `dist/`, `.venv/`); verify: in a fresh venv `pip install .` then `python -c "import trailer_search, sys; assert 'yt_dlp' not in sys.modules"`, and `pip install ".[ytdlp]"` then `python -c "from trailer_search.ytdlp import YtDlpRetriever"`.
+- [x] 5.2 Run `python -m pytest -m live tests/test_live_ytdlp.py` in that venv; verify: it passes, asserts and prints the elapsed time under the deadline and no dropped-query WARNING, and the pick and time are recorded in the PR report; commit.
 
 ## 6. Verify
 
