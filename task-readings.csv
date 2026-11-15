@@ -1,0 +1,2 @@
+pr,change,task_id,start,merged_at,hours,agent_hours,lines,plan_rounds,code_rounds,cost_usd,api_requests,failed,denied,compactions,gap
+4,extract-trailer-search-library,issue-1,2026-11-15T11:07:41Z,2026-11-15T16:47:10Z,5.66,0.92,8880,4,2,21.9514,333,11,6,4,
