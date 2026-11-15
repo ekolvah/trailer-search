@@ -1,0 +1,27 @@
+{
+  "extraKnownMarketplaces": {
+    "agent-process-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "ekolvah/agent-process-distribution",
+        "ref": "stable"
+      },
+      "autoUpdate": true
+    }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/agent-process-check.py\" https://github.com/ekolvah/agent-process-distribution/blob/v3.34.0/skills/agent-process/SKILL.md#install"
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "OTEL_RESOURCE_ATTRIBUTES": "vcs.repository.name=ekolvah/trailer-search,vcs.repository.url.full=https://github.com/ekolvah/trailer-search"
+  }
+}
