@@ -32,13 +32,13 @@
 
 ## 6. Verify
 
-- [ ] 6.1 Run `/simplify` without an argument and commit its edits.
-- [ ] 6.2 Run `openspec validate --strict --all`; verify: exit 0.
-- [ ] 6.3 Run the declared test `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify: exit 0.
+- [x] 6.1 Run `/simplify` without an argument and commit its edits.
+- [x] 6.2 Run `openspec validate --strict --all`; verify: exit 0.
+- [x] 6.3 Run the declared test `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify: exit 0.
 
 ## 7. Deliver
 
-- [ ] 7.1 Run `agent-process archive_change extract-trailer-search-library`, then `gh pr create --title "feat: extract-trailer-search-library" --body-file <report>` (report: `Refs #1`, scenario map, live-check result, deferrals: armv7 timing → lampa-mediacenter#48, kinozal TMDB/delivery gates → kinozal_scraper#647), then `gh pr merge <PR> --auto --squash`.
+- [x] 7.1 Run `agent-process archive_change extract-trailer-search-library`, then `gh pr create --title "feat: extract-trailer-search-library" --body-file <report>` (report: `Refs #1`, scenario map, live-check result, deferrals: armv7 timing → lampa-mediacenter#48, kinozal TMDB/delivery gates → kinozal_scraper#647), then `gh pr merge <PR> --auto --squash`.
 - [ ] 7.2 Run `agent-process wait_for_pr <PR>` after creation and after every corrective push; apply findings for at most three rounds.
 - [ ] 7.3 After the person's approval merges the PR, with their consent create and push tag `v0.1.0` on the merge commit; verify: in a fresh venv `pip install "trailer-search[ytdlp] @ git+https://github.com/ekolvah/trailer-search@v0.1.0"` and the issue #1 snippet import succeeds.
 
