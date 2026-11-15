@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trailer-search"
+version = "0.1.0"
+description = "Pick a Russian movie trailer from YouTube search results."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+ytdlp = ["yt-dlp>=2026.10.26"]
+youtube-api = ["google-api-python-client>=2.195.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+trailer_search = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["live: hits live YouTube; run explicitly with -m live"]
+addopts = "-m 'not live'"
+
+[tool.mypy]
+python_version = "3.12"
+mypy_path = "src"
+disallow_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = ["yt_dlp.*", "googleapiclient.*"]
+ignore_missing_imports = true

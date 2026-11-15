@@ -1,0 +1,5299 @@
+[
+  {
+    "film": {
+      "ru_title": "Гнев",
+      "original_title": "Man on Fire",
+      "year": 2026
+    },
+    "correct": "ru_mof_01",
+    "candidates": [
+      {
+        "video_id": "eng_mof_01",
+        "title": "Man on Fire 2026 Official Trailer",
+        "channel": "MovieClips",
+        "published_at": "2026-01-10T00:00:00Z"
+      },
+      {
+        "video_id": "eng_mof_02",
+        "title": "Man on Fire 2026 Trailer Breakdown",
+        "channel": "ReactChannel",
+        "published_at": "2026-01-12T00:00:00Z"
+      },
+      {
+        "video_id": "ru_mof_01",
+        "title": "Гнев 2026 трейлер на русском",
+        "channel": "КиноПоиск",
+        "published_at": "2026-01-11T00:00:00Z"
+      }
+    ],
+    "note": "seed: #138 (RU в пуле после union-retrieval #140; англ первый → baseline берёт англ, чинит selection #141)",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Волк",
+      "original_title": "The Wolf",
+      "year": 2025
+    },
+    "correct": "ru_wolf_01",
+    "candidates": [
+      {
+        "video_id": "eng_wolf_01",
+        "title": "The Wolf 2025 Official Trailer",
+        "channel": "Universal"
+      },
+      {
+        "video_id": "ru_wolf_01",
+        "title": "Волк 2025 трейлер на русском",
+        "channel": "КиноПоиск"
+      }
+    ],
+    "note": "seed: #138 (RU в пуле, но англ первый → baseline берёт англ; чинит selection #141; иллюстративно до --record)",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Тень",
+      "original_title": "The Shadow",
+      "year": 2026
+    },
+    "correct": "ru_shadow_01",
+    "candidates": [
+      {
+        "video_id": "eng_shadow_01",
+        "title": "The Shadow 2026 Teaser Trailer",
+        "channel": "Warner"
+      },
+      {
+        "video_id": "ru_shadow_01",
+        "title": "Тень 2026 трейлер",
+        "channel": "Кинопрокат"
+      }
+    ],
+    "note": "seed: #138 (RU в пуле после union-retrieval #140; англ первый → baseline берёт англ, чинит selection #141)",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Хищник",
+      "original_title": "Predator",
+      "year": 2025
+    },
+    "correct": "ru_pred_01",
+    "candidates": [
+      {
+        "video_id": "eng_pred_01",
+        "title": "Predator 2025 Official Trailer",
+        "channel": "20thCentury"
+      },
+      {
+        "video_id": "eng_pred_02",
+        "title": "Predator 2025 Final Trailer",
+        "channel": "Fandango"
+      },
+      {
+        "video_id": "ru_pred_01",
+        "title": "Хищник 2025 официальный трейлер",
+        "channel": "Кинопрокат"
+      }
+    ],
+    "note": "seed: #138 (RU третий в пуле, англ первый → baseline берёт англ; чинит selection #141; иллюстративно до --record)",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Дюна: Часть вторая",
+      "original_title": "Dune: Part Two",
+      "year": 2024
+    },
+    "correct": "dune2_official",
+    "candidates": [
+      {
+        "video_id": "dune2_official",
+        "title": "Dune: Part Two | Official Trailer 2024",
+        "channel": "Warner Bros."
+      },
+      {
+        "video_id": "dune2_react",
+        "title": "Dune Part Two 2024 Trailer Reaction",
+        "channel": "ReactChannel"
+      }
+    ],
+    "note": "нормальный: первый кандидат корректен → baseline Hit",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Оппенгеймер",
+      "original_title": "Oppenheimer",
+      "year": 2023
+    },
+    "correct": "oppen_trailer",
+    "candidates": [
+      {
+        "video_id": "oppen_trailer",
+        "title": "Oppenheimer 2023 Official Trailer",
+        "channel": "Universal Pictures"
+      }
+    ],
+    "note": "нормальный: baseline Hit",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Барби",
+      "original_title": "Barbie",
+      "year": 2023
+    },
+    "correct": "barbie_main",
+    "candidates": [
+      {
+        "video_id": "barbie_main",
+        "title": "Barbie 2023 Main Trailer",
+        "channel": "Warner Bros."
+      },
+      {
+        "video_id": "barbie_teaser",
+        "title": "Barbie 2023 Teaser",
+        "channel": "Warner Bros."
+      }
+    ],
+    "note": "нормальный: baseline Hit",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Бедные-несчастные",
+      "original_title": "Poor Things",
+      "year": 2023
+    },
+    "correct": "poorthings_ot",
+    "candidates": [
+      {
+        "video_id": "poorthings_ot",
+        "title": "Poor Things 2023 Official Trailer",
+        "channel": "Searchlight"
+      }
+    ],
+    "note": "нормальный: baseline Hit",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Фуриоса",
+      "original_title": "Furiosa",
+      "year": 2024
+    },
+    "correct": "furiosa_ot",
+    "candidates": [
+      {
+        "video_id": "furiosa_ot",
+        "title": "Furiosa: A Mad Max Saga | Official Trailer 2024",
+        "channel": "Warner Bros."
+      }
+    ],
+    "note": "нормальный: baseline Hit",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Гладиатор 2",
+      "original_title": "Gladiator II",
+      "year": 2024
+    },
+    "correct": "gladiator2_ot",
+    "candidates": [
+      {
+        "video_id": "gladiator2_ot",
+        "title": "Gladiator II 2024 Official Trailer",
+        "channel": "Paramount"
+      }
+    ],
+    "note": "нормальный: baseline Hit",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Злая",
+      "original_title": "Wicked",
+      "year": 2024
+    },
+    "correct": "wicked_ot",
+    "candidates": [
+      {
+        "video_id": "wicked_ot",
+        "title": "Wicked 2024 Official Trailer",
+        "channel": "Universal"
+      }
+    ],
+    "note": "нормальный: baseline Hit",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Забвение",
+      "original_title": "Oblivion Rise",
+      "year": 2026
+    },
+    "correct": "oblivion_real26",
+    "candidates": [
+      {
+        "video_id": "wrongyear_01",
+        "title": "Oblivion 2019 Trailer",
+        "channel": "OldUploads"
+      },
+      {
+        "video_id": "wrongyear_02",
+        "title": "Oblivion Classic 2015 Trailer",
+        "channel": "Archive"
+      }
+    ],
+    "note": "miss-ветка: эталон существует, но в пуле только чужой год → baseline None → Miss",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Рассвет",
+      "original_title": "Daybreak",
+      "year": 2025
+    },
+    "correct": "daybreak_real25",
+    "candidates": [
+      {
+        "video_id": "daybreak_wrong",
+        "title": "Daybreak 2010 Trailer",
+        "channel": "RetroTrailers"
+      }
+    ],
+    "note": "miss-ветка: baseline None → Miss",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Малоизвестный артхаус",
+      "original_title": "Obscure Arthouse",
+      "year": 2026
+    },
+    "correct": null,
+    "candidates": [],
+    "note": "NONE-ветка: трейлера не существует, пул пуст → baseline None → Hit",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Тихий фильм",
+      "original_title": "Quiet Film",
+      "year": 2026
+    },
+    "correct": null,
+    "candidates": [
+      {
+        "video_id": "junk_wrongyear",
+        "title": "Quiet Film 2012 Fan Edit",
+        "channel": "FanUploads"
+      }
+    ],
+    "note": "NONE-ветка: только чужой год в пуле → baseline None → Hit",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Ярость",
+      "original_title": "Ярость",
+      "year": 2026,
+      "cast": [
+        "Иван Петров"
+      ]
+    },
+    "correct": "ru_fury_cast",
+    "candidates": [
+      {
+        "video_id": "ru_fury_react",
+        "title": "Ярость 2026 трейлер разбор",
+        "channel": "КиноБлог",
+        "description": "мнение о трейлере"
+      },
+      {
+        "video_id": "ru_fury_cast",
+        "title": "Ярость 2026 официальный трейлер",
+        "channel": "Кинопрокат",
+        "description": "В главной роли Иван Петров"
+      }
+    ],
+    "note": "cast tie-break (#141): два RU-кандидата равного языка+года, каст в description различает → эвристика выбирает cast-несущий; измеряет cast-ось harness'ом",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Носферату",
+      "original_title": "Nosferatu",
+      "year": 2024,
+      "cast": [
+        "Билл Скарсгард",
+        "Лили-Роуз Депп"
+      ]
+    },
+    "correct": [
+      "2TN9DnF2Yhw",
+      "esfYGlJd0k8",
+      "dkv5KtVG4T0"
+    ],
+    "candidates": [
+      {
+        "video_id": "nulvWqYUM8k",
+        "title": "NOSFERATU - Official Trailer [HD] - Only In Theaters December 25",
+        "channel": "Focus Features",
+        "description": "Succumb to the darkness. NOSFERATU. Only in theaters this Christmas. Robert Eggers' NOSFERATU is a gothic tale of ...",
+        "published_at": "2024-09-30T15:00:11Z"
+      },
+      {
+        "video_id": "2TN9DnF2Yhw",
+        "title": "Носферату — Русский трейлер (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Русский трейлер фильма «Носферату» 2024 года Официальные русские трейлеры к фильмам, трейлеры к сериалам, ...",
+        "published_at": "2024-07-11T09:47:17Z"
+      },
+      {
+        "video_id": "b59rxDB_JRg",
+        "title": "NOSFERATU - Official Teaser Trailer [HD] - Only In Theaters December 25",
+        "channel": "Focus Features",
+        "description": "He is coming. NOSFERATU. A Robert Eggers picture. Only in theaters this Christmas. Robert Eggers' NOSFERATU is a gothic ...",
+        "published_at": "2024-06-24T15:00:04Z"
+      },
+      {
+        "video_id": "Px6S0RxfAHg",
+        "title": "NOSFERATU | Official Trailer (Universal Pictures) - HD",
+        "channel": "Universal Pictures UK",
+        "description": "In cinemas soon Follow us on Facebook at https://www.facebook.com/universalpicturesuk/ Find us on Instagram at ...",
+        "published_at": "2024-06-24T15:00:32Z"
+      },
+      {
+        "video_id": "esfYGlJd0k8",
+        "title": "Носферату — Русский трейлер Дубляж, 2024",
+        "channel": "Movie Boxes",
+        "description": "Приветствуем тебя на нашем канале @MovieBoxes ▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭ Предлагаем к Вашему ...",
+        "published_at": "2025-05-20T10:40:11Z"
+      },
+      {
+        "video_id": "cmjpadVj-Vk",
+        "title": "WERWULF - Official Trailer [HD] - Only In Theaters Christmas",
+        "channel": "Focus Features",
+        "description": "Do not dread the darkness. Embrace it. Robert Eggers' WERWULF is only in theaters this Christmas. Witness Robert Eggers' most ...",
+        "published_at": "2026-06-29T12:00:12Z"
+      },
+      {
+        "video_id": "T9XpmjWTS2Q",
+        "title": "NOSFERATU | Official Trailer | Only In Theatres December 25",
+        "channel": "Universal Pictures Canada",
+        "description": "Succumb to the darkness. NOSFERATU. Only in theatres this Christmas. Robert Eggers' NOSFERATU is a gothic tale of ...",
+        "published_at": "2024-10-01T14:02:47Z"
+      }
+    ],
+    "note": "реал: мульти-валидный RU-дубляж (Kinoman 2TN9DnF2Yhw, Movie Boxes esfYGlJd0k8 — оба «Русский трейлер, Дубляж 2024»); шум WERWULF (cmjpadVj-Vk, др. фильм Эггерса 2026) в пуле не должен матчиться +TMDB RU-дубляж dkv5KtVG4T0 (контент-проверен: «Носферату — Русский трейлер #2 (Дубляж, 2024)»); #329 симметричное расширение accept-set (B1).",
+    "tmdb_videos": [
+      {
+        "key": "dkv5KtVG4T0",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Носферату — Русский трейлер #2 (Дубляж, 2024)"
+      },
+      {
+        "key": "rsKT_wdAmtE",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "The Spirit Speaks"
+      },
+      {
+        "key": "ctDvKvP6JzU",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "A Girl Possessed"
+      },
+      {
+        "key": "8PBi2gZnePA",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Thomas Meets Count Orlok"
+      },
+      {
+        "key": "tVv-_6h_Ofs",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"A Black Omen\" - Deleted Scene"
+      },
+      {
+        "key": "EAHYitb3mb0",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behold The Third Night - Deleted Scene"
+      },
+      {
+        "key": "X9hFwBygvlI",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Streaming Now on Peacock"
+      },
+      {
+        "key": "xHKW7DWteL4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Q&A with Director Robert Eggers and Cinematographer Jarin Blaschke"
+      },
+      {
+        "key": "lsEgC4FRDcA",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"He's Here!\" They're here!"
+      },
+      {
+        "key": "LpQGM7mkq_w",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Nosferatu team's incredible work in transforming Bill Skarsgård into the pinnacle of horror has earned the movie FOUR Oscar nominations!"
+      },
+      {
+        "key": "WyEgHWoQFDY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Nosferatu raises the stakes in horror with Academy Award nominations for: Best Cinematography, Best Production Design, Best Costume Design and Best Makeup and Hairstyling"
+      },
+      {
+        "key": "JuOg3gisag8",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Nosferatu Cast Share Their Experience Working with Robert Eggers"
+      },
+      {
+        "key": "vAEM5mDrhSc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Watch at Home Now"
+      },
+      {
+        "key": "BIlcvsqhXPU",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "“The detail was so authentic, that’s the gift Robert Eggers creates.”"
+      },
+      {
+        "key": "S9zYWyzwyPM",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "On a Robert Eggers’ set, the camera is a main character."
+      },
+      {
+        "key": "EClTcR4imC4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "The true stars of NOSFERATU"
+      },
+      {
+        "key": "Cxpl4Mt275I",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Building tension with long shots."
+      },
+      {
+        "key": "1kupP6KIQ1U",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Horses. Wolves. 2,000 live rats. The animal actors of NOSFERATU."
+      },
+      {
+        "key": "IXoPa88aj4Q",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Say your prayers."
+      },
+      {
+        "key": "9H7bQkAfHyo",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"Come To Me\""
+      },
+      {
+        "key": "8HWtNewYwIg",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Unsettling and perfectly horrifying."
+      },
+      {
+        "key": "oRKGR_w9yKw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Trapped in darkness. There is no escape."
+      },
+      {
+        "key": "Smi6Ck_uiQ4",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "A mesmerizing gothic tale that's captivating critics and audiences alike."
+      },
+      {
+        "key": "FZJeVP7Tmvs",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "The making of a nightmare castle."
+      },
+      {
+        "key": "kjDBcDLMtts",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "You can't escape the grip of this death."
+      },
+      {
+        "key": "v8r3cwPDyBU",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "This is what nightmares are made of!"
+      },
+      {
+        "key": "7nwR_O3rG2o",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "a voice deeper than an ancient crypt"
+      },
+      {
+        "key": "18xrNB_Y4VU",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Death's shadow falls long. Nosferatu is coming."
+      },
+      {
+        "key": "PHdVBjDm-UA",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "The 1830s Gothic Fashion of Robert Eggers' Nosferatu - Dressed Ep 10"
+      },
+      {
+        "key": "Ky4A2jdWoic",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Lily-Rose Depp's Nosferatu Transformation Will Leave You Speechless - BAFTA"
+      },
+      {
+        "key": "wHGOhaXNqiM",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "The Cast of Nosferatu Discusses the Props That Shaped Their Characters - Prop Shop"
+      },
+      {
+        "key": "KtFcImFoxZE",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "There's no stopping him. Pray you survive the night! Nosferatu is coming."
+      },
+      {
+        "key": "E5hN_bVgE38",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Every dream begins in darkness."
+      },
+      {
+        "key": "17AnB6bv9iw",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": false,
+        "site": "YouTube",
+        "name": "Lily-Rose Depp & Robert Eggers on Isabelle Adjani's Performances and Butoh"
+      },
+      {
+        "key": "BWfMBSNF2eU",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Conversations @ Curzon - Robert Eggers on the making of Nosferatu, Vampires and humour in his films"
+      },
+      {
+        "key": "YWgfJ0R2Cs4",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"Come To Me\" Official Clip"
+      },
+      {
+        "key": "3jiwKbQVrxc",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Robert Eggers on Nosferatu"
+      },
+      {
+        "key": "NmpB_KTW46w",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Interview - Robert Eggers and Chris Columbus"
+      },
+      {
+        "key": "Y3A404l4pGY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official IMAX® Interview"
+      },
+      {
+        "key": "T3hEp-hZmGU",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "'Nosferatu' With Robert Eggers, Lily-Rose Depp, Bill Skarsgård, And More - Academy Conversations"
+      },
+      {
+        "key": "Dqts3wKStHY",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Thirst 30"
+      },
+      {
+        "key": "gSlY0pdRk6c",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "There is a dread storm rising."
+      },
+      {
+        "key": "MlSrSLCx8zI",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "A Look Inside"
+      },
+      {
+        "key": "zAcdt9CUFw8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "He shall reign over all of your empty corpses."
+      },
+      {
+        "key": "pgFUzOlXzwc",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "“Nosferatu” Official Clip"
+      },
+      {
+        "key": "4EdBsxPK1Bs",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"Held Hands With Death\" Official Clip"
+      },
+      {
+        "key": "XWjyMhycL5s",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "How Robert Eggers' Past Truly Crafted Nosferatu - Origin Story"
+      },
+      {
+        "key": "5172Vt3FOYw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Devourance 30"
+      },
+      {
+        "key": "x9wECXvy288",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"Within\""
+      },
+      {
+        "key": "nulvWqYUM8k",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      },
+      {
+        "key": "b59rxDB_JRg",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Teaser Trailer"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Битлджус Битлджус",
+      "original_title": "Beetlejuice Beetlejuice",
+      "year": 2024,
+      "cast": [
+        "Майкл Китон",
+        "Вайнона Райдер"
+      ]
+    },
+    "correct": [
+      "CoZqL9N6Rx4",
+      "As-vKW4ZboU"
+    ],
+    "candidates": [
+      {
+        "video_id": "CoZqL9N6Rx4",
+        "title": "BEETLEJUICE BEETLEJUICE | Official Trailer",
+        "channel": "Warner Bros.",
+        "description": "It's Showtime! #Beetlejuice#Beetlejuice Only in theaters September 6. Beetlejuice is back! Oscar-nominated, singular creative ...",
+        "published_at": "2024-05-23T16:00:17Z"
+      },
+      {
+        "video_id": "As-vKW4ZboU",
+        "title": "Beetlejuice Beetlejuice | Official Trailer 2",
+        "channel": "Warner Bros.",
+        "description": "The ghost with the most is back. #Beetlejuice #Beetlejuice - Only in theaters September 6. Beetlejuice is back! Oscar-nominated ...",
+        "published_at": "2024-07-18T13:00:14Z"
+      },
+      {
+        "video_id": "e6yDanmWI1E",
+        "title": "BEETLEJUICE BEETLEJUICE | Official Teaser Trailer",
+        "channel": "Warner Bros.",
+        "description": "The juice is loose! #Beetlejuice #Beetlejuice - Only in theaters September 6. Beetlejuice is back! Oscar-nominated, singular ...",
+        "published_at": "2024-03-21T21:00:23Z"
+      },
+      {
+        "video_id": "Vbswe_anQx0",
+        "title": "Beetlejuice Beetlejuice | 🪦👻 Lydia’s Past Awakens... and He’s Back for More Haunting Chaos 💀✨",
+        "channel": "Signal Arc",
+        "description": "After decades of silence, the mischievous and malevolent bio-exorcist Beetlejuice is back from the Netherworld — and this time, ...",
+        "published_at": "2025-07-02T08:16:29Z"
+      },
+      {
+        "video_id": "ickbVzajrk0",
+        "title": "Beetlejuice (1988) Trailer #1 | Movieclips Classic Trailers",
+        "channel": "Rotten Tomatoes Classic Trailers",
+        "description": "Check out the official Beetlejuice (1988) Trailer starring Michael Keaton! Let us know what you think in the comments below.",
+        "published_at": "2018-09-21T20:24:48Z"
+      }
+    ],
+    "note": "реал: EN-only official — RU-дубляжа в пуле нет, Warner Official Trailer CoZqL9N6Rx4 и Official Trailer 2 As-vKW4ZboU; тизер и классика-1988 (ickbVzajrk0) исключены",
+    "tmdb_videos": [
+      {
+        "key": "EVm9EEpq4vU",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Now Streaming on Max"
+      },
+      {
+        "key": "xnbAxOEiMis",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official American Sign Language Trailer"
+      },
+      {
+        "key": "7NfsCqItcWI",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Scenes: Handbook for the Recently Deceased"
+      },
+      {
+        "key": "u4H3M4qyn2Q",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Movie Clip: Entering the Afterlife"
+      },
+      {
+        "key": "byrjAcIC3cA",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Scenes: Til Death Do We Park"
+      },
+      {
+        "key": "P5KK2H4Dxpc",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Movie Clip: Marriage Counseling"
+      },
+      {
+        "key": "atViikswY7A",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Scenes: Meet the Deetz"
+      },
+      {
+        "key": "t80XeiXBsks",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Scenes: Beetlejuice Returns!"
+      },
+      {
+        "key": "WR6kF7tkKvs",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Scenes: Stop-Motion Art"
+      },
+      {
+        "key": "W2HXtyIYdfI",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Extended Movie Preview"
+      },
+      {
+        "key": "R5IDp5xG6h4",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Scenes: The Juice is Loose!"
+      },
+      {
+        "key": "NvUWBQtYhmM",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "#1 Movie in the World"
+      },
+      {
+        "key": "VnARC5pprkY",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Jenna knows a thing or two about making an iconic dance scene."
+      },
+      {
+        "key": "4Y7AQ32IoTQ",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Tim Burton Interview"
+      },
+      {
+        "key": "hsEIwBKBshM",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "#Beetlejuice #Beetlejuice is gleefully zany time."
+      },
+      {
+        "key": "Wsxn2DUtz4M",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "He has been summoned!"
+      },
+      {
+        "key": "mLAZHgAQYPI",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "This one's for you."
+      },
+      {
+        "key": "HK_20nhXvu0",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Now Playing Only in Theaters"
+      },
+      {
+        "key": "6b7-49Y23vg",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Now Playing"
+      },
+      {
+        "key": "6TBakiNnHZk",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": false,
+        "site": "YouTube",
+        "name": "New ways to search: Beetlejuice Beetlejuice (ft. Bob)"
+      },
+      {
+        "key": "JxtbHkZmLlc",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Willem Dafoe Interview"
+      },
+      {
+        "key": "gTA0CwZJRhE",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Waymo"
+      },
+      {
+        "key": "KsvzxTXylOQ",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "We saved a seat for you."
+      },
+      {
+        "key": "6ra5We-taDE",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official IMAX® Interview"
+      },
+      {
+        "key": "AMn6-dzzeZc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "You can always call the #1 bio-exorcist to help."
+      },
+      {
+        "key": "AA4L0YqxXrU",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "RIP to our notifications."
+      },
+      {
+        "key": "r_uGRfF4AYY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Beetlejuice's Fantasy Football League Winning Tips"
+      },
+      {
+        "key": "eI5TLolXk7M",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "London Premiere"
+      },
+      {
+        "key": "knXbOhZE2gQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "It may not be a Wednesday, but we thought you might like this."
+      },
+      {
+        "key": "lEpoz1_TjXA",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Beetlejuice goes ghost pepper while eating to die for ribs"
+      },
+      {
+        "key": "ypAUDTNOsLU",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Astrid Featurette"
+      },
+      {
+        "key": "_Hm9LQx0yvE",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Tickets On Sale"
+      },
+      {
+        "key": "JE2TD7kJttk",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "The ghost with the most is back. Full Trailer Out Now."
+      },
+      {
+        "key": "As-vKW4ZboU",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer 2"
+      },
+      {
+        "key": "CoZqL9N6Rx4",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      },
+      {
+        "key": "e6yDanmWI1E",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Teaser Trailer"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Джокер: Безумие на двоих",
+      "original_title": "Joker: Folie à Deux",
+      "year": 2024,
+      "cast": [
+        "Хоакин Феникс",
+        "Леди Гага"
+      ]
+    },
+    "correct": [
+      "6Gqk6ohloTU",
+      "2g4l_4mLt90"
+    ],
+    "candidates": [
+      {
+        "video_id": "6Gqk6ohloTU",
+        "title": "Джокер 2: Безумие на двоих — Русский трейлер (2024)",
+        "channel": "iVideos",
+        "description": "Русский трейлер фильма «Джокер 2: Безумие на двоих» 2024 года | Русские трейлеры к фильмам, сериалам и играм!",
+        "published_at": "2024-04-10T19:38:22Z"
+      },
+      {
+        "video_id": "2g4l_4mLt90",
+        "title": "Джокер 2: Безумие на двоих — Русский трейлер #2 (4K, 2024)",
+        "channel": "iVideos",
+        "description": "Второй русский трейлер фильма «Джокер 2: Безумие на двоих» 2024 года | Русские трейлеры к фильмам, сериалам и ...",
+        "published_at": "2024-07-24T15:34:01Z"
+      },
+      {
+        "video_id": "zdW_eBySjcA",
+        "title": "Джокер 2: Безумие на двоих — Тизер-трейлер (2024)",
+        "channel": "Kinoman",
+        "description": "Тизер трейлер фильма «Джокер: Безумие на двоих» 2024 года Официальные русские трейлеры к фильмам, трейлеры к ...",
+        "published_at": "2024-04-09T16:55:16Z"
+      },
+      {
+        "video_id": "pws-u-OaneY",
+        "title": "🃏Вышел тизер-трейлер фильма «Джокер: Безумие на двоих»",
+        "channel": "Мосфид",
+        "description": "",
+        "published_at": "2024-04-13T18:00:29Z"
+      },
+      {
+        "video_id": "zTZhteQ2a-g",
+        "title": "📽Джокер 2: Безумие на двоих 🎬 Русский трейлер 🍿фильм 2024",
+        "channel": "kino_life99",
+        "description": "Название: Джокер 2: Безумие на двоих Производство: Франция жанр: мюзикл, триллер, драма, криминал ...",
+        "published_at": "2024-09-18T14:56:23Z"
+      },
+      {
+        "video_id": "_OKAwz2MsJs",
+        "title": "Joker: Folie À Deux | Official Trailer",
+        "channel": "Warner Bros.",
+        "description": "When you're smiling, the whole world smiles with you. Joker: Folie À Deux – only in theaters and IMAX, October 4. #JokerMovie ...",
+        "published_at": "2024-07-23T13:00:29Z"
+      },
+      {
+        "video_id": "xy8aJw1vYHo",
+        "title": "Joker: Folie à Deux | Official Teaser Trailer",
+        "channel": "Warner Bros.",
+        "description": "He's not alone anymore. Joker: Folie à Deux – only in theaters and @IMAX, October 4. #JokerMovie #FilmedForIMAX.",
+        "published_at": "2024-04-10T00:53:54Z"
+      },
+      {
+        "video_id": "fiqqAI0e4Nc",
+        "title": "Joker: Folie à Deux | That's Life",
+        "channel": "Warner Bros.",
+        "description": "You can do anything you want. You're Joker. Get tickets now for Joker: Folie à Deux - only in theaters and IMAX, October 4.",
+        "published_at": "2024-09-18T16:00:01Z"
+      },
+      {
+        "video_id": "D8ej3dPgJfs",
+        "title": "Joker 2: Folie à Deux – First Trailer (2024) Lady Gaga, Joaquin Phoenix",
+        "channel": "MOVIE BOX TRAILERS",
+        "description": "Joker2 #Joaquin Phoenix #WarnerBros Take a look at our 'First Trailer' concept for DC Elseworlds' upcoming movie Joker 2: Folie ...",
+        "published_at": "2024-03-17T14:20:49Z"
+      },
+      {
+        "video_id": "2M1bvc-80Nw",
+        "title": "JOKER 2: Folie à Deux Trailer German Deutsch (2024)",
+        "channel": "KinoCheck",
+        "description": "Offizieller \"Joker 2: Folie à Deux\" Trailer Deutsch German 2024 | Abonnieren ➤ https://abo.yt/kc | (OT: Joker 2: Folie à Deux) ...",
+        "published_at": "2024-04-10T01:02:15Z"
+      }
+    ],
+    "note": "реал: нумерованный сиквел — каналы пишут «Джокер 2», ru_title без цифры; полные RU-трейлеры iVideos 6Gqk6ohloTU и #2 4K 2g4l_4mLt90; ловушка — новостной клип Мосфида pws-u-OaneY, цитирующий точное название",
+    "tmdb_videos": [
+      {
+        "key": "2g4l_4mLt90",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Джокер 2: Безумие на двоих — Русский трейлер #2 (4K, 2024)"
+      },
+      {
+        "key": "6Gqk6ohloTU",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Джокер 2: Безумие на двоих — Русский трейлер (2024)"
+      },
+      {
+        "key": "f8rupP9AQMU",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Scenes: Finding Lee with Lady Gaga"
+      },
+      {
+        "key": "vcyG78OvtcQ",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind The Scenes: The Character of Music"
+      },
+      {
+        "key": "OZYkbpuLQJs",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Scenes: King of Nothing"
+      },
+      {
+        "key": "2z107KZWPG0",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Movie Clip - Come On Get Happy"
+      },
+      {
+        "key": "qqL6fjCMljw",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Movie Clip - If My Friends Could See Me Now"
+      },
+      {
+        "key": "UjO7eikD66E",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Scenes: Can I Have a Cigarette?"
+      },
+      {
+        "key": "aQL8D1K0W_M",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Extended Preview"
+      },
+      {
+        "key": "Cnbp4YldOyo",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "'Joker: Folie à Deux' with filmmakers | Academy Conversations"
+      },
+      {
+        "key": "EVu1V9K6KeY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official IMAX® Interview"
+      },
+      {
+        "key": "E3Ay2QU3ZXI",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Lee (Harley) Quinzel"
+      },
+      {
+        "key": "ykBQvAr3mSc",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "JOKER: FOLIE À DEUX | Put on a happy face, 🇨🇦!"
+      },
+      {
+        "key": "2_YvsFwTdBQ",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Shared Madness - Joker Featurette"
+      },
+      {
+        "key": "sPdZ2KcunN8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Finish what he started."
+      },
+      {
+        "key": "wTLQbani47g",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Send in the clowns"
+      },
+      {
+        "key": "8jUGY10R-PA",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Shared Madness - Lee"
+      },
+      {
+        "key": "b0YfWILWH5U",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "UK Premiere"
+      },
+      {
+        "key": "f5mLjNHzo4g",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Shared Madness - Arthur Fleck"
+      },
+      {
+        "key": "kkrh-XhNkoY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Folie à Deux Featurette"
+      },
+      {
+        "key": "Y6h4LahGWcI",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Knock knock…"
+      },
+      {
+        "key": "ktIkoKl032w",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "It’s time to finish what he started"
+      },
+      {
+        "key": "ZnhfYyAiRok",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip"
+      },
+      {
+        "key": "fiqqAI0e4Nc",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "That's Life"
+      },
+      {
+        "key": "V6AWayFmIoA",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Get Ready for Judgment Day."
+      },
+      {
+        "key": "gu3OX_kdIfQ",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Joaquin's Joker Featurette"
+      },
+      {
+        "key": "wTzOF4ZY2yo",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip"
+      },
+      {
+        "key": "39Kj08_Yjng",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind-the-Scenes Featurette | Filmed For IMAX®"
+      },
+      {
+        "key": "UI56wR6Gd-c",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "“My Name is Lee” Featurette"
+      },
+      {
+        "key": "nHXlugkUtkU",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "What The World Needs Now"
+      },
+      {
+        "key": "8aDxPC9dVDQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Tickets Now On Sale"
+      },
+      {
+        "key": "uG4DoPcBAhw",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "The Music Within Featurette"
+      },
+      {
+        "key": "HaFrUMO1ggM",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Who do you think they see?"
+      },
+      {
+        "key": "2Ql3s_X7VPU",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "New Trailer Online Now"
+      },
+      {
+        "key": "mffO1wnxbG4",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer Out Now"
+      },
+      {
+        "key": "_OKAwz2MsJs",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      },
+      {
+        "key": "AnyVZKj6Sjo",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Drop it"
+      },
+      {
+        "key": "HWyZyN3s_Ns",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Knock knock"
+      },
+      {
+        "key": "bVhgRzreqFY",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Something’s changed"
+      },
+      {
+        "key": "HKT7JlHtVng",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Welcome to the Joker & Harley Show"
+      },
+      {
+        "key": "W2xZ41L1DRk",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Trailer out now"
+      },
+      {
+        "key": "xy8aJw1vYHo",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Teaser Trailer"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Анора",
+      "original_title": "Anora",
+      "year": 2024,
+      "cast": [
+        "Майки Мэдисон"
+      ]
+    },
+    "correct": [
+      "BUtvdzMxw3U",
+      "XTGdPJ6ignc"
+    ],
+    "candidates": [
+      {
+        "video_id": "BUtvdzMxw3U",
+        "title": "Анора — Русский трейлер (2024)",
+        "channel": "Kinoman",
+        "description": "Русский трейлер фильма «Анора» 2024 года Официальные русские трейлеры к фильмам, трейлеры к сериалам, ...",
+        "published_at": "2024-08-21T09:45:32Z"
+      },
+      {
+        "video_id": "RSFKSZWmh2M",
+        "title": "ANORA Trailer (2024)",
+        "channel": "KinoCheck.com",
+        "description": "Official Anora Movie Trailer 2024 | Subscribe ➤ https://abo.yt/ki | Mikey Madison Movie Trailer | Cinema: 18 Oct 2024 | More ...",
+        "published_at": "2024-10-15T15:13:01Z"
+      },
+      {
+        "video_id": "XTGdPJ6ignc",
+        "title": "Анора🔥💥Русский трейлер (Дубляж, 2024) Драма, комедия",
+        "channel": "Кино Трейлеры",
+        "description": "Русский трейлер фильма «Анора» 2024 года. ▸Дата выхода: 17 октября 2024 г. (РФ) ▸Молодая стриптизерша из ...",
+        "published_at": "2024-10-05T08:19:23Z"
+      },
+      {
+        "video_id": "GuPkfvxmtdw",
+        "title": "Anora Trailer #1 (2024)",
+        "channel": "Rotten Tomatoes Trailers",
+        "description": "Check out the official trailer for Anora starring Mikey Madison! ▻ Visit Fandango: ...",
+        "published_at": "2024-07-15T16:29:15Z"
+      },
+      {
+        "video_id": "p90SHE4C8Js",
+        "title": "ANORA | Official Trailer",
+        "channel": "Entract Films",
+        "description": "PALME D'OR WINNER | Cannes 2024 A love story from SEAN BAKER. Starring Mikey Madison. Anora, a young sex worker from ...",
+        "published_at": "2024-07-16T17:56:37Z"
+      },
+      {
+        "video_id": "7Bj_UEm4G0o",
+        "title": "ANORA Trailer German Deutsch (2024)",
+        "channel": "KinoCheck",
+        "description": "Offizieller \"Anora\" Trailer Deutsch German 2024 | Abonnieren ➤ https://abo.yt/kc | (OT: Anora) Movie Trailer | Kino: 31 Okt 2024 ...",
+        "published_at": "2024-09-16T13:04:04Z"
+      },
+      {
+        "video_id": "08sR1MY2wpU",
+        "title": "Anora Trailer #2 (2024)",
+        "channel": "Rotten Tomatoes Trailers",
+        "description": "Check out the official trailer for Anora starring Mikey Madison! ▻ Buy Tickets on Fandango: ...",
+        "published_at": "2024-10-09T16:56:07Z"
+      },
+      {
+        "video_id": "k68giG0yX5A",
+        "title": "Anora (2024)",
+        "channel": "Findingoodmovies",
+        "description": "Name: Anora (2024) Description: \"Anora\" is a 2024 American comedy-drama directed by Sean Baker, known for his authentic ...",
+        "published_at": "2025-02-07T04:23:04Z"
+      },
+      {
+        "video_id": "LsGvnMLqW1Q",
+        "title": "ANORA | Trailer Ufficiale (Universal Studios) - HD",
+        "channel": "Universal Pictures International Italy",
+        "description": "Dal 7 novembre al cinema. Seguici su Facebook: facebook.com/FocusFeaturesIT Trovaci su Instagram: ...",
+        "published_at": "2024-09-20T16:36:42Z"
+      }
+    ],
+    "note": "реал: RU-дубляж СУЩЕСТВУЕТ (Kinoman BUtvdzMxw3U, «Кино Трейлеры» дубляж XTGdPJ6ignc) — мульти-валидный русский трейлер как у остальных кейсов. NB: прод-retrieval (youtube.py) ищет с англ. «trailer» и на этом названии терял RU-дубляжи; пул отражает корректную retrieval-breadth (RU-ключ), баг заведён отдельным issue линии #315",
+    "tmdb_videos": [
+      {
+        "key": "BUtvdzMxw3U",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Анора — Русский трейлер (2024)"
+      },
+      {
+        "key": "_fPEaPBMNTQ",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"Will you marry me?\""
+      },
+      {
+        "key": "BzbdVJkM7T0",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Ani and Vanya Get Married"
+      },
+      {
+        "key": "RGt3gOzjm7g",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Vanya's Parents Are Coming"
+      },
+      {
+        "key": "d-BovJALTtY",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "“Game Over For You”"
+      },
+      {
+        "key": "1ztYZFzps8c",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "'Anora' Wins Best Editing | 97th Oscars Speech (2025)"
+      },
+      {
+        "key": "RjickaRRLtQ",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "'Anora' Best Actress Press Room Speech | 97th Oscars (2025)[Mikey Madison]"
+      },
+      {
+        "key": "MiEk-rWom9Y",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "'Anora' Best Picture, Best Original Screenplay, Best Director Press Room Speech | 97th Oscars (2025)"
+      },
+      {
+        "key": "hnTWP7jaXQY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Amelia Dimoldenberg Pitches Yura Borisov As The Next James Bond Over Pre Oscars Brunch"
+      },
+      {
+        "key": "aKSWSNDlHg8",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Mikey Madison & Amelia Dimoldenberg Tease The Chicken Shop Date Movie At Pre Oscars Brunch"
+      },
+      {
+        "key": "wABdmegRLbs",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Sean Baker Unveils Vintage-Inspired 'Anora' Posters"
+      },
+      {
+        "key": "EMTHwp1UPjk",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Sean Baker’s 30 Year Journey to 'Anora'"
+      },
+      {
+        "key": "aA53nbOcARM",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Mikey EPK Character"
+      },
+      {
+        "key": "kX6zSsKOYFI",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Mikey EPK Spontaneity On Set"
+      },
+      {
+        "key": "aTwkRsc1bYQ",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Featurette Sean EPK Working With Cast"
+      },
+      {
+        "key": "E9OOIVsDcbM",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Working With Sean"
+      },
+      {
+        "key": "S5r3OplFjJ8",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Mikey Madison and Sean Baker on Anora"
+      },
+      {
+        "key": "YO-x2x4WoFg",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Describing ANORA's Vanya In 3 Words"
+      },
+      {
+        "key": "A9qyGbh-Zyo",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "ANORA Cast Reacts To PRETTY WOMAN Comparisons"
+      },
+      {
+        "key": "V6nQDyZWafE",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "ANORA Co-Stars Call Mikey Madison The Superhero Of The Film | TIFF 2024"
+      },
+      {
+        "key": "ylZEFGMp2-8",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Sean Baker on Working with Cast"
+      },
+      {
+        "key": "Bm25_Zcku9g",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Marriage"
+      },
+      {
+        "key": "PojwBTaaixY",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Candy Shop"
+      },
+      {
+        "key": "j0Rr_t54b6E",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Anora is the name on everyone's lips 💋"
+      },
+      {
+        "key": "A-Z0C0pmfwk",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Vanya's House"
+      },
+      {
+        "key": "9OZ25F40hiI",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "You're Funny"
+      },
+      {
+        "key": "yWtzcjoUx7c",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Wedding"
+      },
+      {
+        "key": "qFAp_yI3HEw",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Clip - Ivan's Crew Arrival in Las Vegas"
+      },
+      {
+        "key": "AAAY1psCOCU",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Clip - Ani and Ivan Meeting"
+      },
+      {
+        "key": "Amo2s-mKrcI",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "'Anora’ with Mikey Madison, Sean Baker & more"
+      },
+      {
+        "key": "yTrhxWo01_0",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "TIFF Q&A With Sean Baker & Mikey Madison"
+      },
+      {
+        "key": "mYipRZ4xvkg",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "'Anora' Is Character Collaboration At Its Finest"
+      },
+      {
+        "key": "mwcxBJZgwH4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Anora director Sean Baker: \"It's a traditional romantic comedy ... and then we pull the rug\""
+      },
+      {
+        "key": "8m6UrWMl18M",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer #2"
+      },
+      {
+        "key": "N-AEky8LYxw",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Sean Baker and Mikey Madison on Anora"
+      },
+      {
+        "key": "BnXvmhfWzDA",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Sean Baker, Mikey Madison, Karren Karagulian, and Vache Tovmasyan on Anora"
+      },
+      {
+        "key": "PLhZ8tyVMSc",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official International Trailer 1"
+      },
+      {
+        "key": "p1HxTmV5i7c",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Redband Trailer"
+      },
+      {
+        "key": "vgrXTvL_l_c",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Greenband Trailer"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Субстанция",
+      "original_title": "The Substance",
+      "year": 2024,
+      "cast": [
+        "Деми Мур",
+        "Маргарет Куэлли"
+      ]
+    },
+    "correct": [
+      "HSg_3GSGt8U",
+      "kPFFHB3pjhc",
+      "CZIdRUCO-_0"
+    ],
+    "candidates": [
+      {
+        "video_id": "HSg_3GSGt8U",
+        "title": "Субстанция | Официальный трейлер | Смотрите в Okko",
+        "channel": "Онлайн-кинотеатр Okko",
+        "description": "Смотрите хоррор «Субстанция» в Okko: https://okko.tv/s/kpk В главных ролях: Деми Мур, Маргарет Куолли и Деннис Куэйд.",
+        "published_at": "2024-11-29T07:02:22Z"
+      },
+      {
+        "video_id": "kPFFHB3pjhc",
+        "title": "Субстанция — Русский трейлер (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Русский трейлер фильма «Субстанция» 2024 года Официальные русские трейлеры к фильмам, трейлеры к сериалам, ...",
+        "published_at": "2024-07-29T10:03:49Z"
+      },
+      {
+        "video_id": "oPsQlO_fY7E",
+        "title": "Субстанція - фінальний трейлер (український)",
+        "channel": "ТОП КІНО",
+        "description": "Елізабет Спаркл (Демі Мур) - справжня суперзірка та володарка премії “Оскар” веде неймовірно популярне фітнес-шоу, ...",
+        "published_at": "2024-09-15T10:58:02Z"
+      },
+      {
+        "video_id": "laS6qVpKjpQ",
+        "title": "«Субстанция» (2024): Всё, что вы не знали о фильме",
+        "channel": "SAM Voice",
+        "description": "«Субстанция» (2024): Всё, что вы не знали о фильме Фильм «Субстанция» (The substance) — это новый проект 2024 года, ...",
+        "published_at": "2024-11-06T16:57:03Z"
+      },
+      {
+        "video_id": "vj71Bwflv64",
+        "title": "THE SUBSTANCE Trailer German Deutsch (2024) Demi Moore, Dennis Quaid",
+        "channel": "KinoCheck",
+        "description": "Offizieller \"The Substance\" Trailer Deutsch German 2024 | Abonnieren ➤ https://abo.yt/kc | (OT: The Substance) Movie Trailer ...",
+        "published_at": "2024-08-16T16:15:10Z"
+      },
+      {
+        "video_id": "LNlrGhBpYjc",
+        "title": "THE SUBSTANCE | Official Trailer | In Theaters & On MUBI Now",
+        "channel": "MUBI",
+        "description": "Have you ever dreamt of a better version of yourself? You. Only better in every way. You've got to try this new product. It changed ...",
+        "published_at": "2024-08-15T13:00:19Z"
+      },
+      {
+        "video_id": "qVN3Zk-qb1Q",
+        "title": "The Substance Teaser Trailer (2024)",
+        "channel": "Rotten Tomatoes Trailers",
+        "description": "Check out the official teaser for The Substance starring Demi Moore! ▻ Buy Tickets on Fandango: ...",
+        "published_at": "2024-07-11T13:52:19Z"
+      },
+      {
+        "video_id": "xHml6sH7z3E",
+        "title": "THE SUBSTANCE Trailer (2024) Demi Moore",
+        "channel": "KinoCheck.com",
+        "description": "Official The Substance Movie Trailer 2024 | Subscribe ➤ https://abo.yt/ki | Demi Moore Movie Trailer | Cinema: 20 Sep 2024 ...",
+        "published_at": "2024-08-15T13:12:21Z"
+      },
+      {
+        "video_id": "xRd1KZZ76_o",
+        "title": "THE SUBSTANCE Official Trailer (2024) Demi Moore",
+        "channel": "Movie Trailers Source",
+        "description": "First movie trailer for The Substance starring Demi Moore.",
+        "published_at": "2024-07-11T13:52:57Z"
+      },
+      {
+        "video_id": "lR5nlovVgvQ",
+        "title": "THE SUBSTANCE | Official Trailer #2 | In Theaters & On MUBI Now",
+        "channel": "MUBI",
+        "description": "Have you ever dreamt of a better version of yourself? You. Only better in every way. You've got to try this new product. It changed ...",
+        "published_at": "2024-10-31T15:54:08Z"
+      }
+    ],
+    "note": "реал: мульти-валидный RU (Okko official-платформа HSg_3GSGt8U, Kinoman дубляж kPFFHB3pjhc); украинский трейлер oPsQlO_fY7E — др. язык, исключён +TMDB RU-дубляж CZIdRUCO-_0 (контент-проверен: «Субстанция | Трейлер (RU)»); #329 симметричное расширение accept-set (B1).",
+    "tmdb_videos": [
+      {
+        "key": "CZIdRUCO-_0",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Субстанция | Трейлер"
+      },
+      {
+        "key": "cBh97-obqKQ",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Director Coralie Fargeat Dives Deep with Sean Evans on David Lynch & More"
+      },
+      {
+        "key": "UMicrbtjFKU",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Inside the Screenplay"
+      },
+      {
+        "key": "KASLYEChinM",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Conversation with Demi Moore & \"Charlie's Angels\""
+      },
+      {
+        "key": "Wgfk_gtwvPA",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Coralie Fargeat’s reaction on her Academy Award nomination for Best Director for The Substance"
+      },
+      {
+        "key": "8H64HNvXrqU",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Making-Of Featurette"
+      },
+      {
+        "key": "s0vATsOGW1Y",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"Especially not now...\""
+      },
+      {
+        "key": "m53cJl9O7QY",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"We got you just a little something...\""
+      },
+      {
+        "key": "BKcMm5RG2M4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Q&A with Coralie Fargeat & Guillermo del Toro"
+      },
+      {
+        "key": "dQU7LHh7ANU",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Tree’s up 🎄"
+      },
+      {
+        "key": "Rk3u4_IH0cY",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - Pretty Girls Should Always Smile"
+      },
+      {
+        "key": "DBiPdgIZt1g",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Conversation with THE SUBSTANCE Filmmaker Coralie Fargeat"
+      },
+      {
+        "key": "jNQtxvA2zPY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Interview - Margaret Qualley"
+      },
+      {
+        "key": "HGmRKUYWN48",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Interview - Demi Moore at Cannes Film Festival"
+      },
+      {
+        "key": "O9nfzMT05ck",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - Get Ready With Me"
+      },
+      {
+        "key": "lR5nlovVgvQ",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer #2"
+      },
+      {
+        "key": "4dzYB2JiMAA",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - I'd Like To Order"
+      },
+      {
+        "key": "0uUEiKr9FmA",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": false,
+        "site": "YouTube",
+        "name": "The Substance (2024) - \"I'm Sue\""
+      },
+      {
+        "key": "QzbgCI-FFu0",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - Lucky Day"
+      },
+      {
+        "key": "hYCkO4uuzt4",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "To everyone who has gone out to see The Substance in cinemas…"
+      },
+      {
+        "key": "4DPFdsDVK4w",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - Pump It Up With Sue"
+      },
+      {
+        "key": "vRM4IC9jNkc",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "On my way to see The Substance again 🧪"
+      },
+      {
+        "key": "kEWzeBLhLD4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "THE SUBSTANCE - Coralie Fargeat rips beauty standards to gory shreds | MUBI Podcast"
+      },
+      {
+        "key": "1_SSwbYYIQc",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Breaking Down THE SUBSTANCE's Shrimp Scene"
+      },
+      {
+        "key": "aA-vyoIPcL4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "The hype is real"
+      },
+      {
+        "key": "seyGZLvAauk",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "TIFF 2024 Q&A"
+      },
+      {
+        "key": "86wkRfWQWiY",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Mark it in your calendar"
+      },
+      {
+        "key": "LNlrGhBpYjc",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      },
+      {
+        "key": "B1B3HZRHpEw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Teaser"
+      },
+      {
+        "key": "ZFV4tGgf5rA",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Vertical Teaser"
+      },
+      {
+        "key": "U-RxVJrLKrk",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Дэдпул и Росомаха",
+      "original_title": "Deadpool & Wolverine",
+      "year": 2024,
+      "cast": [
+        "Райан Рейнольдс",
+        "Хью Джекман"
+      ]
+    },
+    "correct": [
+      "5GmXVEBcOpc",
+      "j0La8m0S568"
+    ],
+    "candidates": [
+      {
+        "video_id": "5GmXVEBcOpc",
+        "title": "Дэдпул и Росомаха — Русский трейлер (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Официальный дублированный трейлер фильма «Дэдпул и Росомаха» 2024 года Официальные русские трейлеры к ...",
+        "published_at": "2024-02-12T05:20:56Z"
+      },
+      {
+        "video_id": "j0La8m0S568",
+        "title": "Дэдпул и Росомаха — Русский трейлер #2 (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Официальный дублированный трейлер фильма «Дэдпул и Росомаха» 2024 года Официальные русские трейлеры к ...",
+        "published_at": "2024-04-22T14:18:55Z"
+      },
+      {
+        "video_id": "8z0TGHp3iZw",
+        "title": "Дэдпул и Росомаха [2024] Финальный трейлер [РУССКАЯ ОЗВУЧКА]",
+        "channel": "- MAXIMUS -",
+        "description": "ПОМОЧЬ КАНАЛУ – https://boosty.to/maximus93 Подпишись на мой канал ...",
+        "published_at": "2024-07-20T07:06:22Z"
+      },
+      {
+        "video_id": "2P_UbFLQ1EI",
+        "title": "Дэдпул и Росомаха 2024 (Русский трейлер) | Озвучка от DMITRY TER | Deadpool & Wolverine",
+        "channel": "DMITRY TER | Озвучка и Музыка",
+        "description": "В трейлере продемонстрировали зачин сюжета и несколько боевых сцен, а также главных героев в исполнении Райана ...",
+        "published_at": "2024-02-12T08:42:39Z"
+      },
+      {
+        "video_id": "3o3LOvd7ev4",
+        "title": "Дэдпул и Росомаха (2024) | Новый Трейлер | В кино с 26 июля",
+        "channel": "Marvel DC Trailer",
+        "description": "deadpool3 #hughjackman #ryanreynolds #msu #trailer2024 Всем привет, друзья! Пока все в ожидании нового трейлера, ...",
+        "published_at": "2024-04-18T16:00:06Z"
+      },
+      {
+        "video_id": "73_1biulkYk",
+        "title": "Deadpool & Wolverine | Official Trailer | In Theaters July 26",
+        "channel": "Marvel Entertainment",
+        "description": "LFG. Watch the new trailer for Marvel Studios' #DeadpoolAndWolverine. Only in theaters July 26. ▻ Watch Marvel on Disney+: ...",
+        "published_at": "2024-04-22T13:00:09Z"
+      },
+      {
+        "video_id": "uJMCNJP2ipI",
+        "title": "Deadpool & Wolverine | Official Teaser | In Theaters July 26",
+        "channel": "Marvel Entertainment",
+        "description": "Everyone deserves a happy ending. In theaters July 26. #DeadpoolWolverine ▻ Watch Marvel on Disney+: https://bit.ly/2XyBSIW ...",
+        "published_at": "2024-02-11T23:36:49Z"
+      },
+      {
+        "video_id": "Idh8n5XuYIA",
+        "title": "Deadpool & Wolverine | Final Trailer | In Theaters July 26",
+        "channel": "Marvel Entertainment",
+        "description": "Are you ready? In ONE WEEK, experience #DeadpoolAndWolverine in theaters everywhere. Get tickets: ...",
+        "published_at": "2024-07-19T14:00:23Z"
+      },
+      {
+        "video_id": "sMVIBr-7hgE",
+        "title": "Deadpool & Wolverine | Official Trailer | In Theaters July 26",
+        "channel": "Marvel Entertainment",
+        "description": "LFG Watch the new trailer for Marvel Studios' #DeadpoolAndWolverine. Only in theaters July 26. ▻ Watch Marvel on Disney+: ...",
+        "published_at": "2024-04-22T13:00:26Z"
+      },
+      {
+        "video_id": "smfQRyUtmiM",
+        "title": "DEADPOOL 3 Official Teaser Announcement (2024)",
+        "channel": "Movie Trailers Source",
+        "description": "First movie trailer for Deadpool 3 starring Ryan Reynolds & Hugh Jackman (Wolverine).",
+        "published_at": "2022-09-27T21:24:06Z"
+      }
+    ],
+    "note": "реал: official RU-дубляж Kinoman #1 5GmXVEBcOpc и #2 j0La8m0S568; фан-озвучки (MAXIMUS 8z0TGHp3iZw, DMITRY TER 2P_UbFLQ1EI) — не дубляж, исключены",
+    "tmdb_videos": [
+      {
+        "key": "Vtp4466Hx8I",
+        "iso_639_1": "ru",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool & Wolverine | Best Bubs"
+      },
+      {
+        "key": "5GmXVEBcOpc",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Дэдпул и Росомаха — Русский трейлер (Дубляж, 2024)"
+      },
+      {
+        "key": "CGLDAXFtqbM",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Wolverine Breathing Exercise"
+      },
+      {
+        "key": "8zY0dZr8t28",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool and Kidpool Help SickKids"
+      },
+      {
+        "key": "dyq7hMlF9iY",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool and Blind Al Have a Big Announcement"
+      },
+      {
+        "key": "rl2fAfnNftw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Now Streaming on Disney+"
+      },
+      {
+        "key": "WQLDg45IJqA",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Magic: The Visual Effects of Deadpool & Wolverine"
+      },
+      {
+        "key": "LYaJVfiwv0w",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "On Digital Oct 1 & On Blu-ray Oct 22"
+      },
+      {
+        "key": "k2q1haFRQaA",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool & Wolverine Come Home"
+      },
+      {
+        "key": "nY5IAhjTclY",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "The Visual Effects of Cassandra Nova's Powers"
+      },
+      {
+        "key": "65oqnYN6as8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Name For Myself"
+      },
+      {
+        "key": "hiGPEYgOdOs",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Thank You"
+      },
+      {
+        "key": "7dOcH4HN5fA",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "All Time"
+      },
+      {
+        "key": "PWdtBp5opqw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Billion with a B"
+      },
+      {
+        "key": "YyVAwYCzuDk",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Flame On"
+      },
+      {
+        "key": "83KmAr0aviA",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Popcorn and Jazz - 10 Hours"
+      },
+      {
+        "key": "YBYOuQJ5Wno",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Portal"
+      },
+      {
+        "key": "qhAB4Y1VrO8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Smashing"
+      },
+      {
+        "key": "U8XGephn-gI",
+        "iso_639_1": "en",
+        "type": "Bloopers",
+        "official": true,
+        "site": "YouTube",
+        "name": "Hugh's Acting Masterclass"
+      },
+      {
+        "key": "BId1AMHzItQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Crying"
+      },
+      {
+        "key": "XBLJ6XOCBdY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Watch Deadpool & Wolverine again and again and again and again and again and again and again and again"
+      },
+      {
+        "key": "QQ_jvHQM53o",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Smash"
+      },
+      {
+        "key": "G9BWRaXdA-M",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Score"
+      },
+      {
+        "key": "45LohjMTJOM",
+        "iso_639_1": "en",
+        "type": "Bloopers",
+        "official": true,
+        "site": "YouTube",
+        "name": "Dogpool Blooper"
+      },
+      {
+        "key": "3yPfmJMzVVY",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Thank You, Ray Chan"
+      },
+      {
+        "key": "9Bo_GQtD7vo",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Ultimate Deadpool & Wolverine Celebration of Life"
+      },
+      {
+        "key": "Y2Op5pFoqS0",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Let's keep our little secret"
+      },
+      {
+        "key": "XfD4F9E3yX0",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool & Wolverine & Walking4Hope"
+      },
+      {
+        "key": "TPcJrh-VeJk",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "GRWM to Host a Special Screening of Deadpool & Wolverine"
+      },
+      {
+        "key": "dIpNpMfGxK8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Legendary"
+      },
+      {
+        "key": "eoFCmgF8Cjs",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Go"
+      },
+      {
+        "key": "xdUc7qURlk4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official IMAX® Interview"
+      },
+      {
+        "key": "u06vqfLcBas",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Pray"
+      },
+      {
+        "key": "wqeWqCcnDoY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Kevin Feige Welcomes Mutants Into the MCU"
+      },
+      {
+        "key": "01tu2bUX59w",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "My not so secret weapon."
+      },
+      {
+        "key": "ETuda6ZGQkU",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Gear Up"
+      },
+      {
+        "key": "UffWG-yFGgw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "This Friday"
+      },
+      {
+        "key": "8BjXzXq3O5A",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": false,
+        "site": "YouTube",
+        "name": "Deadpool & Wolverine in the Studio"
+      },
+      {
+        "key": "Idh8n5XuYIA",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Final Trailer"
+      },
+      {
+        "key": "C2QCuBX_byg",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Everyone"
+      },
+      {
+        "key": "zE1wKmQ98ZA",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool & Wolverine & Chicken Strips"
+      },
+      {
+        "key": "eN2rNIgy9JQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Can’t Unsee It"
+      },
+      {
+        "key": "eS-MpmL6fPc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Pumped"
+      },
+      {
+        "key": "S2sBNY9Wg8o",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool & Wolverine & The Bachelorette"
+      },
+      {
+        "key": "Up6hJCihbL8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Purpose"
+      },
+      {
+        "key": "LYuc1wDC318",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "World Tour"
+      },
+      {
+        "key": "qoAYNhOWol8",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Shanghai Fan Event"
+      },
+      {
+        "key": "pABY-rpsfH4",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "LFG"
+      },
+      {
+        "key": "r3LisZEIK34",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Nice"
+      },
+      {
+        "key": "pn5fdK61o9c",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Best Friends Day"
+      },
+      {
+        "key": "ewkLcCQ1O-0",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "The Deadpool And Wolverine popcorn bucket has arrived"
+      },
+      {
+        "key": "90lAiDCdwX4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool & Wolverine Popcorn Bucket"
+      },
+      {
+        "key": "Esc_qtkULBE",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Tickets On Sale"
+      },
+      {
+        "key": "NebqFm0PoVw",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": false,
+        "site": "YouTube",
+        "name": "Heineken Silver - World-Class Light Beer for World-Class Bubs"
+      },
+      {
+        "key": "YLswizPsdYk",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Get Tickets Now"
+      },
+      {
+        "key": "2I5aSPn_eYQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Tickets On Sale Now"
+      },
+      {
+        "key": "pCdR7mgWT4s",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Disclaimers"
+      },
+      {
+        "key": "73_1biulkYk",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      },
+      {
+        "key": "umxRwIKOPA4",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Trailer Tomorrow"
+      },
+      {
+        "key": "uJMCNJP2ipI",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Teaser"
+      },
+      {
+        "key": "Szj1iqYanFM",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool Update, Part Hugh"
+      },
+      {
+        "key": "Yd47Z8HYf0Y",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Deadpool Update"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Головоломка 2",
+      "original_title": "Inside Out 2",
+      "year": 2024,
+      "cast": []
+    },
+    "correct": [
+      "hLr8JdHFK-M",
+      "xbSLz5lR520",
+      "X-aiPGLSPUY",
+      "EV8APU07JaM"
+    ],
+    "candidates": [
+      {
+        "video_id": "hLr8JdHFK-M",
+        "title": "Головоломка 2 — Русский трейлер (4К, Дубляж, 2024)",
+        "channel": "iVideos",
+        "description": "Русский трейлер мультфильма «Головоломка 2» 2024 года | Русские трейлеры к фильмам, сериалам и играм! Интересные ...",
+        "published_at": "2024-03-18T15:20:16Z"
+      },
+      {
+        "video_id": "xbSLz5lR520",
+        "title": "Головоломка 2 — Русский трейлер (4К, Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Официальный дублированный трейлер мультфильма «Головоломка 2 » 2024 года Официальные русские трейлеры к ...",
+        "published_at": "2024-03-07T19:56:20Z"
+      },
+      {
+        "video_id": "Y1WmqdWQ-4c",
+        "title": "Головоломка 2 | Финальный русский трейлер | Закадровое озвучивание",
+        "channel": "Daniel O'Conner - Перевод и Озвучивание",
+        "description": "Головоломка2 #InsideOut2 #disney Фильм Disney и Pixar «Головоломка 2» откроется в кинотеатрах по всей стране всего за ...",
+        "published_at": "2024-06-05T17:56:30Z"
+      },
+      {
+        "video_id": "V6UnhbS-bOE",
+        "title": "Головоломка 2 — Русский тизер-трейлер (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Русский тизер трейлер мультфильма «Головоломка 2 » 2024 года Официальные русские трейлеры к фильмам, трейлеры ...",
+        "published_at": "2023-11-09T16:13:24Z"
+      },
+      {
+        "video_id": "X-aiPGLSPUY",
+        "title": "Головоломка 2 — Финальный трейлер (2024)",
+        "channel": "Kinoman",
+        "description": "Финальный трейлер мультфильма «Головоломка 2 » 2024 года Официальные русские трейлеры к фильмам, трейлеры к ...",
+        "published_at": "2024-06-05T13:45:47Z"
+      },
+      {
+        "video_id": "LEjhY15eCx0",
+        "title": "Inside Out 2 | Official Trailer",
+        "channel": "Pixar",
+        "description": "make room for new emotions   Watch the new trailer for Disney & Pixar's Inside Out 2, only in theaters June 14! #Insideout2 The ...",
+        "published_at": "2024-03-07T17:00:10Z"
+      },
+      {
+        "video_id": "VWavstJydZU",
+        "title": "Inside Out 2 | Teaser Trailer",
+        "channel": "Pixar",
+        "description": "Things are getting messy   Disney and Pixar's #InsideOut2 is coming to theaters June 2024 with brand new emotions! The little ...",
+        "published_at": "2023-11-09T13:59:01Z"
+      },
+      {
+        "video_id": "L4DrolmDxmw",
+        "title": "Inside Out 2 | Final Trailer",
+        "channel": "Pixar",
+        "description": "Disney and Pixar's “Inside Out 2” opens in theaters nationwide in just 10 days, inviting moviegoers inside the mind of newly ...",
+        "published_at": "2024-06-04T16:00:17Z"
+      },
+      {
+        "video_id": "6_AVROEGlfE",
+        "title": "Inside Out 2 | Official Trailer | Disney UK",
+        "channel": "Disney UK",
+        "description": "make room for new emotions   Watch the new trailer for Disney & Pixar's #InsideOut2, only in cinemas June 14! Subscribe to ...",
+        "published_at": "2024-03-07T17:19:37Z"
+      },
+      {
+        "video_id": "zvZHQvFz2ek",
+        "title": "Intensamente 2 - 2024 Trailer Oficial",
+        "channel": "iLeorju",
+        "description": "Próximamente de Pixar, es Inside Out 2! Intensa Mente 2: Trailer de la película (2024) No olvides Suscribirte: http://goo.gl/Py2Eia ...",
+        "published_at": "2018-12-28T23:21:11Z"
+      }
+    ],
+    "note": "реал: мульти-валидный RU-дубляж 4K (iVideos hLr8JdHFK-M, Kinoman xbSLz5lR520, финальный X-aiPGLSPUY); тизер V6UnhbS-bOE и закадр-озвучка Y1WmqdWQ-4c исключены +TMDB RU-дубляж EV8APU07JaM (контент-проверен: «Головоломка 2 — Русский трейлер 4К #2»); #329 симметричное расширение accept-set (B1).",
+    "tmdb_videos": [
+      {
+        "key": "EV8APU07JaM",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Головоломка 2 💎 Русский трейлер 4К #2 💎 Мультфильм 2024"
+      },
+      {
+        "key": "xo2swVa5KPc",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Animation Motivation: Thread the Needle"
+      },
+      {
+        "key": "AjILG76-txs",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Scene at The Academy"
+      },
+      {
+        "key": "QGFELnpig2M",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Available September 25 on Disney+"
+      },
+      {
+        "key": "Wt_0EKdTiE4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Global Phenomenon"
+      },
+      {
+        "key": "u69y5Ie519M",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Announce Trailer"
+      },
+      {
+        "key": "RY5aH21ohU4",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Time to Celebrate"
+      },
+      {
+        "key": "eioXDOSx6rQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Best Movie of the Year"
+      },
+      {
+        "key": "b0mVq8LGOkI",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "#1 Movie is Certified Fresh"
+      },
+      {
+        "key": "RUFqAHPLkzI",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official IMAX® Interview"
+      },
+      {
+        "key": "j7jvAHcKJGs",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "IMAX® Upgrade"
+      },
+      {
+        "key": "xSeavZfiO0s",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Warm Fuzzies"
+      },
+      {
+        "key": "-OrsTqfN-sg",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Father's Day"
+      },
+      {
+        "key": "RtoKrwYQ20E",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Maya Hawke And The 'Inside Out 2' Team Explored Their Own Emotions Through The Pixar Sequel"
+      },
+      {
+        "key": "uyzQw8-8k9U",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Meet the Cast of Inside Out 2"
+      },
+      {
+        "key": "uskbXdnbcvg",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Remember How You Felt..."
+      },
+      {
+        "key": "0W6mhdueFec",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Summer Kick Off"
+      },
+      {
+        "key": "L4DrolmDxmw",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Final Trailer"
+      },
+      {
+        "key": "uwnlgp64shw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Hop On"
+      },
+      {
+        "key": "nm35CQL3yms",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Moments"
+      },
+      {
+        "key": "tnLtvSxNU1o",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Riley and Her Mom"
+      },
+      {
+        "key": "2GMtiofogKI",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Bad Memories"
+      },
+      {
+        "key": "sqJ1Tz91TNA",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Meet envy"
+      },
+      {
+        "key": "Zpcr6u-eu50",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "That Feeling When"
+      },
+      {
+        "key": "C27fmGCmPa4",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Meet Anxiety"
+      },
+      {
+        "key": "MvKzg3rrP30",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Booth To Screen"
+      },
+      {
+        "key": "nDL4nbvT9T0",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Tickets on Sale!"
+      },
+      {
+        "key": "LEjhY15eCx0",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      },
+      {
+        "key": "aYRnM4nyuKs",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Team"
+      },
+      {
+        "key": "VWavstJydZU",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Teaser Trailer"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Мегалополис",
+      "original_title": "Megalopolis",
+      "year": 2024,
+      "cast": [
+        "Адам Драйвер"
+      ]
+    },
+    "correct": [
+      "30H_1gNgpBo",
+      "EAUQi5RoA9o"
+    ],
+    "candidates": [
+      {
+        "video_id": "pq6mvHZU0fc",
+        "title": "Megalopolis (2024) Official Trailer - Adam Driver, Giancarlo Esposito, Nathalie Emmanuel",
+        "channel": "Lionsgate Movies",
+        "description": "MEGALOPOLIS: The Ultimate IMAX Experience on September 23. In theaters & IMAX everywhere September 27. Starring Adam ...",
+        "published_at": "2024-09-05T13:01:28Z"
+      },
+      {
+        "video_id": "30H_1gNgpBo",
+        "title": "Мегалополис — Русский трейлер (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Русский трейлер фильма «Мегалополис» 2024 года Официальные русские трейлеры к фильмам, трейлеры к сериалам, ...",
+        "published_at": "2024-09-27T14:20:19Z"
+      },
+      {
+        "video_id": "MkgJ1gSvatI",
+        "title": "MEGALOPOLIS Final Trailer (2024) Extended | 4K UHD",
+        "channel": "MovieGasm‍․com",
+        "description": "The city of New Rome is the main conflict between Cesar Catilina, a brilliant artist in favor of a utopian future, and the greedy ...",
+        "published_at": "2024-09-14T17:00:54Z"
+      },
+      {
+        "video_id": "RU1QyAYa60g",
+        "title": "Megalopolis - Teaser Trailer",
+        "channel": "Francis Ford Coppola ",
+        "description": "Our new film MEGALOPOLIS is the best work I've ever had the privilege to preside over.",
+        "published_at": "2024-05-14T04:24:36Z"
+      },
+      {
+        "video_id": "rcMkmavOAP0",
+        "title": "Мегалополис (2024) Драма, фэнтези | Русский трейлер фильма",
+        "channel": "HD Movies",
+        "description": "В американском городе Новый Рим архитектор Цезарь Катилина — умеющий останавливать время лауреат Нобелевской ...",
+        "published_at": "2024-12-02T15:14:55Z"
+      },
+      {
+        "video_id": "NA5ydinNXiE",
+        "title": "Megalopolis - Official Trailer (2024) Adam Driver, Giancarlo Esposito, Aubrey Plaza",
+        "channel": "IGN",
+        "description": "Megalopolis sci-fi drama from the iconic Francis Ford Coppola. Megalopolis is a Roman Epic fable set in an imagined Modern ...",
+        "published_at": "2024-08-21T14:10:34Z"
+      },
+      {
+        "video_id": "SX4b2hGBnes",
+        "title": "Megalopolis - Official Trailer",
+        "channel": "Madman Films",
+        "description": "A film by Francis Ford Coppola. Watch #Megalopolis at home. A Roman Epic set in an imagined Modern America. The City of New ...",
+        "published_at": "2024-07-04T03:57:23Z"
+      }
+    ],
+    "note": "реал: official RU-дубляж Kinoman 30H_1gNgpBo; HD Movies rcMkmavOAP0 — переозвучка/реаплоуд, исключён +TMDB RU-дубляж EAUQi5RoA9o (контент-проверен: «Мегалополис — Русский трейлер»); #329 симметричное расширение accept-set (B1).",
+    "tmdb_videos": [
+      {
+        "key": "EAUQi5RoA9o",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Мегалополис | Фильм [2024] Русский трейлер"
+      },
+      {
+        "key": "WVZd5b--U6w",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official International Streaming Trailer"
+      },
+      {
+        "key": "KzD7FLDk2Ww",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - Purgatory"
+      },
+      {
+        "key": "_-kgdXirVCA",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - Satellite"
+      },
+      {
+        "key": "8AN-OMhJREs",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - Show Me The Future"
+      },
+      {
+        "key": "tOxaBU8tPy8",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - Walk Into The Future"
+      },
+      {
+        "key": "h0tw7Sws3lw",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Francis Ford Coppola on Megalopolis"
+      },
+      {
+        "key": "tNybhMsO5ew",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Clip - Go Back To The Club"
+      },
+      {
+        "key": "T9B56tzId6w",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Francis Ford Coppola Compares Directors To Coaches"
+      },
+      {
+        "key": "vC_GM4u9Y0s",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Get Tickets"
+      },
+      {
+        "key": "2ivrLY9ahzA",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "UK TV Spot 4"
+      },
+      {
+        "key": "6wutLO5f5gA",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "UK TV Spot 3"
+      },
+      {
+        "key": "gRlNjzMFV0w",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "UK TV Spot 2"
+      },
+      {
+        "key": "oD-cb65tByo",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "UK TV Spot 1"
+      },
+      {
+        "key": "FHYlEOK0uOE",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      },
+      {
+        "key": "pq6mvHZU0fc",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      },
+      {
+        "key": "RU1QyAYa60g",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Teaser Trailer"
+      },
+      {
+        "key": "ZZL3U1j3K1c",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "First Look Clip"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Дикий робот",
+      "original_title": "The Wild Robot",
+      "year": 2024,
+      "cast": []
+    },
+    "correct": [
+      "dnYMdlt1vCU",
+      "u7SfIW5tjdE"
+    ],
+    "candidates": [
+      {
+        "video_id": "u7SfIW5tjdE",
+        "title": "Дикий робот — Русский трейлер #2 (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Официальный дублированный трейлер мультфильма «Дикий робот» 2024 года Официальные русские трейлеры к ...",
+        "published_at": "2024-06-26T12:00:21Z"
+      },
+      {
+        "video_id": "dnYMdlt1vCU",
+        "title": "Дикий робот — Русский трейлер (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Официальный дублированный трейлер мультфильма «Дикий робот» 2024 года Официальные русские трейлеры к ...",
+        "published_at": "2024-03-28T11:44:08Z"
+      },
+      {
+        "video_id": "DAM9aJTXBQU",
+        "title": "Дикий робот | The Wild Robot (2024) трейлер українською мовою 🇺🇦",
+        "channel": "new kino ua",
+        "description": "",
+        "published_at": "2025-10-02T16:28:47Z"
+      },
+      {
+        "video_id": "VUCNBAmse04",
+        "title": "The Wild Robot | Final Trailer",
+        "channel": "Universal Pictures",
+        "description": "The Wild Robot - In Theaters September 27 From DreamWorks Animation comes a new adaptation of a literary sensation, Peter ...",
+        "published_at": "2024-09-10T15:00:10Z"
+      },
+      {
+        "video_id": "SyRY4GL2koQ",
+        "title": "Дикий робот 💥 официальный трейлер 💥 фильм 2024",
+        "channel": "MovieMania",
+        "description": "Официальный трейлер мультфильма «Дикий робот» 2024 года Официальные русские трейлеры к фильмам, сериалам, ...",
+        "published_at": "2024-03-25T08:15:01Z"
+      },
+      {
+        "video_id": "67vbA5ZJdKQ",
+        "title": "The Wild Robot | Official Trailer",
+        "channel": "Universal Pictures",
+        "description": "The Wild Robot - In Theaters September 27 From DreamWorks Animation comes a new adaptation of a literary sensation, Peter ...",
+        "published_at": "2024-03-05T16:00:09Z"
+      },
+      {
+        "video_id": "njPNg0A9VpY",
+        "title": "The Wild Robot | Official Trailer 2",
+        "channel": "Universal Pictures",
+        "description": "The Wild Robot - In Theaters September 27 From DreamWorks Animation comes a new adaptation of a literary sensation, Peter ...",
+        "published_at": "2024-06-11T15:00:11Z"
+      },
+      {
+        "video_id": "LbDiujN_0bc",
+        "title": "THE WILD ROBOT - Official Trailer (2024)",
+        "channel": "JoBlo Animated Videos",
+        "description": "THE WILD ROBOT - Official Trailer (2024) PLOT: After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited ...",
+        "published_at": "2024-03-05T16:02:50Z"
+      },
+      {
+        "video_id": "tN4PvhbVcVU",
+        "title": "THE WILD ROBOT Trailer (2024)",
+        "channel": "KinoCheck.com",
+        "description": "Official The Wild Robot Movie Trailer 2024 | Subscribe ➤ https://abo.yt/ki | Movie Trailer | Cinema: 20 Sep 2024 | More ...",
+        "published_at": "2024-03-05T16:20:31Z"
+      }
+    ],
+    "note": "реал: official RU-дубляж Kinoman #1 dnYMdlt1vCU и #2 u7SfIW5tjdE; MovieMania SyRY4GL2koQ (реаплоуд) и украинский DAM9aJTXBQU исключены",
+    "tmdb_videos": [
+      {
+        "key": "u7SfIW5tjdE",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Дикий робот — Русский трейлер #2 (Дубляж, 2024)"
+      },
+      {
+        "key": "dnYMdlt1vCU",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Дикий робот — Русский трейлер (Дубляж, 2024)"
+      },
+      {
+        "key": "fI6IK6ELaf0",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "The Robots Attack!! Brightbill's Wild Goose Chase"
+      },
+      {
+        "key": "-AZcmx7bGmw",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "“I Could Use a Boost” – Full Film Clip"
+      },
+      {
+        "key": "7uM0qBn1nxs",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Are You My Mother? Roz Finds an Egg!"
+      },
+      {
+        "key": "3Hi8Rm2ACek",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Chris Sanders Legacy"
+      },
+      {
+        "key": "wrx-BY4fB6o",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Scene at The Academy (Feat. Lupita Nyong’o, Chris Sanders, Kris Bowers, & More)"
+      },
+      {
+        "key": "oEC84M0GMdg",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Streaming Now on Peacock"
+      },
+      {
+        "key": "H_E8Roxe_j8",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Overall Achievement"
+      },
+      {
+        "key": "0-AQ5o9htzg",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "\"The Heart Of The Film\" - Bonus Feature"
+      },
+      {
+        "key": "scdl0iS0_zs",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Script to Scene (Longneck)"
+      },
+      {
+        "key": "Id--P16c8qw",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Script to Scene (Rescue)"
+      },
+      {
+        "key": "OniCL6neBog",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "A Baby Hatches"
+      },
+      {
+        "key": "nSlBljYjA70",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "The Magic Behind The Movie (Featuring Lupita Nyong'o)"
+      },
+      {
+        "key": "af9seyn4jXQ",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Lupita Nyong'o And Pedro Pascal Talk The Wild Robot Origins"
+      },
+      {
+        "key": "-Q3riC-J9DI",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Watch at Home Now"
+      },
+      {
+        "key": "FLgpxZp505w",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Watch at Home Now"
+      },
+      {
+        "key": "F7QZTj0k2Ng",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "A Deep Dive Into The Original Music - Bonus Feature"
+      },
+      {
+        "key": "yUmw4fZ5VZ0",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind The Scenes (Featuring Lupita Nyong'o, Pedro Pascal And Mark Hamill)"
+      },
+      {
+        "key": "OTLAsi9WOKw",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Interview | Dir. Chris Sanders"
+      },
+      {
+        "key": "Q8U17DfIxd0",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Storyboard Side By Side"
+      },
+      {
+        "key": "cVjoeNI8f1M",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Lupita Nyong'o on being inspired by AI for The Wild Robot #lff"
+      },
+      {
+        "key": "EJHR3fDhHJ8",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Roz Becomes One With Nature"
+      },
+      {
+        "key": "HakytPyvYhA",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Pedro Pascal on his first animated voice role in The Wild Robot #lff"
+      },
+      {
+        "key": "d6V61TtFdiw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Watch at Home Tomorrow"
+      },
+      {
+        "key": "NNyRED1pOD0",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "How To Draw"
+      },
+      {
+        "key": "cpurXDJvYeo",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Animation \"Migration\""
+      },
+      {
+        "key": "Nwem-IdqkDY",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Animation \"Beach\""
+      },
+      {
+        "key": "WnE51QfRxvE",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Score"
+      },
+      {
+        "key": "hAXH3euTYRc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Theaters Now (Performance Fresh Vertical)"
+      },
+      {
+        "key": "2-1beB3bFI8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Theaters Now (Number One Vertical)"
+      },
+      {
+        "key": "hKn-CBW8KOA",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Theaters Now (Number One Winning Certified RT Review)"
+      },
+      {
+        "key": "xpJdljNdsR0",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "The Love & Kindness Behind THE WILD ROBOT | TIFF 2024"
+      },
+      {
+        "key": "9tR6uVUw9sw",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Sustainability"
+      },
+      {
+        "key": "gWxRpSMHmxU",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Actors Going Wild \"Vontra\""
+      },
+      {
+        "key": "H9SCA4kRGy0",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Actors Going Wild \"Fink & Thorn\""
+      },
+      {
+        "key": "bS5UcOdz5vQ",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Actors Going Wild \"Brightbill\""
+      },
+      {
+        "key": "F_pguJEJmBc",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Wild Voices"
+      },
+      {
+        "key": "MaogzaRA3Zc",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "A Look Inside"
+      },
+      {
+        "key": "tktFUrkX4Kc",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Mark Hamill On The Heart Of THE WILD ROBOT"
+      },
+      {
+        "key": "ii1Jn5alVtg",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "'The Wild Robot' with filmmakers | Academy Conversations"
+      },
+      {
+        "key": "uZ7rG16MowY",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Cast Run"
+      },
+      {
+        "key": "VUCNBAmse04",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Final Trailer"
+      },
+      {
+        "key": "17XI28jjvnE",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "National Read A Book Day With Lupita Nyong’o"
+      },
+      {
+        "key": "Laa__YPZFYI",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "A Goose That... Can't Swim?"
+      },
+      {
+        "key": "dq36zIPc9GY",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Humor"
+      },
+      {
+        "key": "oC1cicjljf0",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Pick and Flick"
+      },
+      {
+        "key": "SuyoyEhaklQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Skunk"
+      },
+      {
+        "key": "gR6_y64E6N4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Maren Morris Announcement"
+      },
+      {
+        "key": "hbciJR5CsBA",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Trailer feat. Maren Morris"
+      },
+      {
+        "key": "jxAu5FM5LJo",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "A Wild Vision"
+      },
+      {
+        "key": "e8PM4GY9Nnc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Biggest Dream Featuring “Birds of a Feather” by Billie Eilish"
+      },
+      {
+        "key": "inFF5a4uXpQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Wild"
+      },
+      {
+        "key": "njPNg0A9VpY",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer 2"
+      },
+      {
+        "key": "67vbA5ZJdKQ",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Гладиатор 2",
+      "original_title": "Gladiator II",
+      "year": 2024,
+      "cast": [
+        "Пол Мескаль",
+        "Дензел Вашингтон"
+      ]
+    },
+    "correct": [
+      "wL3mZn0YeIw",
+      "xLg5TurQTc8"
+    ],
+    "candidates": [
+      {
+        "video_id": "wL3mZn0YeIw",
+        "title": "Гладиатор 2 — Русский трейлер (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Официальный дублированный трейлер фильма «Гладиатор 2» 2024 года Официальные русские трейлеры к фильмам, ...",
+        "published_at": "2024-07-10T07:50:03Z"
+      },
+      {
+        "video_id": "TQwSz88ITAE",
+        "title": "Gladiator II | Final Trailer (2024) - Paul Mescal, Pedro Pascal, Denzel Washington, Ridley Scott",
+        "channel": "Paramount Pictures",
+        "description": "Audiences are calling #GladiatorII “ferociously entertaining.” Watch the Final Trailer and get tickets now to see it in theatres Friday.",
+        "published_at": "2024-11-18T16:00:01Z"
+      },
+      {
+        "video_id": "xLg5TurQTc8",
+        "title": "Гладиатор 2 — Русский трейлер #2 (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Официальный дублированный трейлер фильма «Гладиатор 2» 2024 года Официальные русские трейлеры к фильмам, ...",
+        "published_at": "2024-09-23T14:04:03Z"
+      },
+      {
+        "video_id": "4rgYUipGJNo",
+        "title": "Gladiator II | Official Trailer (2024 Movie) - Paul Mescal, Pedro Pascal, Denzel Washington",
+        "channel": "Paramount Pictures",
+        "description": "From director Ridley Scott, watch the new Official Trailer for #GladiatorII starring Paul Mescal, Pedro Pascal, Denzel Washington, ...",
+        "published_at": "2024-07-09T13:00:03Z"
+      },
+      {
+        "video_id": "ZS-nrNb8hXc",
+        "title": "GLADIATOR 2 Trailer 2 (2024)",
+        "channel": "KinoCheck.com",
+        "description": "Official Gladiator 2 Movie Trailer 2 2024 | Subscribe ➤ https://abo.yt/ki | Paul Mescal Movie Trailer | Cinema: 22 Nov 2024 | More ...",
+        "published_at": "2024-09-23T13:35:13Z"
+      },
+      {
+        "video_id": "8tlbXs5yNZY",
+        "title": "Gladiator II Trailer 2",
+        "channel": "Entertainment Tonight",
+        "description": "Paul Mescal, Denzel Washington, Pedro Pascal, Joseph Quinn, Connie Nielsen, Fred Hechinger, Lior Raz and more star in ...",
+        "published_at": "2024-09-23T17:04:52Z"
+      },
+      {
+        "video_id": "_uByxcee9Lc",
+        "title": "GLADIATOR 2 Trailer 2 German Deutsch (2024)",
+        "channel": "KinoCheck",
+        "description": "Offizieller \"Gladiator 2\" Trailer Deutsch German 2024 | Abonnieren ➤ https://abo.yt/kc | (OT: Gladiator 2) Movie Trailer | Kino: 14 ...",
+        "published_at": "2024-09-23T13:25:38Z"
+      },
+      {
+        "video_id": "Cha8mL7U2Mo",
+        "title": "Gladiator II | Official Trailer (2024 Movie) 4k - BUT BETTER (Original Music)",
+        "channel": "TheCaptainofGondor",
+        "description": "Gladiator 2 edited with an epic cover (trailer cover by the amazing https://www.youtube.com/@WEllFSILVAMusic Please donate to ...",
+        "published_at": "2024-07-09T17:02:22Z"
+      }
+    ],
+    "note": "реал: official RU-дубляж Kinoman #1 wL3mZn0YeIw и #2 xLg5TurQTc8; каст в EN-описаниях, но RU первичен (#315)",
+    "tmdb_videos": [
+      {
+        "key": "wL3mZn0YeIw",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Гладиатор 2 — Русский трейлер (Дубляж, 2024)"
+      },
+      {
+        "key": "ROfw3912xug",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Boat Battle"
+      },
+      {
+        "key": "D1q0eo-z4LU",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Lucius vs Acacius"
+      },
+      {
+        "key": "W3p_7DjGBVQ",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Denzel Washington is Impressed By Lucius' Fist Fight - Clip"
+      },
+      {
+        "key": "UNxfpXD2eGA",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Lucius and Emperor Geta Meet ft. Paul Mescal & Joseph Quinn"
+      },
+      {
+        "key": "QywdAdJcwJI",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "General Acacius Speech in Colosseum"
+      },
+      {
+        "key": "IRVx_QZ-oZk",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Magic: Creating the Colosseum for Gladiator II"
+      },
+      {
+        "key": "ryD4j4Iwapw",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Behind the Magic | The Visual Effects of Gladiator II"
+      },
+      {
+        "key": "_ZBYN01c7OM",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "20 Years of Making a Sequel - Exclusive Behind the Scenes"
+      },
+      {
+        "key": "gGmaZCZz48g",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Screenwriting of Gladiator II"
+      },
+      {
+        "key": "L5HZw0tGAv8",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Cinematography of Gladiator II"
+      },
+      {
+        "key": "eEFRXtV5LTE",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Extended Clip - The Gateway to Rome"
+      },
+      {
+        "key": "ICvbuugHjUg",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Costume Design of Gladiator II"
+      },
+      {
+        "key": "uwd0uX0h1Mc",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "A Conversation with Director Ridley Scott and Christopher Nolan"
+      },
+      {
+        "key": "abP1EYHvGvc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "It's time to enter the arena"
+      },
+      {
+        "key": "lLl6Bx8coJ4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "'Gladiator II' With Paul Mescal, Denzel Washington, Ridley Scott, and More | Academy Conversations"
+      },
+      {
+        "key": "d-_apjZSE_s",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Gladiator II is “what movies are made for.”"
+      },
+      {
+        "key": "QiDTEfTSRbw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "See it. Feel it. Experience Gladiator II in 4DX"
+      },
+      {
+        "key": "fdh8bUZHt6s",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Rebuilding Rome for Gladiator II"
+      },
+      {
+        "key": "DFgIdcti2KQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "This is what movies are made for"
+      },
+      {
+        "key": "HL6IOyKy8Fc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "“The best action blockbuster of the year”!"
+      },
+      {
+        "key": "7-CLwRoh4m0",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "World Tour"
+      },
+      {
+        "key": "NlJE-JayNIk",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "HBCU Student Roundtable with Denzel Washington"
+      },
+      {
+        "key": "lkOEfB0U1IQ",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Lucilla"
+      },
+      {
+        "key": "6q4vdtNnxMs",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Acacius"
+      },
+      {
+        "key": "L9-Vwg82mfQ",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Emperors"
+      },
+      {
+        "key": "cuzExc4OpK0",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Lucius"
+      },
+      {
+        "key": "tnQu4VrggM8",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Macrinus"
+      },
+      {
+        "key": "8Lld3U0sVho",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "The birth of a new Roman epic"
+      },
+      {
+        "key": "SL0ellaO20k",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "London Premiere"
+      },
+      {
+        "key": "TQwSz88ITAE",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Final Trailer"
+      },
+      {
+        "key": "mmbLQNsZqh0",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Let the games begin"
+      },
+      {
+        "key": "mw3NuoRkDCw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Prepare for the roar of the crowd"
+      },
+      {
+        "key": "g_yU1rS261M",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Strength x Honor"
+      },
+      {
+        "key": "botmnZBsji8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Prepare to be entertained"
+      },
+      {
+        "key": "lKAosomWZto",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Directing Gladiator II"
+      },
+      {
+        "key": "DizBLLrSMSc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "He will defy an empire"
+      },
+      {
+        "key": "iK7EDIzgJw0",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "The fire of vengeance burns hot"
+      },
+      {
+        "key": "4OQnvl6zOTs",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "A new Roman legacy begins."
+      },
+      {
+        "key": "504X_zXULVs",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Roundtable Interview"
+      },
+      {
+        "key": "nZtmOBiXOjc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Rage can be a gift"
+      },
+      {
+        "key": "LBpqSQJFl90",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "A day you’ll never forget"
+      },
+      {
+        "key": "-LNvW2ofxdI",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "For vengeance. For honor."
+      },
+      {
+        "key": "L1foOR4beXQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Honor isn’t given. It’s fought for."
+      },
+      {
+        "key": "utK0oXB_waQ",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Training"
+      },
+      {
+        "key": "9F2zmfRu5SM",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Experience the Music of Gladiator II - Behind the scoring with Ridley Scott, Harry Gregson-Williams"
+      },
+      {
+        "key": "rbbNgvm3SS8",
+        "iso_639_1": "en",
+        "type": "Behind the Scenes",
+        "official": true,
+        "site": "YouTube",
+        "name": "Making of an Epic"
+      },
+      {
+        "key": "Ts0N8swyWFI",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "New Trailer"
+      },
+      {
+        "key": "le6-HvwsyQc",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "New Trailer Tomorrow"
+      },
+      {
+        "key": "zBUlcCtE-fk",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Paul Mescal Featurette"
+      },
+      {
+        "key": "HMlPacqbVf8",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Joseph Quinn Featurette"
+      },
+      {
+        "key": "Sfewq6MbT8c",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Denzel Washington Featurette"
+      },
+      {
+        "key": "7fGnxleq7vA",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Pedro Pascal Featurette"
+      },
+      {
+        "key": "4rgYUipGJNo",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Веном: Последний танец",
+      "original_title": "Venom: The Last Dance",
+      "year": 2024,
+      "cast": [
+        "Том Харди"
+      ]
+    },
+    "correct": [
+      "ck-b_28PMM8",
+      "Hou4gXex2WM"
+    ],
+    "candidates": [
+      {
+        "video_id": "ck-b_28PMM8",
+        "title": "Веном 3: Последний танец — Русский трейлер (Дубляж, 2024)",
+        "channel": "Kinoman",
+        "description": "Официальный дублированный трейлер фильма «Веном 3: Последний танец» 2024 года Официальные русские трейлеры ...",
+        "published_at": "2024-06-03T13:48:42Z"
+      },
+      {
+        "video_id": "Hou4gXex2WM",
+        "title": "Веном: Последний танец - Русский трейлер (2024)",
+        "channel": "Киноафиша Трейлеры",
+        "description": "Трейлер к фильму «Веном: Последний танец» (2024) Премьера: 26 октября 2024 года Подробнее: ...",
+        "published_at": "2024-09-12T13:59:06Z"
+      },
+      {
+        "video_id": "iuYfjlC2wqg",
+        "title": "Веном: Последний танец | Трейлер (2024) В кино с 25 октября",
+        "channel": "Marvel DC Trailer",
+        "description": "trailer #venom #venom3 #sony #sonypictures #tomhardy #marvel Всем привет, друзья! В скором времени должен выйти ...",
+        "published_at": "2024-05-26T05:00:05Z"
+      },
+      {
+        "video_id": "w6PiA4qf_50",
+        "title": "Дубляж трейлера \"Веном 3: Последний танец\" с теми самыми Веномом и Эдди скоро на канале!",
+        "channel": "Дмитрий Череватенко",
+        "description": "Дубляж трейлера \"Веном 3: Последний танец\" с теми самыми Веномом и Эдди скоро на канале!",
+        "published_at": "2024-06-05T07:43:29Z"
+      },
+      {
+        "video_id": "ySMP9462Eds",
+        "title": "Веном 3 Последний Танец (2024)",
+        "channel": "ScorpionFilms",
+        "description": "",
+        "published_at": "2024-11-12T16:15:12Z"
+      },
+      {
+        "video_id": "__2bjWbetsA",
+        "title": "VENOM: THE LAST DANCE – Official Trailer (HD)",
+        "channel": "Sony Pictures Entertainment",
+        "description": "Till death do they part. Tom Hardy returns in #Venom: The Last Dance – coming exclusively to theaters this October. Visit our site: ...",
+        "published_at": "2024-06-03T12:59:59Z"
+      },
+      {
+        "video_id": "HyIyd9joTTc",
+        "title": "VENOM: THE LAST DANCE  – Final Trailer (HD)",
+        "channel": "Sony Pictures Entertainment",
+        "description": "With you to the end. Witness the epic conclusion in #Venom: The Last Dance exclusively in theatres October 25. Visit our site: ...",
+        "published_at": "2024-09-12T12:59:42Z"
+      },
+      {
+        "video_id": "sdwApAs67bg",
+        "title": "Venom: The Last Dance (2024) - VENOM HORSE! Scene | Movieclips",
+        "channel": "Movieclips",
+        "description": "Venom: The Last Dance - VENOM HORSE!: Venom (Tom Hardy) takes over a horse. BUY THE MOVIE: ...",
+        "published_at": "2025-01-07T18:00:38Z"
+      },
+      {
+        "video_id": "STScKOUpXR8",
+        "title": "Venom: The Last Dance | Official Trailer",
+        "channel": "Marvel Entertainment",
+        "description": "Till death do they part. Tom Hardy returns in #Venom: The Last Dance – coming exclusively to theaters this October. ▻ Watch ...",
+        "published_at": "2024-06-03T13:02:09Z"
+      },
+      {
+        "video_id": "vxztvYBX1vk",
+        "title": "VENOM: THE LAST DANCE - Knull | In Cinemas October 24",
+        "channel": "Sony Pictures India",
+        "description": "KNULL THE MAKER is here for his key! #Venom: The Last Dance Releasing exclusively in cinemas on October 24 Join us on: ...",
+        "published_at": "2024-10-22T07:10:55Z"
+      }
+    ],
+    "note": "реал: нумерованный сиквел («Веном 3» в title, ru_title без цифры) — Kinoman дубляж ck-b_28PMM8 и Киноафиша Hou4gXex2WM; промо «скоро на канале» w6PiA4qf_50 — ловушка",
+    "tmdb_videos": [
+      {
+        "key": "ck-b_28PMM8",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Веном 3: Последний танец — Русский трейлер (Дубляж, 2024)"
+      },
+      {
+        "key": "tVqo-hIE4qA",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Special Features Preview"
+      },
+      {
+        "key": "041KTRpr0XU",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "First 10 Minutes Preview"
+      },
+      {
+        "key": "Op8P4xzbmhg",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Welcome to the Nice List"
+      },
+      {
+        "key": "bI5vwW_1JjQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Welcome to the Naughty List"
+      },
+      {
+        "key": "VqJWP_6rudk",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Director Kelly Marcel breaks down the Venom trilogy | Film4"
+      },
+      {
+        "key": "y1M-nGQblmw",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Who wouldn’t want to get paid to talk to themselves?!"
+      },
+      {
+        "key": "BX2uhw9UOiQ",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Snacks with the Venom cast? Say less 👀🔥"
+      },
+      {
+        "key": "sZgZL6Yn2fw",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Venom: The Last Dance is only in cinemas NOW"
+      },
+      {
+        "key": "ZY34ufXPFl8",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "POV: it's the UK premiere of your film."
+      },
+      {
+        "key": "Tujcuvurc1U",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "This is your sign to go and see Venom: The Last Dance on the big screen!"
+      },
+      {
+        "key": "oAazxCOLF8c",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "A VIP cutie patootie 🖤 Blue stole our hearts"
+      },
+      {
+        "key": "z5aYy3qktGg",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "London, it was a blast"
+      },
+      {
+        "key": "utiep_e9hnU",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official IMAX® Interview"
+      },
+      {
+        "key": "HcfFZwIg8cY",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "He’s backkkk"
+      },
+      {
+        "key": "4RT-yq4pb0E",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Savor the Last Bite: The Venom Legacy"
+      },
+      {
+        "key": "5EyqQEiKeq4",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "HAAS x Venom"
+      },
+      {
+        "key": "En9N-MltoqM",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Austin Grand Prix Sizzle"
+      },
+      {
+        "key": "ZAULZiKbJoU",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Hero"
+      },
+      {
+        "key": "R3QCR4juFHQ",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Ahh with Megan Thee Stallion"
+      },
+      {
+        "key": "O3wFg9z8WWI",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Venom's world incoming..."
+      },
+      {
+        "key": "aZTrRFHXz5A",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "In the Studio with Busta Rhymes"
+      },
+      {
+        "key": "sm93tBNyz-g",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Cinemas Oct 23"
+      },
+      {
+        "key": "xrpdt2tdvVY",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Cinemas Oct 23"
+      },
+      {
+        "key": "Gy9-A2WLHzs",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Cinemas Oct 23"
+      },
+      {
+        "key": "dx4z9BY0Qm0",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Cinemas Oct 23"
+      },
+      {
+        "key": "Sy4sCnMnMEU",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Cinemas Oct 23"
+      },
+      {
+        "key": "drJHT245_W8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Cinemas Oct 23"
+      },
+      {
+        "key": "dZSqSfgG-Q8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "In Cinemas Oct 23"
+      },
+      {
+        "key": "HkBv-gjnXxQ",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Not That Kind of Cowboy with Dak Prescott"
+      },
+      {
+        "key": "jPPVqQGQW2g",
+        "iso_639_1": "en",
+        "type": "Featurette",
+        "official": true,
+        "site": "YouTube",
+        "name": "Eddie Pays Dana White a Visit"
+      },
+      {
+        "key": "FKBN1qAzW3s",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official IMAX® 1.90 Trailer"
+      },
+      {
+        "key": "HyIyd9joTTc",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Final Trailer"
+      },
+      {
+        "key": "8dyO_MGWWME",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Trailer Countdown"
+      },
+      {
+        "key": "__2bjWbetsA",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Trailer"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Смерть единорога",
+      "original_title": "Death of a Unicorn",
+      "year": 2025,
+      "cast": [
+        "Пол Радд",
+        "Дженна Ортега"
+      ]
+    },
+    "correct": [
+      "7ewzFEub32Q",
+      "r0eKbYttj64",
+      "8mePkYE0o_g",
+      "6dQYK51161g"
+    ],
+    "candidates": [
+      {
+        "video_id": "7ewzFEub32Q",
+        "title": "Смерть единорога — Русский трейлер (Дубляж, 2025)",
+        "channel": "Kinoman",
+        "description": "Русский трейлер фильма «Смерть единорога» 2025 года Друзья, подписывайтесь на нашу группу Вконтакте ...",
+        "published_at": "2024-12-24T08:15:32Z"
+      },
+      {
+        "video_id": "r0eKbYttj64",
+        "title": "Смерть единорога — Русский трейлер #2 (Дубляж, 2025)",
+        "channel": "Kinoman",
+        "description": "Русский трейлер фильма «Смерть единорога» 2025 года Официальные русские трейлеры к фильмам, трейлеры к ...",
+        "published_at": "2025-03-11T09:00:04Z"
+      },
+      {
+        "video_id": "8mePkYE0o_g",
+        "title": "Смерть единорога — Русский трейлер #3 (Дубляж, 2025)",
+        "channel": "Kinoman",
+        "description": "Русский трейлер фильма «Смерть единорога» 2025 года Официальные русские трейлеры к фильмам, трейлеры к ...",
+        "published_at": "2025-03-28T09:00:06Z"
+      },
+      {
+        "video_id": "62pyfjnzIuc",
+        "title": "Death Of A Unicorn | Official Trailer 2 HD | A24",
+        "channel": "A24",
+        "description": "SUBSCRIBE: http://bit.ly/A24subscribe From writer/director Alex Scharfman and starring Paul Rudd, Jenna Ortega, Will Poulter, ...",
+        "published_at": "2025-02-27T13:59:00Z"
+      },
+      {
+        "video_id": "6dQYK51161g",
+        "title": "Смерть единорога — Русский трейлер (Дубляж, 2025)",
+        "channel": "топКино",
+        "description": "Дата выхода в (РФ) — 3 апреля 2025 года. VK Видео — https://vk.com/video/@club227596514 Отец и дочь Райли и Эллиот ...",
+        "published_at": "2024-12-24T08:31:58Z"
+      },
+      {
+        "video_id": "9cMIarrxLGs",
+        "title": "Death Of A Unicorn | Official Trailer HD | A24",
+        "channel": "A24",
+        "description": "SUBSCRIBE: http://bit.ly/A24subscribe From writer/director Alex Scharfman and starring Paul Rudd, Jenna Ortega, Will Poulter, ...",
+        "published_at": "2024-12-18T13:59:00Z"
+      },
+      {
+        "video_id": "aSsGXdTRKZw",
+        "title": "DEATH OF A UNICORN | Official Trailer (2025)",
+        "channel": "JoBlo Horror 4K",
+        "description": "SUBSCRIBE for more JOBLO HORROR TRAILERS here: https://goo.gl/WiC41U A father (Paul Rudd) and daughter (Jenna ...",
+        "published_at": "2025-02-27T14:04:21Z"
+      },
+      {
+        "video_id": "94GCWahr3ZY",
+        "title": "DEATH OF A UNICORN Official “Unicorn Reveal” Teaser Trailer (2025) Jenna Ortega",
+        "channel": "FilmSelect",
+        "description": "Check out the official teaser trailer for Death of a Unicorn! In theaters March 28, 2025. Father-Daughter duo, Ridley and Elliot, hit a ...",
+        "published_at": "2025-03-17T17:07:28Z"
+      },
+      {
+        "video_id": "smW9t5UbTdo",
+        "title": "DEATH OF A UNICORN Trailer German Deutsch UT (2025) Paul Rudd, Jenna Ortega",
+        "channel": "KinoCheck",
+        "description": "Offizieller \"Death of a Unicorn\" Trailer Deutsch German 2025 | Abonnieren ➤ https://abo.yt/kc | (OT: Death of a Unicorn) Paul ...",
+        "published_at": "2025-04-21T12:06:37Z"
+      }
+    ],
+    "note": "реал: мульти-валидный RU-дубляж 2025 (Kinoman #1/#2/#3 7ewzFEub32Q/r0eKbYttj64/8mePkYE0o_g, топКино 6dQYK51161g)",
+    "tmdb_videos": [
+      {
+        "key": "r0eKbYttj64",
+        "iso_639_1": "ru",
+        "type": "Trailer",
+        "official": false,
+        "site": "YouTube",
+        "name": "Смерть единорога — Русский трейлер #2 (Дубляж, 2025)"
+      },
+      {
+        "key": "TlF0r0nc2Jo",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Jenna Ortega & Paul Rudd HIT A UNICORN"
+      },
+      {
+        "key": "uG2gsnq7SJE",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Odd 6 NOW PLAYING"
+      },
+      {
+        "key": "iPUCGB6NOnk",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Carnage 6 NOW PLAYING"
+      },
+      {
+        "key": "_WadST9QnkQ",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Discovering The Unicorn"
+      },
+      {
+        "key": "J2slPTOH4S4",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Only in UK Cinemas April 4 | Book Tickets Now"
+      },
+      {
+        "key": "KrrIjeQVoVk",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Only in UK Cinemas April 4 | Book Tickets Now"
+      },
+      {
+        "key": "yxOEuEDtn9A",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "On Three"
+      },
+      {
+        "key": "b6BcexVCj6A",
+        "iso_639_1": "en",
+        "type": "Clip",
+        "official": true,
+        "site": "YouTube",
+        "name": "Exclusive Clip"
+      },
+      {
+        "key": "75_HJDV_09I",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Save 15 GET TICKETS"
+      },
+      {
+        "key": "uS5BMrteLG8",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Run 15 GET TICKETS"
+      },
+      {
+        "key": "ui_F_e5TEQQ",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Only In UK Cinemas April 4"
+      },
+      {
+        "key": "8gnR7MfJ9v0",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Featurette"
+      },
+      {
+        "key": "kbscSSGkOQI",
+        "iso_639_1": "en",
+        "type": "Teaser",
+        "official": true,
+        "site": "YouTube",
+        "name": "Official Promo"
+      },
+      {
+        "key": "aQOle3MHnGs",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Trailer #2"
+      },
+      {
+        "key": "fOfndMsG8rs",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Trailer"
+      },
+      {
+        "key": "9cMIarrxLGs",
+        "iso_639_1": "en",
+        "type": "Trailer",
+        "official": true,
+        "site": "YouTube",
+        "name": "Death Of A Unicorn | Official Trailer HD | A24"
+      }
+    ]
+  },
+  {
+    "film": {
+      "ru_title": "Крайние меры",
+      "original_title": "",
+      "year": 2026
+    },
+    "correct": [
+      "cr0vdzKoD-E"
+    ],
+    "candidates": [
+      {
+        "video_id": "3Tb3ujNVmBw",
+        "title": "Коммерсант · Трейлер · Фильм 2026",
+        "channel": "В Рейтинге 5⭐",
+        "description": "трейлер фильма «Коммерсант» 2026 года Москва, 1996 год. У молодого и предприимчивого банкира Андрея Рубанова ...",
+        "published_at": "2026-02-25T18:19:42Z"
+      },
+      {
+        "video_id": "4QEzosi6h-s",
+        "title": "Крайние меры _ Краткий Обзор идата выхода 2026",
+        "channel": "Всё о кино  Последние новости сериалов и фильмов",
+        "description": "Сериал Крайние меры (2024) Жанры: Комедии, Детективы, Боевики, Драма Дата выхода в РФ: 2024 год Режиссёр: Виктор ...",
+        "published_at": "2026-06-01T06:00:28Z"
+      },
+      {
+        "video_id": "Lf47ebSj8MQ",
+        "title": "Крайние меры 2 сезон 1 серия (17 серия) - Дата выхода (2026)",
+        "channel": "Лучшие и самые последние новости сериалов и фильмов",
+        "description": "Крайние меры 2 сезон 1 серия (17 серия) - Дата выхода (2026)",
+        "published_at": "2026-06-01T15:37:37Z"
+      },
+      {
+        "video_id": "qpMTP6obUeo",
+        "title": "Крайние меры (Официальный трейлер)",
+        "channel": "WRC Production | MineCraft",
+        "description": "Крайние меры - история о бывшем преступнике который вновь вернулся к истокам из-за желания мстить за оскорбление ...",
+        "published_at": "2026-04-30T21:00:06Z"
+      },
+      {
+        "video_id": "cr0vdzKoD-E",
+        "title": "Крайние меры 1-32 серия | Алексей Макаров | детектив, боевик | Wink, РЕН ТВ | 2026 | АНОНС",
+        "channel": "Сериальные Новинки",
+        "description": "«Крайние меры» (2026) — российский ироничный детектив с элементами боевика, драмы и комедии. Главную роль ...",
+        "published_at": "2026-05-30T06:44:55Z"
+      }
+    ],
+    "trap": [
+      "qpMTP6obUeo"
+    ],
+    "note": "реал #380 (пул записан живьём 2026-07-26 через search_candidates): WRONG — единственный кейс, где стратегия берёт верифицированно ЧУЖУЮ работу. Эталон — сериал РЕН ТВ/Wink с Алексеем Макаровым; настоящего трейлера на дату записи не существует, в пуле лучший доступный артефакт правильной работы — анонс cr0vdzKoD-E (описание называет майора Егора Звягина и Макарова). correct=null сознательно НЕ выбран: в пуле есть годный к отправке ролик правильного сериала, и «правильный ответ — не отправлять ничего» штрафовало бы как wrong изменение, которое доставит пользователю верную ссылку. trap qpMTP6obUeo — «Крайние меры (Официальный трейлер)» канала «WRC Production | MineCraft»: фанатский Minecraft-продакшен, описание про другой сюжет + ссылка на vk.com/wrcproduction_official (проверка: videos.list по video_id → channelTitle + description). Слово «трейлер» в заголовке даёт ему trailer_signal=+1 и топ-ранг над анонсом. Повторная запись пула через час qpMTP6obUeo уже не вернула — иллюстрация того, зачем фикстуры заморожены.",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Леший",
+      "original_title": "",
+      "year": 2026
+    },
+    "correct": [
+      "0En-tU74Mrs",
+      "m8lvkE3OZz0",
+      "jDqlMBSadtQ"
+    ],
+    "candidates": [
+      {
+        "video_id": "gz7_jErB_-Q",
+        "title": "ЛЕШИЙ — ТИЗЕР ФИЛЬМА",
+        "channel": "ОПЕРПОСТ",
+        "description": "Не всё, что скрыто в лесу, должно быть найдено. В глухом лесу бригада лесорубов сталкивается с находкой, которую им ...",
+        "published_at": "2024-05-03T15:00:40Z"
+      },
+      {
+        "video_id": "0En-tU74Mrs",
+        "title": "Леший (2026) сериал НТВ - трейлер",
+        "channel": "OnlyTrailers",
+        "description": "Десять лет назад оперативник Сергей Гранин получил тяжёлое ранение во время опасной операции, прикрыв собой ...",
+        "published_at": "2026-06-16T11:01:59Z"
+      },
+      {
+        "video_id": "m8lvkE3OZz0",
+        "title": "Леший (2026) — сериал НТВ",
+        "channel": "Фабрика грёз",
+        "description": "Десять лет назад жизнь оперативника Сергея Гранина (Евгений Терских) резко изменилась, когда, спасая своего лучшего ...",
+        "published_at": "2026-06-10T09:47:31Z"
+      },
+      {
+        "video_id": "6R1wJU-CoU4",
+        "title": "ЛЕШИЙ  -  ФЭНТЕЗИ ТРИЛЛЕР УЖАСЫ ДЕТЕКТИВ ДРАМА (ТРЕЙЛЕР 2026)",
+        "channel": "KinoTrailerPark - КиноТрейлерПарк",
+        "description": "ЛЕШИЙ - ФЭНТЕЗИ ТРИЛЛЕР УЖАСЫ ДЕТЕКТИВ ДРАМА (ТРЕЙЛЕР 2026) ЕСЛИ ВАМ НРАВЯТСЯ ЭТИ ВИДЕО ...",
+        "published_at": "2024-09-17T15:42:16Z"
+      },
+      {
+        "video_id": "jDqlMBSadtQ",
+        "title": "Леший | 1 сезон | 1-30 серия | Русский трейлер | 2026 | Все о сериале - garry.cool",
+        "channel": "Garry Cool",
+        "description": "Десять лет назад жизнь оперативника Сергея Гранина резко изменилась, когда он, спасая своего друга и напарника Юру ...",
+        "published_at": "2026-06-10T17:36:53Z"
+      }
+    ],
+    "trap": [
+      "gz7_jErB_-Q",
+      "6R1wJU-CoU4"
+    ],
+    "note": "реал #380 (пул записан живьём 2026-07-26): hit с конкурентоспособной ловушкой. Эталон — сериал НТВ 2026 про оперативника Гранина (описания всех трёх роликов совпадают по сюжету). trap — хоррор-фильм «Леший» о бригаде лесорубов, kinopoisk.ru/film/5503188 (проверка: videos.list → description): gz7_jErB_-Q тизер, 6R1wJU-CoU4 «(ТРЕЙЛЕР 2026)» — RU + слово «трейлер» + совпавший год, то есть делит топ-ранг с эталонными. Hit здесь — ПО ПОРЯДКУ ПУЛА при равном ранге, а не запас прочности: перезапись пула перевернёт кейс в wrong без единой строки кода.",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Новичок",
+      "original_title": "",
+      "year": 2025
+    },
+    "correct": [
+      "xWVN2FlYASc",
+      "FaBcqHcm5eU",
+      "78aZ2X6oP1o",
+      "tTKsWKoMcA0"
+    ],
+    "candidates": [
+      {
+        "video_id": "xWVN2FlYASc",
+        "title": "Новичок — Русский трейлер (Дубляж, 2025)",
+        "channel": "Kinoman",
+        "description": "Официальный дублированный трейлер фильма «Новичок» 2024 года Официальные русские трейлеры к фильмам, ...",
+        "published_at": "2024-11-14T06:41:42Z"
+      },
+      {
+        "video_id": "FaBcqHcm5eU",
+        "title": "Новичок / The Amateur (2025) - HD Трейлер на русском (Дубляж)",
+        "channel": "MovCollections",
+        "description": "Криптографу ЦРУ удается шантажом заставить свое агентство обучить его, чтобы позволить ему преследовать группу ...",
+        "published_at": "2024-11-15T09:43:49Z"
+      },
+      {
+        "video_id": "1N5vlpqQAjY",
+        "title": "Новичок (1 Сезон) | Русский Трейлер | (Дубляж, 2025)",
+        "channel": "The Sound Production (Перевод и Озвучивание)",
+        "description": "Описание: После развода и закрытия своей фирмы 45-летний Джон Нолан решает начать новую жизнь и идёт работать в ...",
+        "published_at": "2025-07-26T08:24:54Z"
+      },
+      {
+        "video_id": "78aZ2X6oP1o",
+        "title": "Новичок — Трейлер на русском (Дубляж, 2025)",
+        "channel": "trailers",
+        "description": "Новичок — Трейлер на русском (Дубляж, 2025) https://youtu.be/78aZ2X6oP1o О фильме \"Новичок\" Время: 2часа 3 мин ...",
+        "published_at": "2025-07-22T17:45:00Z"
+      },
+      {
+        "video_id": "tTKsWKoMcA0",
+        "title": "Новичок (2025) Трейлер фильма",
+        "channel": "МИФ КИНО",
+        "description": "Русский трейлер фильма «Новичок» 2025 года. Про что фильм «Новичок»: В центре сюжета картины история ...",
+        "published_at": "2025-06-12T21:45:04Z"
+      }
+    ],
+    "trap": [
+      "1N5vlpqQAjY"
+    ],
+    "note": "реал #380 (пул записан живьём 2026-07-26): hit с конкурентоспособной ловушкой. Эталон — фильм «Новичок» / The Amateur 2025 (Рами Малек, криптограф ЦРУ мстит за жену). trap 1N5vlpqQAjY «Новичок (1 Сезон)» — сериал The Rookie 2018 про Джона Нолана из полиции Лос-Анджелеса (проверка: videos.list → description), другое произведение; но RU + «Русский Трейлер» + 2025 в заголовке → делит топ-ранг с эталонными. Hit по порядку пула, не по запасу прочности.",
+    "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Marvel Человек-Паук 2",
+      "original_title": "Marvel's Spider-Man 2 (Digital Deluxe Edition)",
+      "year": 2025
+    },
+    "correct": [
+      "nq1M_Wc4FIc",
+      "RBkBs4R0mJk",
+      "9fVYKsEmuRo",
+      "wOJaeD0Si04"
+    ],
+    "trap": [
+      "3hKDkoLhrfE",
+      "9oe6tELPFPE",
+      "Vstf1W5mA7c",
+      "P3uI5sLosKU"
+    ],
+    "candidates": [
+      {
+        "video_id": "3hKDkoLhrfE",
+        "title": "Человек-Паук: Новый день — Русский трейлер 2 (4K Дубляж, 2026) Том Холланд",
+        "channel": "FRESH Trailers",
+        "description": "Официальный новый дублированный трейлер 2 фильма «Человек-Паук: Новый день» [2026] — новая глава истории ...",
+        "published_at": "2026-06-17T21:39:01Z"
+      },
+      {
+        "video_id": "Vstf1W5mA7c",
+        "title": "SPIDER-MAN: BRAND NEW DAY (2026) | Special Trailer \"Tombstone\" | Marvel Comics | Concept",
+        "channel": "TeaserCon",
+        "description": "SpiderManBrandNewDay #SpiderMan #Brandnewday #Marvel #Comics Attention viewers! (ITS FAN MADE) Marvel Studios is ...",
+        "published_at": "2026-07-27T12:22:08Z"
+      },
+      {
+        "video_id": "P3uI5sLosKU",
+        "title": "SPIDER-MAN: BRAND NEW DAY – Final Trailer (Peter’s Journey) 4K",
+        "channel": "Sony Pictures Entertainment",
+        "description": "It's about to be a Brand New Day. Get tickets now. #SpiderManBrandNewDay is in theatres July 31.",
+        "published_at": "2026-07-21T16:00:31Z"
+      },
+      {
+        "video_id": "nq1M_Wc4FIc",
+        "title": "Marvel's Spider-Man 2 - Be Greater. Together. Trailer I PS5 Games",
+        "channel": "PlayStation",
+        "description": "https://www.playstation.com/en-us/games/marvels-spider-man-2 Spider-Men, Peter Parker and Miles Morales, return for an ...",
+        "published_at": "2023-10-03T00:25:19Z"
+      },
+      {
+        "video_id": "9oe6tELPFPE",
+        "title": "Человек-Паук: Новый день — Русский трейлер (4K Дубляж, 2026) Том Холланд",
+        "channel": "FRESH Trailers",
+        "description": "Человек-Паук: Новый день — Русский трейлер (4K Дубляж, 2026) Том Холланд Дата выхода в прокат в Казахстане: 30 ...",
+        "published_at": "2026-03-18T11:53:42Z"
+      },
+      {
+        "video_id": "RBkBs4R0mJk",
+        "title": "Marvel's Spider-Man 2 - Digital Deluxe Trailer | PS5 Games",
+        "channel": "Marvel Entertainment",
+        "description": "Pre-Order Marvel's Spider-Man 2 Digital Deluxe Edition on the PlayStation Store, available October 20, 2023, only on PlayStation ...",
+        "published_at": "2023-09-14T23:00:19Z"
+      },
+      {
+        "video_id": "9fVYKsEmuRo",
+        "title": "Marvel's Spider-Man 2 - Launch Trailer I PS5 Games",
+        "channel": "PlayStation",
+        "description": "https://www.playstation.com/en-us/games/marvels-spider-man-2/ Spider-Men, Peter Parker and Miles Morales, return for an ...",
+        "published_at": "2023-10-15T16:00:38Z"
+      },
+      {
+        "video_id": "_szw1d9OGDM",
+        "title": "All Marvel's Spider-Man 2 Digital Deluxe Edition Suits",
+        "channel": "Alby",
+        "description": "Join this channel to get access to perks: https://www.youtube.com/channel/UCyY-4mGX9njc4MtTo-yldrw/join ▽ Social Media ...",
+        "published_at": "2023-10-20T10:02:13Z"
+      },
+      {
+        "video_id": "wOJaeD0Si04",
+        "title": "Marvel's Spider-Man 2 - Announce Trailer | PC Games",
+        "channel": "PlayStation",
+        "description": "Now coming to PC, Spider-Men Peter Parker and Miles Morales return for an exciting new adventure in the critically acclaimed ...",
+        "published_at": "2024-10-18T21:00:41Z"
+      }
+    ],
+    "note": "реал #412 (пул записан живьём 2026-07-29 через search_candidates, без --record по всему файлу — квота 100 search.list/сутки): ПЕРВЫЙ игровой кейс в наборе, закрывает часть ledger U. Раздача kinozal — 'Marvel Человек-Паук 2 / Marvel's Spider-Man 2 (Digital Deluxe Edition) / x64 / RU / Action / 2025 / Portable / PC (Windows)'; в проде 2026-07-29 давала '🎬 трейлер не найден' при pool=5. accept-set — четыре официальных трейлера игры с каналов PlayStation/Marvel Entertainment. trap — четыре трейлера ФИЛЬМА 'Человек-Паук: Новый день' (2026): правдоподобные чужие кандидаты, которые ловятся только годом. _szw1d9OGDM (нарезка костюмов) не эталон и не ловушка — та же игра, но не трейлер. tmdb_videos пуст не по регрессии TMDB: игры этот источник структурно не обслуживает.",
+    "tmdb_videos": []
+  }
+]

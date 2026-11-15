@@ -1,0 +1,159 @@
+"""Baseline gate over `find_trailer`, ported from kinozal_scraper `test_eval_baseline.py` (40cd99d).
+
+The committed baseline is kinozal's own (design 9): a green gate proves per-case parity
+with kinozal, and any moved case — regression or improvement — turns it red.
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any
+
+import pytest
+
+from scripts import eval_trailers
+from scripts.eval_trailers import (
+    GOLDEN_PATH,
+    BASELINE_PATH,
+    FrozenRetriever,
+    GoldenCase,
+    GoldenSetError,
+    Outcome,
+    build_baseline,
+    classify,
+    compare_to_baseline,
+    evaluate,
+    load_baseline,
+    load_golden_set,
+    save_baseline,
+)
+
+
+@pytest.fixture
+def mini_rows(write: Any) -> list[tuple[GoldenCase, str | None, Outcome]]:
+    """A two-case set: one hit and one miss."""
+    cases = load_golden_set(
+        write(
+            [
+                {
+                    "film": {
+                        "ru_title": "Гнев",
+                        "original_title": "Man on Fire",
+                        "year": 2026,
+                    },
+                    "correct": "ru01",
+                    "candidates": [{"video_id": "ru01", "title": "Гнев 2026 трейлер"}],
+                    "note": "",
+                },
+                {
+                    "film": {
+                        "ru_title": "Волк",
+                        "original_title": "Wolf",
+                        "year": 2026,
+                    },
+                    "correct": "ru02",
+                    "candidates": [],
+                    "note": "",
+                },
+            ]
+        )
+    )
+    rows = evaluate(cases)
+    return rows
+
+
+def test_match_reports_ok(
+    mini_rows: list[tuple[GoldenCase, str | None, Outcome]],
+) -> None:
+    report = compare_to_baseline(build_baseline(mini_rows), mini_rows)
+    assert report.ok, report.text
+
+
+def test_improvement_also_not_ok(
+    mini_rows: list[tuple[GoldenCase, str | None, Outcome]],
+) -> None:
+    improved: list[tuple[GoldenCase, str | None, Outcome]] = [
+        (case, "ru01", "hit") for case, _, _ in mini_rows
+    ]
+    report = compare_to_baseline(build_baseline(mini_rows), improved)
+    assert not report.ok
+    assert "--update-baseline" in report.text
+
+
+def test_desynced_length_fails_loud(
+    mini_rows: list[tuple[GoldenCase, str | None, Outcome]],
+) -> None:
+    with pytest.raises(GoldenSetError):
+        compare_to_baseline(build_baseline(mini_rows)[:1], mini_rows)
+
+
+def test_desynced_film_name_fails_loud(
+    mini_rows: list[tuple[GoldenCase, str | None, Outcome]],
+) -> None:
+    baseline = build_baseline(mini_rows)
+    baseline[0].film = "Совсем другой фильм"
+    with pytest.raises(GoldenSetError):
+        compare_to_baseline(baseline, mini_rows)
+
+
+@pytest.mark.parametrize(
+    "entry", [{"i": 0, "film": "Гнев"}, {"i": 0, "film": "Гнев", "outcome": "maybe"}]
+)
+def test_load_baseline_rejects_malformed_entry(
+    write: Any, entry: dict[str, Any]
+) -> None:
+    with pytest.raises(GoldenSetError):
+        load_baseline(write([entry]))
+
+
+def test_golden_set_keeps_verified_traps() -> None:
+    marked = [c.film.ru_title for c in load_golden_set(GOLDEN_PATH) if c.trap]
+    assert len(marked) >= 3, marked
+
+
+def test_trap_pick_classifies_as_wrong() -> None:
+    for case in (c for c in load_golden_set(GOLDEN_PATH) if c.trap):
+        for trap_id in case.trap:
+            assert classify(case.correct, trap_id) == "wrong", (
+                case.film.ru_title,
+                trap_id,
+            )
+
+
+def test_committed_baseline_matches() -> None:
+    rows = evaluate(load_golden_set(GOLDEN_PATH))
+    baseline = load_baseline(BASELINE_PATH)
+    report = compare_to_baseline(baseline, rows)
+    assert report.ok, report.text
+    outcomes = [e.outcome for e in baseline]
+    assert (outcomes.count("hit"), outcomes.count("miss"), outcomes.count("wrong")) == (
+        29,
+        2,
+        1,
+    )
+
+
+def test_regressed_selection_is_named() -> None:
+    cases = load_golden_set(GOLDEN_PATH)
+    rows = evaluate(cases, retriever_for=lambda _case: FrozenRetriever([]))
+    report = compare_to_baseline(load_baseline(BASELINE_PATH), rows)
+    assert not report.ok
+    assert "hit→miss" in report.text
+    assert repr(cases[0].film.ru_title) in report.text
+
+
+@pytest.mark.parametrize("drifted", [False, True], ids=["match", "mismatch"])
+def test_cli_exit_status_follows_baseline(
+    drifted: bool,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    baseline = load_baseline(BASELINE_PATH)
+    if drifted:
+        baseline[0].outcome = "wrong" if baseline[0].outcome != "wrong" else "hit"
+    path = tmp_path / "baseline.json"
+    save_baseline(path, baseline)
+    monkeypatch.setattr(eval_trailers, "BASELINE_PATH", path)
+    assert eval_trailers.main([]) == (1 if drifted else 0)
+    assert ("MISMATCH" in capsys.readouterr().out) is drifted
