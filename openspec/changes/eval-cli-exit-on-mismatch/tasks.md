@@ -1,3 +1,7 @@
+## 0. Delivery start
+
+- [x] 0.1 Spec correction on the PR #4 branch of `extract-trailer-search-library` (tracking issue 1).
+
 ## 1. Fix
 
 - [x] 1.1 Return non-zero from `scripts/eval_trailers.py` on a baseline mismatch; verify: `python -m pytest tests/test_eval_baseline.py -k cli_exit`.
