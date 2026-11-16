@@ -1,0 +1,41 @@
+{
+  "verdict": "approve",
+  "round": 2,
+  "reviewer": "architect-reviewer",
+  "reasoning": "All three round-1 findings are closed in the artifacts. The design is minimal, every delta scenario maps to a test that fails first or to an existing guard, and the platform behaviour the design relies on is observed for each query the plan issues.",
+  "classes": {
+    "simpler": {
+      "evidence": "design.md decisions 1-2 weigh season_year (rejected by the owner 2026-11-16) and a year bypass only for season-marked candidates. Queries-only is rejected by 'Requested season beats an earlier season' (the pool in proposal Why mixes seasons). Rank-only is rejected by 'Season candidate passes despite a later year' (title_year_matches drops the 2026 candidate). title_season is one module regex and adds no dependency.",
+      "result": "ok"
+    },
+    "map": {
+      "evidence": "Every scenario in both spec deltas has a row in the tasks.md map: 17 in trailer-selection and 5 in trailer-retrieval, including the new 'Season query without an original title', which maps to test_season_queries (parametrized). The unchanged test names exist (tests/test_strategy.py:25-86, tests/test_retrieval.py:45-76, tests/test_eval_baseline.py:123). Query union now reads 'the same queries SHALL instead read …', so the non-empty/differs condition still applies. Design 6 states it over the same titles list, so ru == original issues one season query, as 'Equal titles query once' requires. The test_season_rejects_earlier_year row is now a plain new test.",
+      "result": "ok"
+    },
+    "red": {
+      "evidence": "Tasks 1.1-1.2 write every new map test and run check_red on all of them except the live one. Each one fails before the change: FilmProfile has no season field (strategy.py:51-62), and _queries has no season branch (retrieval.py:30-35). The declared test exists (.github/agent-process-quality.json).",
+      "result": "ok"
+    },
+    "platform": {
+      "evidence": "design.md Standard approach records live YtDlpRetriever()._search_one runs dated 2026-11-16, with video ids, for both planned queries. 'Джентльмены 2 сезон trailer' returned 5 results, all about season 2. 'The Gentlemen season 2 trailer' returned 01IeKpHvgvM, aOY7HTQlsSo, NGu-GD-Bk7g, Ks4qEmL_6sw and tridpi1XcaQ, all Season 2, with years 2026/2025 in the titles, which also confirms the lower-bound year rule. YouTube search.list is cited by URL.",
+      "result": "ok"
+    },
+    "replaced": {
+      "evidence": "Decision 6 replaces year with season in the queries. Decision 2 relaxes the exact-year guard to a lower bound when a season is given. Risks names what stops being proven (a later same-name title passes) and the catcher (season query text plus the live check 4.2). Without a season the guard is unchanged (at_least=profile.season is not None). Rollback is a re-pin to v0.1.0.",
+      "result": "ok"
+    },
+    "catcher": {
+      "evidence": "Three catchers. (1) The no-season regression: test_committed_baseline_matches runs in the declared test (pytest hook, manual stage; task 5.3 and CI) on the branch head, and task 4.1 runs eval_trailers.py. (2) The later same-name title and the live query quality: task 4.2 test_gentlemen_season_2 runs manually on the branch head, and its result goes into the PR report (task 6.1). (3) An unrecognised marker: at runtime the '; season N fallback' suffix in reason plus logger.warning (design 5) reaches the consumer.",
+      "result": "ok"
+    },
+    "length": {
+      "evidence": "Added or edited sentences. Candidate relevance: 23 words, all asserted (passes a later year, rejects an earlier year). Candidate ranking: 56 words, all asserted (beats an earlier season, markers parametrized over 5 forms, season 1 unmarked). It now defines 'counts as season N', and Series season reuses that term, so the N = 1 contradiction is gone. Query union: 27 words, all asserted (Season queries, Season query without an original title). Series season: 64 words, all asserted (fallback, invalid season, baseline).",
+      "result": "ok"
+    },
+    "bespoke": {
+      "evidence": "Standard approach cites guessit (URL) and parse-torrent-title for season parsing, and rejects them: a new dependency for one number (§VII), and rules built for file names. The YouTube Data API search.list (URL) has no season filter. The plan adds no script or check.",
+      "result": "ok"
+    }
+  },
+  "scenario_coverage": []
+}
