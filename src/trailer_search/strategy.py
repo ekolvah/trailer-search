@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import logging
 import re
 from dataclasses import dataclass, field
 from typing import Protocol
@@ -11,8 +12,11 @@ from trailer_search.text import (
     YEAR_PATTERN,
     has_cyrillic,
     normalize_title,
+    title_season,
     title_year_matches,
 )
+
+logger = logging.getLogger(__name__)
 
 
 def _contains_phrase(haystack: str, phrase: str) -> bool:
@@ -51,7 +55,8 @@ def _title_tokens_in(film_tokens: list[str], cand_tokens: list[str]) -> bool:
 @dataclass
 class FilmProfile:
     """What selection knows about a film; `cast`/`director`/`genre`/`description`
-    are optional metadata (cast in a candidate description breaks ties)."""
+    are optional metadata (cast in a candidate description breaks ties). `season`
+    asks a series for that season's trailer; `year` is then the first season's year."""
 
     ru_title: str
     original_title: str
@@ -60,6 +65,11 @@ class FilmProfile:
     director: str = ""
     genre: str = ""
     description: str = ""
+    season: int | None = None
+
+    def __post_init__(self) -> None:
+        if self.season is not None and self.season < 1:
+            raise ValueError(f"season must be >= 1, got {self.season}")
 
 
 @dataclass
@@ -95,8 +105,11 @@ class HeuristicStrategy:
 
     1. **relevance**: the candidate title contains `ru_title` or `original_title`
        (or `original_title` without its parenthesized edition suffix) tokens in order,
-       allowing one numeric sequel token, and its year matches a truthy profile year.
-    2. **ranking** by `(is_ru, cast_hits, trailer_signal)`, descending and stable.
+       allowing one numeric sequel token, and its year matches a truthy profile year
+       (with a season: names no year earlier than the profile year).
+    2. **ranking** by `(season_hit, is_ru, cast_hits, trailer_signal)`, descending
+       and stable; a pick that misses the requested season gets a `season N fallback`
+       reason suffix and a WARNING.
 
     A unique top rank is a confident pick (0.9); equal top ranks give the first in
     order with 0.3 and an `ambiguous` reason; no relevant candidate gives no pick."""
@@ -119,24 +132,31 @@ class HeuristicStrategy:
             for n in (normalize_title(x) for x in film_profile.cast[: self._MAX_CAST])
             if n
         ]
-        keys = [self._rank(c, cast) for c in relevant]
+        season = film_profile.season
+        keys = [self._rank(c, cast, season) for c in relevant]
         best_key = max(keys)  # first of the top rank, as a stable descending sort
         best = relevant[keys.index(best_key)]
         tied = keys.count(best_key)
+        season_hit, is_ru, cast_hits, _trailer = best_key
         if tied > 1:
-            return TrailerPick(
-                best.video_id,
-                best.title,
-                0.3,
-                f"ambiguous: {tied} candidates share top rank",
+            confidence = 0.3
+            reason = f"ambiguous: {tied} candidates share top rank"
+        else:
+            confidence = 0.9
+            reason = (
+                "cast tie-break"
+                if cast_hits
+                else ("ru language" if is_ru else "sole match")
             )
-        is_ru, cast_hits, _trailer = best_key
-        reason = (
-            "cast tie-break"
-            if cast_hits
-            else ("ru language" if is_ru else "sole match")
-        )
-        return TrailerPick(best.video_id, best.title, 0.9, reason)
+        if season is not None and not season_hit:
+            logger.warning(
+                "no season %d trailer for %r; falling back to %r",
+                season,
+                film_profile.ru_title,
+                best.title,
+            )
+            reason += f"; season {season} fallback"
+        return TrailerPick(best.video_id, best.title, confidence, reason)
 
     @staticmethod
     def _film_titles(profile: FilmProfile) -> list[list[str]]:
@@ -157,12 +177,21 @@ class HeuristicStrategy:
         cand_tokens = normalize_title(candidate.title).split()
         if not any(_title_tokens_in(t, cand_tokens) for t in film_titles):
             return False
-        return not profile.year or title_year_matches(candidate.title, profile.year)
+        return not profile.year or title_year_matches(
+            candidate.title, profile.year, at_least=profile.season is not None
+        )
 
-    def _rank(self, candidate: Candidate, cast: list[str]) -> tuple[int, int, int]:
+    def _rank(
+        self, candidate: Candidate, cast: list[str], season: int | None
+    ) -> tuple[int, int, int, int]:
         description = normalize_title(candidate.description)
         cast_hits = sum(1 for name in cast if _contains_phrase(description, name))
+        named = title_season(candidate.title) if season is not None else None
+        season_hit = season is not None and (
+            named == season or (named is None and season == 1)
+        )
         return (
+            int(season_hit),
             int(has_cyrillic(candidate.title)),
             cast_hits,
             self._trailer_signal(candidate),

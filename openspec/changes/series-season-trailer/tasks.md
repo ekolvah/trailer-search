@@ -9,10 +9,10 @@
 
 ## 2. Selection
 
-- [ ] 2.1 `FilmProfile.season: int | None = None` with `__post_init__` raising `ValueError` below 1 (design 7); verify: `python -m pytest tests/test_strategy.py -k invalid_season`.
-- [ ] 2.2 `title_season` in `text.py` (design 3) and `season_hit` as the first `_rank` key (design 4); verify: `python -m pytest tests/test_strategy.py -k "season_beats or markers or season_1"`.
-- [ ] 2.3 `title_year_matches(..., at_least=)` and its use in `_relevant` when a season is given (design 2); verify: `python -m pytest tests/test_strategy.py -k year`.
-- [ ] 2.4 Fallback suffix `; season N fallback` and `logger.warning` naming the film and season (design 5); verify: `python -m pytest tests/test_strategy.py`; commit.
+- [x] 2.1 `FilmProfile.season: int | None = None` with `__post_init__` raising `ValueError` below 1 (design 7); verify: `python -m pytest tests/test_strategy.py -k invalid_season`.
+- [x] 2.2 `title_season` in `text.py` (design 3) and `season_hit` as the first `_rank` key (design 4); verify: `python -m pytest tests/test_strategy.py -k "season_beats or markers or season_1"`.
+- [x] 2.3 `title_year_matches(..., at_least=)` and its use in `_relevant` when a season is given (design 2); verify: `python -m pytest tests/test_strategy.py -k year`.
+- [x] 2.4 Fallback suffix `; season N fallback` and `logger.warning` naming the film and season (design 5); verify: `python -m pytest tests/test_strategy.py`; commit.
 
 ## 3. Retrieval
 
