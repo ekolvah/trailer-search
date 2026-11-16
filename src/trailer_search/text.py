@@ -7,10 +7,26 @@ import re
 YEAR_PATTERN = r"(?:19|20)\d{2}"
 
 
-def title_year_matches(title: str, film_year: int) -> bool:
-    """Return False if the video title explicitly mentions a year other than film_year."""
+# Season markers on a `normalize_title` string: `2 сезон`, `2 й сезон`, `сезон 2`,
+# `season 2`, `s02`.
+_SEASON_RE = re.compile(
+    r"\b(?:(\d{1,2}) (?:й )?сезон|(?:сезон|season) (\d{1,2})|s(\d{2}))\b"
+)
+
+
+def title_year_matches(title: str, film_year: int, *, at_least: bool = False) -> bool:
+    """Return False if the video title explicitly mentions a year other than film_year,
+    or, with `at_least`, a year earlier than film_year."""
     title_years = {int(m) for m in re.findall(rf"\b({YEAR_PATTERN})\b", title)}
+    if at_least:
+        return all(y >= film_year for y in title_years)
     return not title_years or film_year in title_years
+
+
+def title_season(title: str) -> int | None:
+    """The season number a video title names, or None when it names none."""
+    m = _SEASON_RE.search(normalize_title(title))
+    return int(next(g for g in m.groups() if g)) if m else None
 
 
 def normalize_title(s: str) -> str:

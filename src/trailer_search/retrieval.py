@@ -31,6 +31,11 @@ def _queries(profile: FilmProfile) -> list[str]:
     titles = [profile.ru_title]
     if profile.original_title and profile.original_title != profile.ru_title:
         titles.append(profile.original_title)
+    season = profile.season
+    if season is not None:
+        return [f"{titles[0]} {season} сезон trailer"] + [
+            f"{t} season {season} trailer" for t in titles[1:]
+        ]
     year = profile.year
     return [f"{t} {year} trailer" if year else f"{t} trailer" for t in titles]
 
