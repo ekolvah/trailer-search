@@ -4,8 +4,8 @@
 
 ## 1. RED
 
-- [ ] 1.1 Add the new tests of the map below; verify: every map node id exists.
-- [ ] 1.2 Run `agent-process check_red` with every new map node id except the `live` one; verify: it exits 0 (all fail), then commit RED with the Group 1 ticks.
+- [x] 1.1 Add the new tests of the map below; verify: every map node id exists.
+- [x] 1.2 Run `agent-process check_red` with every new map node id except the `live` one; verify: it exits 0 (all fail), then commit RED with the Group 1 ticks.
 
 ## 2. Selection
 

@@ -93,6 +93,31 @@ def test_query_without_year() -> None:
     assert search.queries == ["Дюна trailer"]
 
 
+@pytest.mark.parametrize(
+    ("original_title", "expected"),
+    [
+        (
+            "The Gentlemen",
+            ["Джентльмены 2 сезон trailer", "The Gentlemen season 2 trailer"],
+        ),
+        ("", ["Джентльмены 2 сезон trailer"]),
+    ],
+)
+def test_season_queries(original_title: str, expected: list[str]) -> None:
+    search = _Branches({})
+    search_union(
+        FilmProfile(
+            ru_title="Джентльмены",
+            original_title=original_title,
+            year=2024,
+            season=2,
+        ),
+        search,
+        max_workers=1,
+    )
+    assert search.queries == expected
+
+
 def test_one_branch_failure_warns(caplog: pytest.LogCaptureFixture) -> None:
     search = _Branches({RU_Q: [_c("A")], ORIG_Q: RuntimeError("YouTube 500")})
     with caplog.at_level(logging.WARNING, logger="trailer_search"):

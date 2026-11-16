@@ -7,6 +7,10 @@ in pool order with low confidence and an `ambiguous` reason.
 
 from __future__ import annotations
 
+import logging
+
+import pytest
+
 from trailer_search.strategy import (
     Candidate,
     FilmProfile,
@@ -233,3 +237,83 @@ def test_edition_in_candidate_title_does_not_win_over_trailer() -> None:
         ),
     ]
     assert _pick(film, cands).video_id == "real"
+
+
+# ── series season (series-season-trailer) ─────────────────────────────────────
+
+GENTLEMEN_S1_RU = "Джентльмены (1 сезон) — Русский трейлер (4К, 2024)"
+
+
+def _gentlemen(season: int) -> FilmProfile:
+    return FilmProfile(
+        ru_title="Джентльмены",
+        original_title="The Gentlemen",
+        year=2024,
+        season=season,
+    )
+
+
+def test_season_candidate_passes_later_year() -> None:
+    title = "Джентльмены (2 сезон) - Русский трейлер (Дубляж, 2026) Гай Ричи"
+    pick = _pick(_gentlemen(2), [Candidate(video_id="s2", title=title)])
+    assert pick.video_id == "s2"
+
+
+def test_season_rejects_earlier_year() -> None:
+    cands = [Candidate(video_id="old", title="The Gentlemen 2019 Official Trailer")]
+    assert _pick(_gentlemen(2), cands).video_id is None
+
+
+def test_requested_season_beats_earlier() -> None:
+    cands = [
+        Candidate(video_id="s1", title=GENTLEMEN_S1_RU),
+        Candidate(
+            video_id="s2", title="The Gentlemen: Season 2 | Official Trailer | Netflix"
+        ),
+    ]
+    pick = _pick(_gentlemen(2), cands)
+    assert (pick.video_id, pick.confidence) == ("s2", 0.9)
+
+
+@pytest.mark.parametrize(
+    "title",
+    [
+        "ДЖЕНТЛЬМЕНЫ 2 СЕЗОН | Трейлер",
+        "Джентльмены · 2-й сезон · Трейлер",
+        "Джентльмены. Сезон 2 — трейлер",
+        "The Gentlemen Season 2 Trailer",
+        "The Gentlemen S02 Trailer",
+    ],
+)
+def test_season_markers_recognised(title: str) -> None:
+    cands = [
+        Candidate(video_id="s1", title="Джентльмены (1 сезон) — Русский трейлер"),
+        Candidate(video_id="s2", title=title),
+    ]
+    assert _pick(_gentlemen(2), cands).video_id == "s2"
+
+
+def test_season_1_accepts_unmarked() -> None:
+    cands = [
+        Candidate(video_id="s2", title="Джентльмены (2 сезон) — Русский трейлер"),
+        Candidate(video_id="plain", title="Джентльмены — Русский трейлер"),
+    ]
+    pick = _pick(_gentlemen(1), cands)
+    assert pick.video_id == "plain"
+    assert "fallback" not in pick.reason
+
+
+def test_missing_season_falls_back_visibly(caplog: pytest.LogCaptureFixture) -> None:
+    cands = [Candidate(video_id="s2", title="Джентльмены (2 сезон) — Русский трейлер")]
+    with caplog.at_level(logging.WARNING, logger="trailer_search"):
+        pick = _pick(_gentlemen(3), cands)
+    assert pick.video_id == "s2"
+    assert pick.reason.endswith("; season 3 fallback")
+    warnings = [r.getMessage() for r in caplog.records if r.levelno == logging.WARNING]
+    assert any("Джентльмены" in w and "3" in w for w in warnings), warnings
+
+
+@pytest.mark.parametrize("season", [0, -1])
+def test_invalid_season_rejected(season: int) -> None:
+    with pytest.raises(ValueError):
+        _gentlemen(season)
