@@ -23,6 +23,8 @@ at its top level and `YtDlpRetriever` in its `ytdlp` module. `TrailerPick` SHALL
 A candidate SHALL be relevant only when its title contains the tokens of the Russian title, the original title,
 or the original title without its parenthesised suffix, consecutively and in order, allowing one interspersed
 standalone sequel number that is not a year, and when its title names no year other than the film's year.
+When the profile gives a season, the year condition SHALL instead be that the title names no year earlier than the
+film's year.
 
 #### Scenario: No relevant candidate
 - **WHEN** no candidate title contains either film title
@@ -44,9 +46,20 @@ standalone sequel number that is not a year, and when its title names no year ot
 - **WHEN** the Russian title is `Шрэк навсегда` and a candidate title is `Шрэк 2010 навсегда трейлер`
 - **THEN** the candidate is not relevant
 
+#### Scenario: Season candidate passes despite a later year
+- **WHEN** the profile is `Джентльмены` / `The Gentlemen` / 2024 with season 2 and the only candidate is `Джентльмены (2 сезон) - Русский трейлер (Дубляж, 2026) Гай Ричи`
+- **THEN** that candidate is picked
+
+#### Scenario: Season keeps rejecting an earlier year
+- **WHEN** the profile is `Джентльмены` / `The Gentlemen` / 2024 with season 2 and the only candidate is `The Gentlemen 2019 Official Trailer`
+- **THEN** the pick has `video_id` None
+
 ### Requirement: Candidate ranking
 Relevant candidates SHALL be ranked by Cyrillic title first, then by how many of the first two cast names occur in
 the description, then by trailer words (`трейлер`, `trailer`, `дубляж`) minus teaser words (`тизер`, `teaser`).
+When the profile gives a season N, candidates whose title counts as season N SHALL rank above all others before
+those keys apply. A title counts as season N when it names season N as `N сезон`, `N-й сезон`, `сезон N`,
+`season N` or `sNN`, case-insensitively, or, for N = 1, when it names no season.
 A unique top rank SHALL give confidence 0.9; a shared top rank SHALL give the first such candidate in pool order
 with confidence 0.3 and a reason starting with `ambiguous`.
 
@@ -62,6 +75,18 @@ with confidence 0.3 and a reason starting with `ambiguous`.
 - **WHEN** two relevant candidates share the top rank
 - **THEN** the first of them in pool order is picked with confidence 0.3 and a reason starting with `ambiguous`
 
+#### Scenario: Requested season beats an earlier season
+- **WHEN** the profile has season 2 and the pool is `Джентльмены (1 сезон) — Русский трейлер (4К, 2024)` then `The Gentlemen: Season 2 | Official Trailer | Netflix`
+- **THEN** the season 2 candidate is picked with confidence 0.9
+
+#### Scenario: Season markers recognised
+- **WHEN** the profile has season 2 and a candidate title names it as `2 СЕЗОН`, `2-й сезон`, `Сезон 2`, `Season 2` or `S02`, competing with `Джентльмены (1 сезон) — Русский трейлер`
+- **THEN** the candidate naming season 2 is picked
+
+#### Scenario: Season 1 accepts an unmarked trailer
+- **WHEN** the profile has season 1 and the pool is `Джентльмены (2 сезон) — Русский трейлер` then `Джентльмены — Русский трейлер`
+- **THEN** the unmarked candidate is picked and the reason does not mention a fallback
+
 ### Requirement: Find trailer
 `find_trailer` SHALL obtain the candidate pool for a film from the given retriever, select one candidate by the
 ranking above, and return a pick whose `title` is the selected candidate's title, or None when nothing is picked.
@@ -74,3 +99,25 @@ A retrieval failure SHALL reach the caller as `TrailerRetrievalError`, never as 
 #### Scenario: Retrieval failure propagates
 - **WHEN** the retriever raises `TrailerRetrievalError`
 - **THEN** `find_trailer` raises `TrailerRetrievalError`
+
+### Requirement: Series season
+`FilmProfile` SHALL accept an optional `season`, defaulting to None, and SHALL raise `ValueError` at construction
+for a season below 1. When a season N is given and the picked candidate's title does not count as season N, the pick's
+reason SHALL end with `; season N fallback`, and a WARNING SHALL name
+the film and the season. Without a season, selection SHALL be unchanged.
+
+#### Scenario: Missing season falls back visibly
+- **WHEN** the profile has season 3 and the only relevant candidate is `Джентльмены (2 сезон) — Русский трейлер`
+- **THEN** that candidate is picked, its reason ends with `; season 3 fallback` and a WARNING names `Джентльмены` and season 3
+
+#### Scenario: Invalid season rejected
+- **WHEN** a `FilmProfile` is built with season 0 or -1
+- **THEN** `ValueError` is raised
+
+#### Scenario: Films without a season are unchanged
+- **WHEN** the committed golden set, none of whose profiles gives a season, is evaluated against its frozen pools
+- **THEN** every selection matches the committed baseline
+
+#### Scenario: Live season trailer for The Gentlemen
+- **WHEN** `find_trailer` runs with the yt-dlp retriever against live YouTube for `Джентльмены` / `The Gentlemen` / 2024 with season 2
+- **THEN** the pick's title names season 2 and contains Cyrillic, and the reason does not mention a fallback

@@ -8,9 +8,10 @@
 
 ### Requirement: Query union
 A retriever SHALL query `<title> <year> trailer` (or `<title> trailer` without a year) for the Russian title and,
-when it is non-empty and differs, for the original title. The pool SHALL list the Russian query's results first,
-then the original query's, without repeating a video id. It SHALL log each query with its duration, and the total
-search duration, at INFO.
+when it is non-empty and differs, for the original title. When the profile gives a season N, the same queries
+SHALL instead read `<Russian title> N сезон trailer` and `<original title> season N trailer`, without a year.
+The pool SHALL list the Russian query's results first, then the original query's, without repeating a video id.
+It SHALL log each query with its duration, and the total search duration, at INFO.
 
 #### Scenario: Durations logged
 - **WHEN** a search of two queries completes
@@ -23,6 +24,14 @@ search duration, at INFO.
 #### Scenario: Equal titles query once
 - **WHEN** the Russian title equals the original title
 - **THEN** exactly one query is issued
+
+#### Scenario: Season queries
+- **WHEN** the profile is `Джентльмены` / `The Gentlemen` / 2024 with season 2
+- **THEN** the queries are `Джентльмены 2 сезон trailer` and `The Gentlemen season 2 trailer`
+
+#### Scenario: Season query without an original title
+- **WHEN** the profile is `Джентльмены` / empty original title / 2024 with season 2
+- **THEN** exactly one query is issued, `Джентльмены 2 сезон trailer`
 
 ### Requirement: Retrieval failure
 When one query fails and another succeeds, the retriever SHALL log a WARNING naming the failed query and return

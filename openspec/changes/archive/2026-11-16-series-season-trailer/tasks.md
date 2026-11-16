@@ -25,13 +25,13 @@
 
 ## 5. Verify
 
-- [ ] 5.1 Run `/simplify` without an argument and commit its edits.
-- [ ] 5.2 Run `openspec validate --strict --all`; verify: exit 0.
-- [ ] 5.3 Run the declared test `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify: exit 0.
+- [x] 5.1 Run `/simplify` without an argument and commit its edits.
+- [x] 5.2 Run `openspec validate --strict --all`; verify: exit 0.
+- [x] 5.3 Run the declared test `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify: exit 0.
 
 ## 6. Deliver
 
-- [ ] 6.1 Run `agent-process archive_change series-season-trailer`, then `gh pr create --title "feat: series-season-trailer" --body-file <report>` (report: `Refs #5`, scenario map, live-check result, deferral: passing `season` from lampa-mediacenter → ekolvah/lampa-mediacenter#64), then `gh pr merge <PR> --auto --squash`.
+- [x] 6.1 Run `agent-process archive_change series-season-trailer`, then `gh pr create --title "feat: series-season-trailer" --body-file <report>` (report: `Refs #5`, scenario map, live-check result, deferral: passing `season` from lampa-mediacenter → ekolvah/lampa-mediacenter#64), then `gh pr merge <PR> --auto --squash`.
 - [ ] 6.2 Run `agent-process wait_for_pr <PR>` after creation and after every corrective push; apply findings for at most three rounds.
 - [ ] 6.3 After the person's approval merges the PR, with their consent create and push tag `v0.2.0` on the merge commit; verify: in a fresh venv `pip install "trailer-search[ytdlp] @ git+https://github.com/ekolvah/trailer-search@v0.2.0"` and `FilmProfile("Джентльмены", "The Gentlemen", 2024, season=2)` builds.
 
