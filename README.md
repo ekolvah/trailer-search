@@ -5,7 +5,7 @@ Picks a Russian film trailer from YouTube search results.
 ## Install
 
 ```sh
-pip install "trailer-search[ytdlp] @ git+https://github.com/ekolvah/trailer-search@v0.1.0"
+pip install "trailer-search[ytdlp] @ git+https://github.com/ekolvah/trailer-search@v0.2.0"
 ```
 
 Extras: `ytdlp` for `YtDlpRetriever` (no API key), `youtube-api` for `YoutubeApiRetriever`
@@ -24,6 +24,8 @@ pick: TrailerPick = find_trailer(FilmProfile(ru_title, original_title, year),
 
 `video_id=None` means no relevant candidate. `TrailerRetrievalError` means no search
 query succeeded within the deadline (`YtDlpRetriever(deadline_s=10.0)` by default).
+For a series, pass `FilmProfile(..., season=N)` with `year` of the first season: the pick is
+season N's trailer, or the best other one with `; season N fallback` ending `reason`.
 
 ## Develop
 

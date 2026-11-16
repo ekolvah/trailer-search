@@ -20,8 +20,8 @@
 
 ## 4. Release and live check
 
-- [ ] 4.1 `pyproject.toml` version 0.2.0; `README.md` install tag `v0.2.0` and one line on `season` (design 8); verify: `python -X utf8 scripts/eval_trailers.py` prints `baseline: match`.
-- [ ] 4.2 Run `python -m pytest -m live tests/test_live_ytdlp.py`; verify: both live tests pass, the Gentlemen pick and reason are recorded in the PR report; commit.
+- [x] 4.1 `pyproject.toml` version 0.2.0; `README.md` install tag `v0.2.0` and one line on `season` (design 8); verify: `python -X utf8 scripts/eval_trailers.py` prints `baseline: match`.
+- [x] 4.2 Run `python -m pytest -m live tests/test_live_ytdlp.py`; verify: both live tests pass, the Gentlemen pick and reason are recorded in the PR report; commit.
 
 ## 5. Verify
 
