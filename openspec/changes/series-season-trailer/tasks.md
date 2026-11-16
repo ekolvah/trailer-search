@@ -16,7 +16,7 @@
 
 ## 3. Retrieval
 
-- [ ] 3.1 Season branch in `_queries`: `<ru> N сезон trailer` / `<orig> season N trailer` (design 6); verify: `python -m pytest tests/test_retrieval.py`; commit.
+- [x] 3.1 Season branch in `_queries`: `<ru> N сезон trailer` / `<orig> season N trailer` (design 6); verify: `python -m pytest tests/test_retrieval.py`; commit.
 
 ## 4. Release and live check
 
