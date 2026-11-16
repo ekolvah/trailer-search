@@ -186,9 +186,9 @@ class HeuristicStrategy:
     ) -> tuple[int, int, int, int]:
         description = normalize_title(candidate.description)
         cast_hits = sum(1 for name in cast if _contains_phrase(description, name))
-        named = title_season(candidate.title) if season is not None else None
-        season_hit = season is not None and (
-            named == season or (named is None and season == 1)
+        # An unmarked title counts as season 1 (design 4).
+        season_hit = (
+            season is not None and (title_season(candidate.title) or 1) == season
         )
         return (
             int(season_hit),

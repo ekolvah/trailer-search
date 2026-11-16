@@ -241,8 +241,6 @@ def test_edition_in_candidate_title_does_not_win_over_trailer() -> None:
 
 # ── series season (series-season-trailer) ─────────────────────────────────────
 
-GENTLEMEN_S1_RU = "Джентльмены (1 сезон) — Русский трейлер (4К, 2024)"
-
 
 def _gentlemen(season: int) -> FilmProfile:
     return FilmProfile(
@@ -266,7 +264,9 @@ def test_season_rejects_earlier_year() -> None:
 
 def test_requested_season_beats_earlier() -> None:
     cands = [
-        Candidate(video_id="s1", title=GENTLEMEN_S1_RU),
+        Candidate(
+            video_id="s1", title="Джентльмены (1 сезон) — Русский трейлер (4К, 2024)"
+        ),
         Candidate(
             video_id="s2", title="The Gentlemen: Season 2 | Official Trailer | Netflix"
         ),

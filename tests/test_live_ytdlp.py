@@ -29,12 +29,11 @@ def test_beast_russian_trailer(caplog: pytest.LogCaptureFixture) -> None:
 
 
 @pytest.mark.live
-def test_gentlemen_season_2(caplog: pytest.LogCaptureFixture) -> None:
-    retriever = YtDlpRetriever(socket_timeout=4)
-    with caplog.at_level(logging.INFO, logger="trailer_search"):
-        pick = find_trailer(
-            FilmProfile("Джентльмены", "The Gentlemen", 2024, season=2), retriever
-        )
+def test_gentlemen_season_2() -> None:
+    pick = find_trailer(
+        FilmProfile("Джентльмены", "The Gentlemen", 2024, season=2),
+        YtDlpRetriever(socket_timeout=4),
+    )
     print(f"pick={pick}")
     assert pick.title is not None and has_cyrillic(pick.title), pick
     assert title_season(pick.title) == 2, pick
