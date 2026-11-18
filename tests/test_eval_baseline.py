@@ -127,7 +127,7 @@ def test_committed_baseline_matches() -> None:
     assert report.ok, report.text
     outcomes = [e.outcome for e in baseline]
     assert (outcomes.count("hit"), outcomes.count("miss"), outcomes.count("wrong")) == (
-        29,
+        30,
         2,
         1,
     )

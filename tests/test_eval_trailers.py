@@ -214,11 +214,11 @@ def test_committed_golden_set_scorecard() -> None:
     rows = evaluate(load_golden_set(GOLDEN_PATH))
     outcomes = [o for _, _, o in rows]
     assert (outcomes.count("hit"), outcomes.count("miss"), outcomes.count("wrong")) == (
-        29,
+        30,
         2,
         1,
     )
-    assert score(outcomes) == 27
+    assert score(outcomes) == 28
 
 
 def test_138_ru_selection_is_fixed() -> None:

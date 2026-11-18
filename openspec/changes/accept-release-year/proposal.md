@@ -36,5 +36,6 @@ Out of scope: `MAX_RESULTS` truncation of the yt-dlp pool and Latin transliterat
 ## Impact
 
 - Edited: `src/trailer_search/text.py`, `tests/test_text.py`, `tests/test_strategy.py`,
-  `tests/fixtures/trailer_golden.json`, `tests/fixtures/trailer_baseline.json`.
+  `tests/fixtures/trailer_golden.json`, `tests/fixtures/trailer_baseline.json`, `tests/test_eval_trailers.py`,
+  `tests/test_eval_baseline.py` (pinned scorecard counts).
 - Added: none. Removed: none. Public API unchanged.

@@ -5,6 +5,8 @@ A candidate SHALL be relevant only when its title contains the tokens of the Rus
 or the original title without its parenthesised suffix, consecutively and in order, allowing one interspersed
 standalone sequel number that is not a year, and, when its title names a year, one of the named years is the
 film's year or the year after it.
+When the profile gives a season, the year condition SHALL instead be that the title names no year earlier than the
+film's year.
 
 #### Scenario: No relevant candidate
 - **WHEN** no candidate title contains either film title
@@ -33,3 +35,11 @@ film's year or the year after it.
 #### Scenario: A year is not skipped as a sequel number
 - **WHEN** the Russian title is `Шрэк навсегда` and a candidate title is `Шрэк 2010 навсегда трейлер`
 - **THEN** the candidate is not relevant
+
+#### Scenario: Season candidate passes despite a later year
+- **WHEN** the profile is `Джентльмены` / `The Gentlemen` / 2024 with season 2 and the only candidate is `Джентльмены (2 сезон) - Русский трейлер (Дубляж, 2026) Гай Ричи`
+- **THEN** that candidate is picked
+
+#### Scenario: Season keeps rejecting an earlier year
+- **WHEN** the profile is `Джентльмены` / `The Gentlemen` / 2024 with season 2 and the only candidate is `The Gentlemen 2019 Official Trailer`
+- **THEN** the pick has `video_id` None

@@ -10,12 +10,13 @@
 
 - [x] 2.1 Accept `film_year + 1` in `title_year_matches` (`src/trailer_search/text.py`) and update its docstring; verify `python -m pytest tests/test_text.py tests/test_strategy.py` passes.
 - [x] 2.2 Add the Коммерсант golden entry (five observed candidates with their real YouTube ids) to `tests/fixtures/trailer_golden.json`, run `python -X utf8 scripts/eval_trailers.py --update-baseline`; verify `git diff tests/fixtures/trailer_baseline.json` adds one `hit` and changes no other outcome.
+- [x] 2.3 Rebase the spec delta onto the season clause and scenarios merged by `series-season-trailer`, and bump the pinned scorecard counts (hit 29→30, score 27→28) in `tests/test_eval_trailers.py` and `tests/test_eval_baseline.py`; verify `openspec validate --strict --all` and `python -m pytest tests/test_eval_trailers.py tests/test_eval_baseline.py` pass.
 
 ## 3. Verify
 
-- [ ] 3.1 Run `/simplify` and commit its edits.
-- [ ] 3.2 Run `openspec validate --strict --all`; verify exit 0.
-- [ ] 3.3 Run `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify exit 0.
+- [x] 3.1 Run `/simplify` and commit its edits.
+- [x] 3.2 Run `openspec validate --strict --all`; verify exit 0.
+- [x] 3.3 Run `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify exit 0.
 
 ## 4. Deliver
 
@@ -32,3 +33,5 @@
 | trailer-selection | Edition suffix of the original title is ignored | `tests/test_strategy.py::test_edition_suffix_ignored` |
 | trailer-selection | Interspersed sequel number | `tests/test_strategy.py::test_sequel_number_skipped` |
 | trailer-selection | A year is not skipped as a sequel number | `tests/test_strategy.py::test_year_not_skipped` |
+| trailer-selection | Season candidate passes despite a later year | `tests/test_strategy.py::test_season_candidate_passes_later_year` |
+| trailer-selection | Season keeps rejecting an earlier year | `tests/test_strategy.py::test_season_rejects_earlier_year` |
