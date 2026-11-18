@@ -20,7 +20,7 @@
 
 ## 4. Deliver
 
-- [ ] 4.1 Run `agent-process archive_change accept-release-year`, open the PR titled `fix: accept-release-year` with the report body, run `gh pr merge <PR> --auto --squash` and `agent-process wait_for_pr <PR>`; verify the head settles with no open P0/P1 thread.
+- [x] 4.1 Run `agent-process archive_change accept-release-year`, open the PR titled `fix: accept-release-year` with the report body, run `gh pr merge <PR> --auto --squash` and `agent-process wait_for_pr <PR>`; verify the head settles with no open P0/P1 thread.
 
 ## Scenario → test map
 
