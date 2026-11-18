@@ -4,7 +4,7 @@
 
 ## 1. RED
 
-- [ ] 1.1 Add `tests/test_strategy.py::test_release_year_admitted` and the guards `tests/test_text.py::test_title_with_year_before_does_not_match` and `tests/test_text.py::test_title_with_film_year_and_other_year_matches` (both pass before the fix); verify `agent-process check_red tests/test_strategy.py::test_release_year_admitted` reports it failing, then commit RED.
+- [x] 1.1 Add `tests/test_strategy.py::test_release_year_admitted` and the guards `tests/test_text.py::test_title_with_year_before_does_not_match` and `tests/test_text.py::test_title_with_film_year_and_other_year_matches` (both pass before the fix); verify `agent-process check_red tests/test_strategy.py::test_release_year_admitted` reports it failing, then commit RED.
 
 ## 2. Release year
 

@@ -31,3 +31,11 @@ def test_title_with_film_year_matches() -> None:
 
 def test_title_with_other_year_does_not_match() -> None:
     assert not title_year_matches("Dune 2024 Trailer", 2021)
+
+
+def test_title_with_year_before_does_not_match() -> None:
+    assert not title_year_matches("Dune 2020 Trailer", 2021)
+
+
+def test_title_with_film_year_and_other_year_matches() -> None:
+    assert title_year_matches("Dune 2021 vs 1984", 2021)
