@@ -42,6 +42,12 @@ def test_other_year_excluded() -> None:
     )
 
 
+def test_release_year_admitted() -> None:
+    film = FilmProfile(ru_title="Коммерсант", original_title="Коммерсант", year=2025)
+    cands = [Candidate(video_id="ru", title="Коммерсант - Трейлер 2026")]
+    assert _pick(film, cands).video_id == "ru"
+
+
 def test_edition_suffix_ignored() -> None:
     film = FilmProfile(
         ru_title="Marvel Человек-Паук 2",

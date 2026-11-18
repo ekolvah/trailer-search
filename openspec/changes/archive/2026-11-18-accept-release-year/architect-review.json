@@ -1,0 +1,41 @@
+{
+  "verdict": "approve",
+  "round": 2,
+  "reviewer": "architect-reviewer",
+  "reasoning": "The round-1 finding is closed: the relevance clause now states the intersection semantics title_year_matches implements, and a guard test pins the mixed-year case; the fix stays root-caused, minimal and test-first.",
+  "classes": {
+    "simpler": {
+      "evidence": "design.md Decisions weighs Emby's symmetric ±1 against the asymmetric {film_year, film_year+1} and rejects -1 as unobserved (§VII). Other simpler routes: dropping the year gate (rejected by the scenario 'Other year excludes a candidate') and raising MAX_RESULTS (out of scope, depends on search rank, not the production/release-year root cause). The chosen change is a one-line edit in text.py:13.",
+      "result": "ok"
+    },
+    "map": {
+      "evidence": "The delta has 7 scenarios, and tasks.md `## Scenario → test map` maps each one. The new scenario 'Film year among several years admits a candidate' maps to test_text.py::test_title_with_film_year_and_other_year_matches. The other entries are unchanged from round 1 and point at existing tests (test_strategy.py:25, :33, :41, :51, :57; test_text.py:32) or at tests task 1.1 adds. No n/a rows.",
+      "result": "ok"
+    },
+    "red": {
+      "evidence": "Task 1.1 runs check_red only on test_release_year_admitted, which fails today: text.py:13 returns False for {2026} with film_year 2025. The two guards, test_title_with_year_before_does_not_match and test_title_with_film_year_and_other_year_matches, pass before the fix and are correctly kept out of check_red. The second guard passes today because `2021 in {2021, 1984}`.",
+      "result": "ok"
+    },
+    "platform": {
+      "evidence": "The change rests on the dated live reproduction in proposal.md Why: the yt-dlp titles, the pick verbatim, and the 8th-result title giving the premiere date. The Emby tolerance is quoted with its URL. 'A premiere is never earlier' is asserted, not observed, but it only backs the -1 non-goal, which keeps current behaviour. The 'no outcome changed' measurement over the golden set is checked again deterministically by task 2.2's baseline diff.",
+      "result": "ok"
+    },
+    "replaced": {
+      "evidence": "No input is replaced. The year guard is loosened, not dropped: next-year titles now pass. design.md Risks covers this (remake or namesake from the next year) and records the impact measured on the golden set.",
+      "result": "ok"
+    },
+    "catcher": {
+      "evidence": "Task 2.2's baseline `git diff` runs on the implementation head. test_eval_baseline (pytest in the manual pre-commit stage, task 3.3 and CI) turns red on any moved case. eval_trailers._record revalidates the pinned `correct` ids before writing (scripts/eval_trailers.py:404-424) and rejects an accept-set id missing from the pool (_parse_correct). design.md now makes `correct` the accept list of the tied Cyrillic trailer ids, so the hit no longer depends on the order of a pool that `--record` rebuilt.",
+      "result": "ok"
+    },
+    "length": {
+      "evidence": "The requirement sentence is 62 words. The edited clause 'and, when its title names a year, one of the named years is the film's year or the year after it' is 20 words, and tests assert each part of it. 'When its title names a year': a title with no year matches (test_text.py:24). 'One of the named years': the mixed-year guard `Dune 2021 vs 1984`. 'The film's year': test_text.py:28. 'Or the year after it': test_release_year_admitted. The rejection side (a year before, another year) is covered by test_title_with_year_before_does_not_match, test_text.py:32 and test_strategy.py:33. The spec now matches the intersection logic in text.py:13.",
+      "result": "ok"
+    },
+    "bespoke": {
+      "evidence": "proposal.md `## Standard approach` cites Emby's ±1 year tolerance with a quote and URL (the standard approach to title-year matching), plus FileBot and Radarr as corroboration. design.md departs to an asymmetric +1 and gives the reason. The plan adds no script or check.",
+      "result": "ok"
+    }
+  },
+  "scenario_coverage": []
+}
