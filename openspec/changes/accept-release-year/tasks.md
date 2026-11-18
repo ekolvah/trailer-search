@@ -8,8 +8,8 @@
 
 ## 2. Release year
 
-- [ ] 2.1 Accept `film_year + 1` in `title_year_matches` (`src/trailer_search/text.py`) and update its docstring; verify `python -m pytest tests/test_text.py tests/test_strategy.py` passes.
-- [ ] 2.2 Add the Коммерсант golden entry (five observed candidates with their real YouTube ids) to `tests/fixtures/trailer_golden.json`, run `python -X utf8 scripts/eval_trailers.py --update-baseline`; verify `git diff tests/fixtures/trailer_baseline.json` adds one `hit` and changes no other outcome.
+- [x] 2.1 Accept `film_year + 1` in `title_year_matches` (`src/trailer_search/text.py`) and update its docstring; verify `python -m pytest tests/test_text.py tests/test_strategy.py` passes.
+- [x] 2.2 Add the Коммерсант golden entry (five observed candidates with their real YouTube ids) to `tests/fixtures/trailer_golden.json`, run `python -X utf8 scripts/eval_trailers.py --update-baseline`; verify `git diff tests/fixtures/trailer_baseline.json` adds one `hit` and changes no other outcome.
 
 ## 3. Verify
 

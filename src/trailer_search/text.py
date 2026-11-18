@@ -15,12 +15,13 @@ _SEASON_RE = re.compile(
 
 
 def title_year_matches(title: str, film_year: int, *, at_least: bool = False) -> bool:
-    """Return False if the video title explicitly mentions a year other than film_year,
-    or, with `at_least`, a year earlier than film_year."""
+    """Return False if the video title names years but neither film_year nor the year
+    after it (the release year of a film profiled by production year), or, with
+    `at_least`, a year earlier than film_year."""
     title_years = {int(m) for m in re.findall(rf"\b({YEAR_PATTERN})\b", title)}
     if at_least:
         return all(y >= film_year for y in title_years)
-    return not title_years or film_year in title_years
+    return not title_years or bool(title_years & {film_year, film_year + 1})
 
 
 def title_season(title: str) -> int | None:

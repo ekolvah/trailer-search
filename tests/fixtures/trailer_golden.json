@@ -5295,5 +5295,52 @@
     ],
     "note": "реал #412 (пул записан живьём 2026-07-29 через search_candidates, без --record по всему файлу — квота 100 search.list/сутки): ПЕРВЫЙ игровой кейс в наборе, закрывает часть ledger U. Раздача kinozal — 'Marvel Человек-Паук 2 / Marvel's Spider-Man 2 (Digital Deluxe Edition) / x64 / RU / Action / 2025 / Portable / PC (Windows)'; в проде 2026-07-29 давала '🎬 трейлер не найден' при pool=5. accept-set — четыре официальных трейлера игры с каналов PlayStation/Marvel Entertainment. trap — четыре трейлера ФИЛЬМА 'Человек-Паук: Новый день' (2026): правдоподобные чужие кандидаты, которые ловятся только годом. _szw1d9OGDM (нарезка костюмов) не эталон и не ловушка — та же игра, но не трейлер. tmdb_videos пуст не по регрессии TMDB: игры этот источник структурно не обслуживает.",
     "tmdb_videos": []
+  },
+  {
+    "film": {
+      "ru_title": "Коммерсант",
+      "original_title": "Коммерсант",
+      "year": 2025
+    },
+    "correct": [
+      "3Tb3ujNVmBw",
+      "51H6oVXZH_g",
+      "pNFzJZtoe2w",
+      "zYdiZx4LWYk"
+    ],
+    "candidates": [
+      {
+        "video_id": "3Tb3ujNVmBw",
+        "title": "Коммерсант · Трейлер · Фильм 2026",
+        "channel": "В Рейтинге 5⭐",
+        "published_at": ""
+      },
+      {
+        "video_id": "51H6oVXZH_g",
+        "title": "Коммерсант трейлер, фильм 2026",
+        "channel": "СМОТРИ",
+        "published_at": ""
+      },
+      {
+        "video_id": "FH6VHJrA250",
+        "title": "Kommersant | Trailer | In cinemas April 23",
+        "channel": "Наше кино",
+        "published_at": ""
+      },
+      {
+        "video_id": "pNFzJZtoe2w",
+        "title": "Коммерсант. Трейлер (2026)",
+        "channel": "Про СССР",
+        "published_at": ""
+      },
+      {
+        "video_id": "zYdiZx4LWYk",
+        "title": "Коммерсант - Трейлер 2026",
+        "channel": "Киноман",
+        "published_at": ""
+      }
+    ],
+    "note": "seed: #10 (год производства 2025, трейлеры названы годом премьеры 2026; live yt-dlp 2026-11-18)",
+    "tmdb_videos": []
   }
 ]
