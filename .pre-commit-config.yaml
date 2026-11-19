@@ -39,6 +39,8 @@ repos:
       - id: detect-secrets
         name: detect-secrets
         entry: python -X utf8 -m detect_secrets.pre_commit_hook
+        # release-please's bootstrap-sha is a commit id, not a secret; JSON has no pragma comment.
+        args: [--exclude-lines, '"bootstrap-sha": "[0-9a-f]{40}"']
         language: python
         additional_dependencies: [detect-secrets==1.5.0]
         stages: [pre-commit, manual]
