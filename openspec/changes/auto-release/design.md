@@ -30,6 +30,10 @@ a `__version__` attribute in the package.
   collecting changelog commits … once a release-please generated PR has been merged, this config value will be
   ignored". Without it the first PR collects every commit since the root, `feat` included, and proposes `0.3.0`.
   Alternative: `last-release-sha` — rejected, "never ignored: remove/change it once a good release PR is merged".
+- **`detect-secrets` skips the `bootstrap-sha` line (found at implementation).** The edit-time hook flagged
+  `release-please-config.json:4` as `Hex High Entropy String`; JSON allows no `pragma: allowlist secret` comment.
+  `--exclude-lines '"bootstrap-sha": "[0-9a-f]{40}"'` exempts that one line shape, leaving the rest of the file
+  scanned. Alternatives: `exclude:` of the whole file (wider); a `.secrets.baseline` (a new file to maintain).
 - **`always-update: true`.** The doc: needed "if pull requests must not be out-of-date with the base branch",
   which the strict required-checks policy enforces.
 - **This PR is titled `chore: auto-release`.** No library behaviour changes, and a `feat` would make the first

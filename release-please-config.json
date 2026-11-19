@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "always-update": true,
+  "bootstrap-sha": "e4f34f4742a158bf2ea90434999686ed2bc61d9a",
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "include-component-in-tag": false,
+      "extra-files": [
+        {"type": "toml", "path": "pyproject.toml", "jsonpath": "$.project.version"},
+        {"type": "generic", "path": "README.md"}
+      ]
+    }
+  }
+}

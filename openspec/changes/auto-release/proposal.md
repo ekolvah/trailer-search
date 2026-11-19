@@ -49,7 +49,8 @@ branch step.
 
 - Added: `.github/workflows/release-please.yml`, `.github/workflows/pr-title.yml`, `release-please-config.json`,
   `.release-please-manifest.json`, `tests/test_version_drift.py`.
-- Edited: `README.md` (marker on the install line).
+- Edited: `README.md` (marker on the install line); `.pre-commit-config.yaml` (repository-owned `detect-secrets`
+  hook, outside the `agent-process:begin/end` block: `--exclude-lines` for the `bootstrap-sha` line).
 - Added by release-please on the first release PR, not by this change: `CHANGELOG.md`.
 - Installer-managed files (`agent-process:managed` header: `.github/workflows/agent-process.yml`, `agent-review.yml`,
   `task-readings.yml`, `.claude/rules/agent-process.md`, the `openspec/config.yaml` block): none touched. No new

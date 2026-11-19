@@ -8,7 +8,7 @@
 
 ## 2. Release config
 
-- [ ] 2.1 Add `release-please-config.json` (`release-type: simple`, `include-component-in-tag: false`, `always-update: true`, `bootstrap-sha: e4f34f4742a158bf2ea90434999686ed2bc61d9a`, `extra-files` toml `pyproject.toml` `$.project.version` and generic `README.md`) and `.release-please-manifest.json` `{".": "0.2.0"}`; append `# x-release-please-version` to the `README.md` install line; verify `python -m pytest tests/test_version_drift.py` passes.
+- [x] 2.1 Add `release-please-config.json` (`release-type: simple`, `include-component-in-tag: false`, `always-update: true`, `bootstrap-sha: e4f34f4742a158bf2ea90434999686ed2bc61d9a`, `extra-files` toml `pyproject.toml` `$.project.version` and generic `README.md`) and `.release-please-manifest.json` `{".": "0.2.0"}`; append `# x-release-please-version` to the `README.md` install line; verify `python -m pytest tests/test_version_drift.py` passes.
 
 ## 3. Workflows
 
