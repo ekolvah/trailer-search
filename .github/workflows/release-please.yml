@@ -6,10 +6,11 @@ name: Release Please
 # The release PR merges itself once its required contexts are green and
 # `github-actions` approved it.
 # Only the nightly or a manually dispatched run opens or updates the release PR; a push
-# run still creates the release of a merged release PR.
+# run still creates the release of a merged release PR, whose merge always moves the manifest.
 on:
   push:
     branches: [main]
+    paths: [.release-please-manifest.json]
   schedule:
     - cron: "17 0 * * *"
   workflow_dispatch:
@@ -32,25 +33,17 @@ jobs:
       # The PR's author is the PAT's person, so the approval of `github-actions` counts for
       # the required approval; the repository allows Actions to approve, or the run fails.
       # Each update of the PR dismisses the approval, and the run that pushed it approves again.
-      - name: Approve the release PR
+      # Auto-merge waits for the required contexts; a failure to enable it fails the run
+      # instead of stalling the PR. `pr` is unset when no PR changed, so the number is
+      # parsed in `run`, not in `env`.
+      - name: Approve the release PR and enable auto-merge
         if: steps.release.outputs.prs_created == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          PAT: ${{ secrets.RELEASE_PLEASE_TOKEN }}
           GH_REPO: ${{ github.repository }}
           PR_JSON: ${{ steps.release.outputs.pr }}
         run: |
           PR=$(jq -er .number <<< "$PR_JSON")
           gh pr review --approve "$PR"
-
-      # Auto-merge waits for the required contexts; a failure to enable it fails the run
-      # instead of stalling the PR. `pr` is unset when no PR changed, so the number is
-      # parsed in `run`, not in `env`.
-      - name: Enable auto-merge on the release PR
-        if: steps.release.outputs.prs_created == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          PR_JSON: ${{ steps.release.outputs.pr }}
-        run: |
-          PR=$(jq -er .number <<< "$PR_JSON")
-          gh pr merge --auto --squash "$PR"
+          GH_TOKEN="$PAT" gh pr merge --auto --squash "$PR"

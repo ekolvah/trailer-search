@@ -8,7 +8,7 @@ import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-MARKER = "x-release-please-version"
+README_VERSION = re.compile(r"@v(\d+\.\d+\.\d+)\S*\s+# x-release-please-version")
 
 
 def lagging_places(manifest: str, places: dict[str, str | None]) -> list[str]:
@@ -21,11 +21,8 @@ def lagging_places(manifest: str, places: dict[str, str | None]) -> list[str]:
 
 
 def _readme_version() -> str | None:
-    for line in (ROOT / "README.md").read_text(encoding="utf-8").splitlines():
-        if MARKER in line:
-            found = re.search(r"@v(\d+\.\d+\.\d+)", line)
-            return found.group(1) if found else None
-    return None
+    found = README_VERSION.search((ROOT / "README.md").read_text(encoding="utf-8"))
+    return found.group(1) if found else None
 
 
 def test_version_places_match_manifest() -> None:

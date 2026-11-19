@@ -39,7 +39,8 @@ a `__version__` attribute in the package.
 - **This PR is titled `chore: auto-release`.** No library behaviour changes, and a `feat` would make the first
   release `0.3.0` instead of the `0.2.1` the fix warrants.
 - **Workflows copy the distribution's**, minus the `stable` step: push to `main` releases a merged release PR
-  (`skip-github-pull-request` on push); the nightly cron and `workflow_dispatch` open or update the release PR, then
+  (`skip-github-pull-request` on push, filtered to `paths: [.release-please-manifest.json]`, which every release PR
+  moves; the nightly run also creates a missed release); the nightly cron and `workflow_dispatch` open or update the release PR, then
   `github-actions` approves it with `GITHUB_TOKEN` and `RELEASE_PLEASE_TOKEN` enables `--auto --squash`. The PAT is
   needed because "With the exception of `workflow_dispatch` and `repository_dispatch`, … other
   `GITHUB_TOKEN`-triggered events do not create workflow runs at all"

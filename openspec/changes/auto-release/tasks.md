@@ -16,7 +16,7 @@
 
 ## 4. Verify
 
-- [ ] 4.1 Run `/simplify` and commit its edits.
+- [x] 4.1 Run `/simplify` and commit its edits.
 - [ ] 4.2 Run `openspec validate --strict --all`; verify exit 0.
 - [ ] 4.3 Run `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify exit 0.
 
