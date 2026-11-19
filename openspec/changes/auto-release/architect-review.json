@@ -1,0 +1,52 @@
+{
+  "verdict": "approve",
+  "round": 3,
+  "reviewer": "architect-reviewer",
+  "reasoning": "Every round-2 finding is closed. Each scenario is mapped to a test or an executable observation, and each platform claim carries a citation or a recorded read. The one failure with no catcher (an expired, revoked or under-scoped PAT) is an accepted risk that the person decides at plan review.",
+  "classes": {
+    "simpler": {
+      "evidence": "The person chose variant A (proposal.md Standard approach). A tag pushed straight from main is ruled out because the version places live on a protected main. design.md Decisions rejects the `python` release type and `last-release-sha`, each with a reason.",
+      "result": "ok"
+    },
+    "map": {
+      "evidence": "tasks.md map: the two drift scenarios map to the named tests in tasks.md 1.1. 'Title without a type': task 5.1 flips the PR title and sees pr-title fail. Task 5.2 now reads `rulesets/<id>` with a jq filter on `required_status_checks[].context`, a field the per-id response carries; the list response lacks it. 'First release after a fix': task 5.2 checks the release PR, its files, the auto-merge, the tag and `gh release view v0.2.1`.",
+      "result": "ok"
+    },
+    "red": {
+      "evidence": "tasks.md 1.1: check_red runs on test_version_places_match_manifest, which fails at RED because the manifest is absent. test_lagging_place_named checks the in-test comparison and is rightly left out of check_red.",
+      "result": "ok"
+    },
+    "platform": {
+      "evidence": "Each claim is cited and matches my 2026-11-18 reads or quotes its page. In design.md: the `.permissions` `\"admin\":false` read; the GITHUB_TOKEN sentence (events-that-trigger-workflows); PR #523's author, review and state; the ruleset 27309738 flags; the distribution's ruleset shape with its command and three values; the notifications-for-workflow-runs sentences; and the token-expiration-and-revocation sentence. The claim of a PAT-expiry email is removed, not asserted. release_pr.py, the release-please source lines and the manifest-releaser quotes carry their citations from round 1.",
+      "result": "ok"
+    },
+    "replaced": {
+      "evidence": "design.md 'Guards the release PR drops' table plus the new-input failure table: each dropped guard (review, issue link, person's approval, CHANGELOG look) and each RELEASE_PLEASE_TOKEN or approve-setting failure has a listed catcher, or 'none' with a reason.",
+      "result": "ok"
+    },
+    "catcher": {
+      "evidence": "Traced. release_pr.py runs in agent-review and quality on the release PR head. tests/test_version_drift.py runs in quality on that head. Issue links are checked on each feat/fix PR's own head. A blocked approve leaves an open release PR in the person's list. An expired, revoked or under-scoped PAT has 'none', recorded under Risks as accepted, with a failure notice offered to the person as a §VII decision at plan review. The planner's plain-words explanation must surface that choice.",
+      "result": "ok"
+    },
+    "length": {
+      "evidence": "spec.md 'Version places agree': 27 words, all asserted by the drift tests. 'Conventional PR title': 25 words, observed in 5.1 and 5.2. 'Release from merged commits': 56 words, observed in 5.2 including the GitHub Release; 'minor' for a feat is not exercised by the first release.",
+      "result": "ok"
+    },
+    "bespoke": {
+      "evidence": "proposal.md Standard approach cites release-please-action, the manifest-releaser doc and action-semantic-pull-request with URLs, plus distribution prior art. The design departs only from the `python` release type, with a stated reason. tests/test_version_drift.py has a decision naming the problem it closes (a lost marker, a wrong jsonpath) and why `extra-files` does not cover it: release-please writes the listed places and verifies none, and release_pr.py does not require each listed file to change.",
+      "result": "ok"
+    }
+  },
+  "scenario_coverage": [
+    {
+      "capability": "release",
+      "scenario": "Title without a type",
+      "reason": "Platform check; task 5.1 observes pr-title fail on the title `auto release`, and task 5.2 reads back the ruleset requiring it."
+    },
+    {
+      "capability": "release",
+      "scenario": "First release after a fix",
+      "reason": "GitHub Actions run after merge; task 5.2 observes the 0.2.1 release PR, its auto-merge, the tag and the Release."
+    }
+  ]
+}
