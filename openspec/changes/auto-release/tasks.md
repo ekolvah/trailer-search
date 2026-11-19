@@ -4,7 +4,7 @@
 
 ## 1. RED
 
-- [ ] 1.1 Add `tests/test_version_drift.py` with `test_version_places_match_manifest` (reads `.release-please-manifest.json`, `pyproject.toml` via `tomllib`, and the version on the `README.md` line carrying `x-release-please-version`) and `test_lagging_place_named` (the comparison on in-memory values names the lagging place); verify `agent-process check_red tests/test_version_drift.py::test_version_places_match_manifest` reports it failing, then commit RED.
+- [x] 1.1 Add `tests/test_version_drift.py` with `test_version_places_match_manifest` (reads `.release-please-manifest.json`, `pyproject.toml` via `tomllib`, and the version on the `README.md` line carrying `x-release-please-version`) and `test_lagging_place_named` (the comparison on in-memory values names the lagging place); verify `agent-process check_red tests/test_version_drift.py::test_version_places_match_manifest` reports it failing, then commit RED.
 
 ## 2. Release config
 
