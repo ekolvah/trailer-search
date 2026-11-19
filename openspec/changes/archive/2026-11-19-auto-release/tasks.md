@@ -17,12 +17,12 @@
 ## 4. Verify
 
 - [x] 4.1 Run `/simplify` and commit its edits.
-- [ ] 4.2 Run `openspec validate --strict --all`; verify exit 0.
-- [ ] 4.3 Run `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify exit 0.
+- [x] 4.2 Run `openspec validate --strict --all`; verify exit 0.
+- [x] 4.3 Run `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify exit 0.
 
 ## 5. Deliver
 
-- [ ] 5.1 Confirm with the person that `RELEASE_PLEASE_TOKEN` is set (`gh secret list` shows it) and Actions may approve PRs; run `agent-process archive_change auto-release`, open the PR titled `chore: auto-release` with the report body, run `gh pr edit <PR> --title "auto release"` and verify the `pr-title` check fails, then `gh pr edit <PR> --title "chore: auto-release"` and verify it passes (an `edited` event re-runs only `pr-title`; the head does not move); run `gh pr merge <PR> --auto --squash` and `agent-process wait_for_pr <PR>`; verify the head settles with no open P0/P1 thread.
+- [x] 5.1 Confirm with the person that `RELEASE_PLEASE_TOKEN` is set (`gh secret list` shows it) and Actions may approve PRs; run `agent-process archive_change auto-release`, open the PR titled `chore: auto-release` with the report body, run `gh pr edit <PR> --title "auto release"` and verify the `pr-title` check fails, then `gh pr edit <PR> --title "chore: auto-release"` and verify it passes (an `edited` event re-runs only `pr-title`; the head does not move); run `gh pr merge <PR> --auto --squash` and `agent-process wait_for_pr <PR>`; verify the head settles with no open P0/P1 thread.
 - [ ] 5.2 After merge: the person creates the ruleset `pr-title` requiring the `pr-title` context on `main`; take its id from `gh api repos/ekolvah/trailer-search/rulesets` and verify `gh api repos/ekolvah/trailer-search/rulesets/<id> --jq '.rules[] | select(.type=="required_status_checks") | .parameters.required_status_checks[].context'` prints `pr-title`. Run `gh workflow run release-please.yml`; verify a release PR proposing `0.2.1` changes only `.release-please-manifest.json`, `pyproject.toml`, `README.md` and `CHANGELOG.md`, its `agent-review` and `quality` pass with `release=true`, it auto-merges, `git ls-remote --tags origin v0.2.1` prints the tag and `gh release view v0.2.1` shows the Release.
 
 ## Scenario → test map
