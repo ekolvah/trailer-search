@@ -12,7 +12,7 @@
 
 ## 3. Workflows
 
-- [ ] 3.1 Add `.github/workflows/release-please.yml` (distribution copy without the `stable` step: push, nightly cron, `workflow_dispatch`; `skip-github-pull-request` on push; approve with `GITHUB_TOKEN`, `gh pr merge --auto --squash` with `RELEASE_PLEASE_TOKEN`) and `.github/workflows/pr-title.yml` (`amannn/action-semantic-pull-request@v6`, types `feat fix docs test refactor chore`); verify `python -c "import yaml,sys;[yaml.safe_load(open(f)) for f in sys.argv[1:]]" .github/workflows/release-please.yml .github/workflows/pr-title.yml` exits 0.
+- [x] 3.1 Add `.github/workflows/release-please.yml` (distribution copy without the `stable` step: push, nightly cron, `workflow_dispatch`; `skip-github-pull-request` on push; approve with `GITHUB_TOKEN`, `gh pr merge --auto --squash` with `RELEASE_PLEASE_TOKEN`) and `.github/workflows/pr-title.yml` (`amannn/action-semantic-pull-request@v6`, types `feat fix docs test refactor chore`); verify `python -c "import yaml,sys;[yaml.safe_load(open(f)) for f in sys.argv[1:]]" .github/workflows/release-please.yml .github/workflows/pr-title.yml` exits 0.
 
 ## 4. Verify
 
