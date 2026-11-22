@@ -19,8 +19,8 @@
 
 ## 4. Docs and live check
 
-- [ ] 4.1 `README.md`: one line on `series` next to the `season` line; verify: `python -X utf8 scripts/eval_trailers.py` prints `baseline: match`.
-- [ ] 4.2 Run `python -m pytest -m live tests/test_live_ytdlp.py`; verify: all live tests pass, the Огонь and Хартленд picks and reasons are recorded in the PR report; commit.
+- [x] 4.1 `README.md`: one line on `series` next to the `season` line; verify: `python -X utf8 scripts/eval_trailers.py` prints `baseline: match`.
+- [x] 4.2 Run `python -m pytest -m live tests/test_live_ytdlp.py`; verify: all live tests pass, the Огонь and Хартленд picks and reasons are recorded in the PR report; commit.
 
 ## 5. Verify
 
