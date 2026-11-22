@@ -8,7 +8,7 @@ import time
 import pytest
 
 from trailer_search import FilmProfile, find_trailer
-from trailer_search.text import has_cyrillic, title_season
+from trailer_search.text import has_cyrillic, title_is_series, title_season
 from trailer_search.ytdlp import YtDlpRetriever
 
 
@@ -38,3 +38,25 @@ def test_gentlemen_season_2() -> None:
     assert pick.title is not None and has_cyrillic(pick.title), pick
     assert title_season(pick.title) == 2, pick
     assert "fallback" not in pick.reason, pick
+
+
+@pytest.mark.live
+def test_ogon_series() -> None:
+    pick = find_trailer(
+        FilmProfile("Огонь", "Огонь", 2025, series=True),
+        YtDlpRetriever(socket_timeout=4),
+    )
+    print(f"pick={pick}")
+    assert pick.title is not None and "Огонь" in pick.title, pick
+    assert title_is_series(pick.title), pick
+
+
+@pytest.mark.live
+def test_heartland_film() -> None:
+    pick = find_trailer(
+        FilmProfile("Хартленд", "Heartland", 2026, series=False),
+        YtDlpRetriever(socket_timeout=4),
+    )
+    print(f"pick={pick}")
+    assert pick.title is not None and has_cyrillic(pick.title), pick
+    assert not title_is_series(pick.title), pick

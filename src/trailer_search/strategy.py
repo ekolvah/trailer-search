@@ -12,6 +12,7 @@ from trailer_search.text import (
     YEAR_PATTERN,
     has_cyrillic,
     normalize_title,
+    title_is_series,
     title_season,
     title_year_matches,
 )
@@ -56,7 +57,9 @@ def _title_tokens_in(film_tokens: list[str], cand_tokens: list[str]) -> bool:
 class FilmProfile:
     """What selection knows about a film; `cast`/`director`/`genre`/`description`
     are optional metadata (cast in a candidate description breaks ties). `season`
-    asks a series for that season's trailer; `year` is then the first season's year."""
+    asks a series for that season's trailer; `year` is then the first season's year.
+    `series` is True for a series, False for a film, None when unknown; a season
+    implies True."""
 
     ru_title: str
     original_title: str
@@ -66,10 +69,16 @@ class FilmProfile:
     genre: str = ""
     description: str = ""
     season: int | None = None
+    series: bool | None = None
 
     def __post_init__(self) -> None:
-        if self.season is not None and self.season < 1:
+        if self.season is None:
+            return
+        if self.season < 1:
             raise ValueError(f"season must be >= 1, got {self.season}")
+        if self.series is False:
+            raise ValueError(f"season {self.season} contradicts series=False")
+        self.series = True
 
 
 @dataclass
@@ -106,8 +115,9 @@ class HeuristicStrategy:
     1. **relevance**: the candidate title contains `ru_title` or `original_title`
        (or `original_title` without its parenthesized edition suffix) tokens in order,
        allowing one numeric sequel token, and its year matches a truthy profile year
-       (with a season: names no year earlier than the profile year).
-    2. **ranking** by `(season_hit, is_ru, cast_hits, trailer_signal)`, descending
+       (with a season: names no year earlier than the profile year); a film rejects
+       a series-marked title unless its own title is marked.
+    2. **ranking** by `(season_hit, is_ru, series_hit, cast_hits, trailer_signal)`, descending
        and stable; a pick that misses the requested season gets a `season N fallback`
        reason suffix and a WARNING.
 
@@ -122,8 +132,15 @@ class HeuristicStrategy:
         self, film_profile: FilmProfile, candidates: list[Candidate]
     ) -> TrailerPick:
         film_titles = self._film_titles(film_profile)
+        # A film whose own title carries a marker keeps marked candidates (design 4).
+        reject_series = film_profile.series is False and not any(
+            title_is_series(t)
+            for t in (film_profile.ru_title, film_profile.original_title)
+        )
         relevant = [
-            c for c in candidates if self._relevant(film_profile, film_titles, c)
+            c
+            for c in candidates
+            if self._relevant(film_profile, film_titles, reject_series, c)
         ]
         if not relevant:
             return TrailerPick(None, None, 0.0, "no title+year match")
@@ -133,11 +150,12 @@ class HeuristicStrategy:
             if n
         ]
         season = film_profile.season
-        keys = [self._rank(c, cast, season) for c in relevant]
+        series = bool(film_profile.series)
+        keys = [self._rank(c, cast, season, series) for c in relevant]
         best_key = max(keys)  # first of the top rank, as a stable descending sort
         best = relevant[keys.index(best_key)]
         tied = keys.count(best_key)
-        season_hit, is_ru, cast_hits, _trailer = best_key
+        season_hit, is_ru, _series_hit, cast_hits, _trailer = best_key
         if tied > 1:
             confidence = 0.3
             reason = f"ambiguous: {tied} candidates share top rank"
@@ -171,19 +189,26 @@ class HeuristicStrategy:
         return [normalize_title(t).split() for t in titles]
 
     def _relevant(
-        self, profile: FilmProfile, film_titles: list[list[str]], candidate: Candidate
+        self,
+        profile: FilmProfile,
+        film_titles: list[list[str]],
+        reject_series: bool,
+        candidate: Candidate,
     ) -> bool:
-        """Title-and-year match against the `_film_titles` variants."""
+        """Title-and-year match against the `_film_titles` variants; with
+        `reject_series`, a series-marked title is not relevant."""
         cand_tokens = normalize_title(candidate.title).split()
         if not any(_title_tokens_in(t, cand_tokens) for t in film_titles):
+            return False
+        if reject_series and title_is_series(candidate.title):
             return False
         return not profile.year or title_year_matches(
             candidate.title, profile.year, at_least=profile.season is not None
         )
 
     def _rank(
-        self, candidate: Candidate, cast: list[str], season: int | None
-    ) -> tuple[int, int, int, int]:
+        self, candidate: Candidate, cast: list[str], season: int | None, series: bool
+    ) -> tuple[int, int, int, int, int]:
         description = normalize_title(candidate.description)
         cast_hits = sum(1 for name in cast if _contains_phrase(description, name))
         # An unmarked title counts as season 1 (design 4).
@@ -193,6 +218,7 @@ class HeuristicStrategy:
         return (
             int(season_hit),
             int(has_cyrillic(candidate.title)),
+            int(series and title_is_series(candidate.title)),
             cast_hits,
             self._trailer_signal(candidate),
         )

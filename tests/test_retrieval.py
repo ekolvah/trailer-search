@@ -118,6 +118,45 @@ def test_season_queries(original_title: str, expected: list[str]) -> None:
     assert search.queries == expected
 
 
+@pytest.mark.parametrize(
+    ("ru_title", "original_title", "year", "series", "expected"),
+    [
+        (
+            "Монстры",
+            "Monster",
+            2022,
+            True,
+            ["Монстры 2022 сериал trailer", "Monster 2022 series trailer"],
+        ),
+        (
+            "Хартленд",
+            "Heartland",
+            2026,
+            False,
+            ["Хартленд 2026 фильм trailer", "Heartland 2026 movie trailer"],
+        ),
+        (
+            "Монстры",
+            "Monster",
+            None,
+            True,
+            ["Монстры сериал trailer", "Monster series trailer"],
+        ),
+    ],
+)
+def test_typed_queries(
+    ru_title: str,
+    original_title: str,
+    year: int | None,
+    series: bool,
+    expected: list[str],
+) -> None:
+    search = _Branches({})
+    profile = FilmProfile(ru_title, original_title, year, series=series)
+    search_union(profile, search, max_workers=1)
+    assert search.queries == expected
+
+
 def test_one_branch_failure_warns(caplog: pytest.LogCaptureFixture) -> None:
     search = _Branches({RU_Q: [_c("A")], ORIG_Q: RuntimeError("YouTube 500")})
     with caplog.at_level(logging.WARNING, logger="trailer_search"):

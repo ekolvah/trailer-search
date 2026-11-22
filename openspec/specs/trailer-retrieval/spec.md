@@ -10,6 +10,8 @@
 A retriever SHALL query `<title> <year> trailer` (or `<title> trailer` without a year) for the Russian title and,
 when it is non-empty and differs, for the original title. When the profile gives a season N, the same queries
 SHALL instead read `<Russian title> N сезон trailer` and `<original title> season N trailer`, without a year.
+When the profile gives no season and a known type, each query SHALL carry, after the year, `сериал` (Russian) or
+`series` (original) for a series, and `фильм` or `movie` for a film.
 The pool SHALL list the Russian query's results first, then the original query's, without repeating a video id.
 It SHALL log each query with its duration, and the total search duration, at INFO.
 
@@ -32,6 +34,14 @@ It SHALL log each query with its duration, and the total search duration, at INF
 #### Scenario: Season query without an original title
 - **WHEN** the profile is `Джентльмены` / empty original title / 2024 with season 2
 - **THEN** exactly one query is issued, `Джентльмены 2 сезон trailer`
+
+#### Scenario: Series queries
+- **WHEN** the profile is the series `Монстры` / `Monster` / 2022 without a season
+- **THEN** the queries are `Монстры 2022 сериал trailer` and `Monster 2022 series trailer`
+
+#### Scenario: Film queries
+- **WHEN** the profile is the film `Хартленд` / `Heartland` / 2026
+- **THEN** the queries are `Хартленд 2026 фильм trailer` and `Heartland 2026 movie trailer`
 
 ### Requirement: Retrieval failure
 When one query fails and another succeeds, the retriever SHALL log a WARNING naming the failed query and return

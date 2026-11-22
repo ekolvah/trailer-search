@@ -26,6 +26,8 @@ pick: TrailerPick = find_trailer(FilmProfile(ru_title, original_title, year),
 query succeeded within the deadline (`YtDlpRetriever(deadline_s=10.0)` by default).
 For a series, pass `FilmProfile(..., season=N)` with `year` of the first season: the pick is
 season N's trailer, or the best other one with `; season N fallback` ending `reason`.
+Pass `series=True` for a series or `series=False` for a film: a film rejects trailers marked
+as a series (`сезон`, `сериал`, `series`), a series prefers them; omitted, the type is unknown.
 
 ## Develop
 
