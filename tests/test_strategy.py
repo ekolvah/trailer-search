@@ -323,3 +323,129 @@ def test_missing_season_falls_back_visibly(caplog: pytest.LogCaptureFixture) -> 
 def test_invalid_season_rejected(season: int) -> None:
     with pytest.raises(ValueError):
         _gentlemen(season)
+
+
+# ── film or series ────────────────────────────────────────────────────────────
+
+
+def _ogon(*, series: bool, original_title: str = "Огонь") -> FilmProfile:
+    return FilmProfile(
+        ru_title="Огонь", original_title=original_title, year=2025, series=series
+    )
+
+
+@pytest.mark.parametrize(
+    "title",
+    [
+        "Огонь 2 сезон трейлер",
+        "Огонь (2026) — сериал НТВ",
+        "Огонь — трейлер сериала",
+        "Fire | Russian Trailer | All About the Series",
+    ],
+)
+def test_film_rejects_series_markers(title: str) -> None:
+    film = _ogon(series=False, original_title="Fire")
+    assert _pick(film, [Candidate(video_id="s", title=title)]).video_id is None
+
+
+def test_film_rejects_season_trailer() -> None:
+    film = FilmProfile(
+        ru_title="Хартленд", original_title="Heartland", year=2026, series=False
+    )
+    cands = [
+        Candidate(video_id="s20", title="Хартленд, 20-й сезон | Официальный трейлер"),
+        Candidate(
+            video_id="film",
+            title="Хартленд (2026) | Официальный трейлер | Нетфликс",
+        ),
+    ]
+    pick = _pick(film, cands)
+    assert (pick.video_id, pick.confidence) == ("film", 0.9)
+
+
+@pytest.mark.parametrize(
+    ("ru_title", "original_title", "year", "title"),
+    [
+        (
+            "Лемони Сникет: 33 несчастья",
+            "A Series of Unfortunate Events",
+            2004,
+            "A Series of Unfortunate Events Official Trailer",
+        ),
+        ("Сериальная мамочка", "", 1994, "Сериальная мамочка — трейлер"),
+    ],
+)
+def test_film_own_marker_word_kept(
+    ru_title: str, original_title: str, year: int, title: str
+) -> None:
+    film = FilmProfile(
+        ru_title=ru_title, original_title=original_title, year=year, series=False
+    )
+    assert _pick(film, [Candidate(video_id="own", title=title)]).video_id == "own"
+
+
+def test_series_keeps_unmarked() -> None:
+    title = "Мосгаз. Дело №12: Южный порт"
+    film = FilmProfile(ru_title=title, original_title="", year=2025, series=True)
+    cands = [Candidate(video_id="F2FcNu__MBQ", title=f"{title} | Официальный трейлер")]
+    pick = _pick(film, cands)
+    assert (pick.video_id, pick.confidence) == ("F2FcNu__MBQ", 0.9)
+
+
+def test_season_contradicts_film() -> None:
+    with pytest.raises(ValueError):
+        FilmProfile(
+            ru_title="Джентльмены",
+            original_title="The Gentlemen",
+            year=2024,
+            season=2,
+            series=False,
+        )
+
+
+def test_series_prefers_marked() -> None:
+    cands = [
+        Candidate(video_id="film", title="Огонь - Финальный трейлер"),
+        Candidate(video_id="ntv", title="Огонь (2026) — сериал НТВ"),
+    ]
+    pick = _pick(_ogon(series=True), cands)
+    assert (pick.video_id, pick.confidence) == ("ntv", 0.9)
+
+
+def test_series_marker_outranks_cast() -> None:
+    film = FilmProfile(
+        ru_title="Огонь",
+        original_title="Огонь",
+        year=2025,
+        cast=["Иван Янковский"],
+        series=True,
+    )
+    cands = [
+        Candidate(
+            video_id="cast", title="Огонь — трейлер", description="Иван Янковский"
+        ),
+        Candidate(video_id="marked", title="Огонь — трейлер сериала"),
+    ]
+    pick = _pick(film, cands)
+    assert (pick.video_id, pick.confidence) == ("marked", 0.9)
+
+
+def test_ru_outranks_series_marker() -> None:
+    cands = [
+        Candidate(
+            video_id="en",
+            title="Fire | Season 1 | Russian Trailer | 2026 | All About the Series",
+        ),
+        Candidate(video_id="ru", title="Огонь - Финальный трейлер"),
+    ]
+    pick = _pick(_ogon(series=True, original_title="Fire"), cands)
+    assert (pick.video_id, pick.confidence) == ("ru", 0.9)
+
+
+def test_season_profile_counts_as_series() -> None:
+    cands = [
+        Candidate(video_id="plain", title="Джентльмены — Русский трейлер"),
+        Candidate(video_id="s1", title="Джентльмены (1 сезон) — Русский трейлер"),
+    ]
+    pick = _pick(_gentlemen(1), cands)
+    assert (pick.video_id, pick.confidence) == ("s1", 0.9)
