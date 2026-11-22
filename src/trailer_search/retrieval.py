@@ -36,8 +36,13 @@ def _queries(profile: FilmProfile) -> list[str]:
         return [f"{titles[0]} {season} сезон trailer"] + [
             f"{t} season {season} trailer" for t in titles[1:]
         ]
-    year = profile.year
-    return [f"{t} {year} trailer" if year else f"{t} trailer" for t in titles]
+    year = f" {profile.year}" if profile.year else ""
+    # Type word per language, Russian query first (design 6).
+    words = {None: ("", ""), True: (" сериал", " series"), False: (" фильм", " movie")}
+    return [
+        f"{t}{year}{w} trailer"
+        for t, w in zip(titles, words[profile.series], strict=False)
+    ]
 
 
 def _branch(

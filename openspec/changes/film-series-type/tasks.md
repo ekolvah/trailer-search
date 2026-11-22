@@ -15,7 +15,7 @@
 
 ## 3. Retrieval
 
-- [ ] 3.1 Type word in `_queries`: `сериал`/`series` for a series without a season, `фильм`/`movie` for a film (design 6), with a `test_typed_queries` row for a profile without a year (no `None` in the query); verify: `python -m pytest tests/test_retrieval.py`; commit.
+- [x] 3.1 Type word in `_queries`: `сериал`/`series` for a series without a season, `фильм`/`movie` for a film (design 6), with a `test_typed_queries` row for a profile without a year (no `None` in the query); verify: `python -m pytest tests/test_retrieval.py`; commit.
 
 ## 4. Docs and live check
 
