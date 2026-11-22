@@ -24,13 +24,13 @@
 
 ## 5. Verify
 
-- [ ] 5.1 Run `/simplify` without an argument and commit its edits.
-- [ ] 5.2 Run `openspec validate --strict --all`; verify: exit 0.
-- [ ] 5.3 Run the declared test `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify: exit 0.
+- [x] 5.1 Run `/simplify` without an argument and commit its edits.
+- [x] 5.2 Run `openspec validate --strict --all`; verify: exit 0.
+- [x] 5.3 Run the declared test `pre-commit run --hook-stage manual --all-files --show-diff-on-failure`; verify: exit 0.
 
 ## 6. Deliver
 
-- [ ] 6.1 Run `agent-process archive_change film-series-type`, then `gh pr create --title "feat: film-series-type" --body-file <report>` (report: `Refs #16`, scenario map, live-check result, deferrals: passing the card type from lampa-mediacenter; year from description/upload date and the «Монстры» example), then `gh pr merge <PR> --auto --squash`.
+- [x] 6.1 Run `agent-process archive_change film-series-type`, then `gh pr create --title "feat: film-series-type" --body-file <report>` (report: `Refs #16`, scenario map, live-check result, deferrals: passing the card type from lampa-mediacenter; year from description/upload date and the «Монстры» example), then `gh pr merge <PR> --auto --squash`.
 - [ ] 6.2 Run `agent-process wait_for_pr <PR>` after creation and after every corrective push; apply findings for at most three rounds.
 - [ ] 6.3 With the person's consent, open an issue in `ekolvah/lampa-mediacenter`: the service passes the card type as `series` once the release with this change is out; verify: the issue URL is in the final message.
 
