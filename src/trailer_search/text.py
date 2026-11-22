@@ -12,6 +12,8 @@ YEAR_PATTERN = r"(?:19|20)\d{2}"
 _SEASON_RE = re.compile(
     r"\b(?:(\d{1,2}) (?:й )?сезон|(?:сезон|season) (\d{1,2})|s(\d{2}))\b"
 )
+# Series markers (design 3): a season marker, a word beginning with `сериал`, the word `series`.
+_SERIES_RE = re.compile(rf"{_SEASON_RE.pattern}|\bсериал|\bseries\b")
 
 
 def title_year_matches(title: str, film_year: int, *, at_least: bool = False) -> bool:
@@ -28,6 +30,11 @@ def title_season(title: str) -> int | None:
     """The season number a video title names, or None when it names none."""
     m = _SEASON_RE.search(normalize_title(title))
     return int(next(g for g in m.groups() if g)) if m else None
+
+
+def title_is_series(title: str) -> bool:
+    """True when a video title carries a series marker."""
+    return bool(_SERIES_RE.search(normalize_title(title)))
 
 
 def normalize_title(s: str) -> str:

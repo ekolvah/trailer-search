@@ -9,9 +9,9 @@
 
 ## 2. Selection
 
-- [ ] 2.1 `FilmProfile.series: bool | None = None`; `__post_init__` sets `series=True` for a season and raises `ValueError` for a season with `series=False` (design 1, 2); verify: `python -m pytest tests/test_strategy.py -k contradicts_film`.
-- [ ] 2.2 `title_is_series` in `text.py` (design 3) and the film rejection in `_relevant`, with the own-title marker flag computed once in `pick` (design 4); verify: `python -m pytest tests/test_strategy.py -k "film or unmarked"`.
-- [ ] 2.3 `series_hit` rank key after `is_ru` for a series or a season profile (design 5); verify: `python -m pytest tests/test_strategy.py`; commit.
+- [x] 2.1 `FilmProfile.series: bool | None = None`; `__post_init__` sets `series=True` for a season and raises `ValueError` for a season with `series=False` (design 1, 2); verify: `python -m pytest tests/test_strategy.py -k contradicts_film`.
+- [x] 2.2 `title_is_series` in `text.py` (design 3) and the film rejection in `_relevant`, with the own-title marker flag computed once in `pick` (design 4); verify: `python -m pytest tests/test_strategy.py -k "film or unmarked"`.
+- [x] 2.3 `series_hit` rank key after `is_ru` for a series or a season profile (design 5); verify: `python -m pytest tests/test_strategy.py`; commit.
 
 ## 3. Retrieval
 
