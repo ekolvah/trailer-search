@@ -5,7 +5,7 @@ Picks a Russian film trailer from YouTube search results.
 ## Install
 
 ```sh
-pip install "trailer-search[ytdlp] @ git+https://github.com/ekolvah/trailer-search@v0.2.1"  # x-release-please-version
+pip install "trailer-search[ytdlp] @ git+https://github.com/ekolvah/trailer-search@v0.3.0"  # x-release-please-version
 ```
 
 Extras: `ytdlp` for `YtDlpRetriever` (no API key), `youtube-api` for `YoutubeApiRetriever`
